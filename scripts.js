@@ -138,15 +138,32 @@ function generateTable() {
 function generateTableHeaders() {
     let headerRow = document.querySelector('thead tr');
     
+    // Clear existing headers after 'Drugs'
     while (headerRow.children.length > 1) {
         headerRow.removeChild(headerRow.lastChild);
     }
 
+    // Create header cells for each city
     for (let city of cities) {
         let header = document.createElement('th');
         header.textContent = city;
+
+        // Tilføj en klik event listener til by header
+        header.addEventListener('click', function() {
+            setPlayerCity(city);
+        });
+
         headerRow.appendChild(header);
     }
+}
+
+function setPlayerCity(cityName) {
+    // Opdater den aktuelle spillers by
+    players[currentPlayerIndex].city = cityName;
+
+    // Opdater h2 teksten
+    let h2Element = document.getElementById('playerCityDisplay');
+    h2Element.textContent = `${players[currentPlayerIndex].name} er i ${cityName}`;
 }
 
 

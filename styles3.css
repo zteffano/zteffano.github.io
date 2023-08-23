@@ -50,6 +50,7 @@ th, td {
 th {
     font-size: 1.5rem;
     background-color: var(--th-bg-color);
+    cursor: pointer;
 }
 
 td {
