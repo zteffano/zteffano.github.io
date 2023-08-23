@@ -117,3 +117,22 @@ button:hover {
     }
 }
 
+
+/* Addon day 2 */
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+#startCash {
+    margin-top: 10px;
+    padding: 5px;
+    color: var(--primary-color);
+    background-color: var(--secondary-bg-color);
+    border: 2px solid var(--primary-color);
+}
+
+.player-cash-display {
+    margin-top: 15px;
+    font-weight: bold;
+}
