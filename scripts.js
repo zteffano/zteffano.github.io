@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", function() {
+
+
 const cities = ['East Harlem', 'Brooklyn', 'Manhattan', 'Queens'];
 const drugsList = ['cocaine', 'heroin', 'ecstacy', 'lsd', 'hash'];
 
@@ -145,3 +148,7 @@ function generateTableHeaders() {
         headerRow.appendChild(header);
     }
 }
+
+
+
+}); // Afslutter: DOMContentLoaded
