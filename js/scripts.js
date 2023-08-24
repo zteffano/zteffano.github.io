@@ -1,12 +1,12 @@
 (function () {
   const cities = ["East Harlem", "Brooklyn", "Manhattan", "Queens"];
-  const drugsList = ["cocaine", "heroin", "ecstacy", "lsd", "hash"];
+  const drugsList = ["cocaine", "heroin", "ecstacy", "LSD", "hash"];
   const prices = {
     cocaine: { min: 4000, max: 12000 },
     heroin: { min: 5000, max: 15000 },
     ecstacy: { min: 200, max: 500 },
-    lsd: { min: 1500, max: 3500 },
-    hash: { min: 1000, max: 4000 },
+    LSD: { min: 1500, max: 3500 },
+    hash: { min: 1000, max: 4000 }
   };
 
   let players = [];

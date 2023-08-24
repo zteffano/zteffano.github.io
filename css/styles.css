@@ -1,10 +1,23 @@
+/*
+
+#59021
+#C111D9
+#05F2DB
+#F29F05
+#F28B0C
+*/
+
 :root {
-    --primary-color: #0ff;
+    --primary-color: #F29F05;
     --secondary-bg-color: rgba(0, 0, 0, 0.7);
     --table-bg-color: rgba(0, 50, 50, 0.4);
     --th-bg-color: rgba(0, 30, 30, 0.7);
-    --btn-bg-color: #005;
-    --btn-bg-color-hover: #007;
+    --btn-bg-color: rgba(0, 0, 0,0.5);
+    --btn-bg-color-hover: rgba(59, 59, 66, 0.232);
+}
+@font-face {
+    font-family: 'Pricedown BL'; /* You can give any name here, but make sure it's unique */
+    src: url('../font/pricedownbl.otf') format('opentype'); /* Assuming 'fonts' is the directory where you stored the font */
 }
 
 body {
@@ -14,233 +27,258 @@ body {
     background: #000 url('../img/neon_city.jpg') no-repeat center center/cover;
     color: var(--primary-color);
     font-family: "Arial", sans-serif;
-    padding: 0 2rem; /* Small padding for mobile screens */
-  
-}
+    /*font-family: 'Pricedown BL', monospace; /* This uses the custom font, and falls back to sans-serif if the custom font isn't available */
+        padding: 0 1rem; /* Small padding for mobile screens */
+        
+    }
 
-.container {
-    max-width: 80%;
-    margin: 2rem auto;  /* reduce margin for mobile devices */
-    text-align: center;
-    background-color: var(--secondary-bg-color);
-    padding: 20px;
-    border: 3px solid var(--primary-color);
-    border-radius: 5px;
-}
 
-h1 {
-    font-size: 1.8rem;
-    text-shadow: 0 0 10px var(--primary-color);
-    margin-bottom: 20px;
-}
 
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-    background-color: rgba(0, 0, 0, 1.0);
-}
+    .container {
+        
+        max-width: 70%;
+        margin: 1rem auto;  /* reduce margin for mobile devices */
+        text-align: center;
+        background-color: var(--secondary-bg-color);
+        padding: 10px;
+        border: 2px solid var(--primary-color);
+        border-radius: 5px;
+    }
 
-th, td {
-    border: 2px solid var(--primary-color);
-    padding: 0.5rem;
-    text-align: center;
-    background-color: var(--table-bg-color);
-}
-
-th {
-    font-size: 1.5rem;
-    background-color: var(--th-bg-color);
-    cursor: pointer;
-}
-
-td {
-    font-size: 1.2rem;
-    background-color: black;
-}
-
-button {
-    margin-top: 20px;
-    background-color: var(--btn-bg-color);
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    font-size: 1.2rem;
-}
-
-button:hover {
-    background-color: var(--btn-bg-color-hover);
-}
-
-#diceResult {
-    margin-top: 20px;
-    font-size: 2rem;
-    font-weight: bold;
-    text-shadow: 0 0 5px var(--primary-color);
-}
-
-#player-container {
-    display: flex;
-    flex-wrap: wrap;  /* Allows items to wrap onto next line */
-    justify-content: center; /* Centers items */
-}
-
-#player-container .container {
-    width: 80vw;
-    max-width: 300px;
-    margin: 1rem; /* Spacing between containers */
-    height: auto; /* Set to auto for better scaling */
-    text-align: center;
-    background-color: var(--secondary-bg-color);
-    padding: 20px;
-    border: 3px solid var(--primary-color);
-    border-radius: 5px;
-}
-
-/* Media queries for larger screens */
-@media screen and (min-width: 768px) {
     h1 {
-        font-size: 2.8rem;
+        font-size: 1.5rem;
+        text-shadow: 0 0 5px var(--primary-color);
+        margin-bottom: 10px;
+        
+    }
+
+    table {
+        width: 100%;
+        margin-top: 10px;
+        border-collapse: collapse;
+        background-color: rgba(0, 0, 0, 1.0);
+    }
+
+    th, td {
+        border: 1px solid var(--primary-color);
+        padding: 0.3rem;
+        text-align: center;
+        background-color: var(--table-bg-color);
     }
 
     th {
-        font-size: 2rem;
+        font-size: 1.2rem;
+        background-color: var(--th-bg-color);
+        cursor: pointer;
     }
 
-    td, button {
-        font-size: 1.5rem;
+    td {
+        font-size: 1rem;
+        background-color: black;
+    }
+
+    button {
+        margin-top: 10px;
+        background-color: var(--btn-bg-color);
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+        padding: 0.3rem 0.8rem;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        font-size: 1rem;
+    }
+
+    button:hover {
+        background-color: var(--btn-bg-color-hover);
+        text-shadow: 0 0 4px var(--primary-color);
     }
 
     #diceResult {
-        font-size: 3rem;
+        margin-top: 10px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-shadow: 0 0 3px var(--primary-color);
     }
-}
+
+    #player-container {
+        display: flex;
+        flex-wrap: wrap;  /* Allows items to wrap onto next line */
+        justify-content: center; /* Centers items */
+    }
+
+    #player-container .container {
+        width: 70vw;
+        max-width: 250px;
+        margin: 0.5rem; /* Spacing between containers */
+        height: auto; /* Set to auto for better scaling */
+        text-align: center;
+        background-color: var(--secondary-bg-color);
+        padding: 10px;
+        border: 2px solid var(--primary-color);
+        border-radius: 5px;
+    }
+    #marketBoard {
+        /* */
+
+    }
 
 
-/* Addon day 2 */
-label {
-    display: block;
-    margin-top: 10px;
-}
+    /* Media queries for larger screens */
+    @media screen and (min-width: 768px) {
+        h1 {
+            font-size: 2rem;
+        }
 
-#startCash {
-    margin-top: 10px;
-    padding: 5px;
-    color: var(--primary-color);
-    background-color: var(--secondary-bg-color);
-    border: 2px solid var(--primary-color);
-}
+        th {
+            font-size: 1.5rem;
+        }
 
-.player-cash-display {
-    margin-top: 15px;
-    font-weight: bold;
-}
+        td, button {
+            font-size: 1.2rem;
+        }
 
-.player-inventory {
-    margin-top: 15px;
-    font-size: 1.2rem;
-}
-
-.buy-btn, .sell-btn {
-    margin-right: 5px;
-    border-radius: 20%;
-    background-color: black;
-    
-}
+        #diceResult {
+            font-size: 2rem;
+        }
+    }
 
 
-/* Player Inventory Styling */
+    /* Addon day 2 */
+    label {
+        display: block;
+        margin-top: 5px;
+    }
 
-#player-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Distributes player containers evenly */
-    margin-top: 50px; /* Provide some space from the game board */
-    border-top: 3px dashed var(--primary-color); /* Dashed line to distinguish sections */
-    padding-top: 20px; /* Padding at the top */
-   
-}
+    #startCash {
+        margin-top: 5px;
+        padding: 3px;
+        color: var(--primary-color);
+        background-color: var(--secondary-bg-color);
+        border: 2px solid var(--primary-color);
+    }
 
-#player-container .container {
-    background-color: rgba(0, 0, 0, 0.8); /* Make it slightly darker for contrast */
-    position: relative; /* Set to relative to allow pseudo elements */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
-   
-}
+    .player-cash-display {
+        margin-top: 10px;
+        font-weight: bold;
+    }
 
-#player-container .container:hover {
-    transform: translateY(-10px); /* Lift the container a bit on hover */
-    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3); /* Add a shadow to make it pop out */
-}
+    .player-inventory {
+        margin-top: 10px;
+        font-size: 0.8rem;
+    }
 
-#player-container .container::before {
-    content: "Inventory"; /* Add an Inventory label */
-    display: block;
-    position: absolute;
-    top: -25px; /* Position it above the container */
-    left: 50%;
-    transform: translateX(-50%); /* Center it */
-    background-color: var(--primary-color);
-    color: #000; /* Black text */
-    padding: 3px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-}
+    .buy-btn, .sell-btn {
+        margin-right: 3px;
+        border-radius: 20%;
+        background-color: black;
+        
+    }
 
-.player-name-label {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px; /* Space between name and the rest */
-}
 
-.player-name-input {
-    margin-bottom: 10px; /* Space after the input field */
-}
+    /* Player Inventory Styling */
 
-.player-cash-display {
-    font-size: 1.4rem;
-    background-color: rgba(0, 0, 0, 0.7); /* A background to distinguish from the rest */
-    padding: 5px 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
+    #player-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Distributes player containers evenly */
+        margin-top: 30px; /* Provide some space from the game board */
+        border-top: 2px dashed var(--primary-color); /* Dashed line to distinguish sections */
+        padding-top: 10px; /* Padding at the top */
+       
+    }
 
-.player-inventory {
-    display: flex;
-    flex-direction: column; /* Stack drug types vertically */
-    align-items: center; /* Center them */
-    border-top: 2px solid var(--primary-color); /* Separate name and cash from drugs */
-    padding-top: 10px; /* Padding for the top */
-    margin-top: 10px; /* Margin at the top */
-}
+    #player-container .container {
+        background-color: rgba(0, 0, 0, 0.8); /* Make it slightly darker for contrast */
+        position: relative; /* Set to relative to allow pseudo elements */
+        transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+       
+    }
 
-.buy-btn, .sell-btn {
-    margin: 5px; /* Space around the buttons */
-    padding: 5px 10px; /* Bigger buttons are easier to click */
-    font-size: 1rem; /* Clearer labels */
-}
+    #player-container .container:hover {
+        transform: translateY(-5px); /* Lift the container a bit on hover */
+        box-shadow: 0 5px 15px var(--primary-color)/* Add a shadow to make it pop out */
+    }
 
-/* Improve visibility of input field and its placeholder */
-.player-name-field {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    border-radius: 5px;
-    padding: 5px 10px;
-}
+    #player-container .container::before {
+        content: "Inventory"; /* Add an Inventory label */
+        display: block;
+        position: absolute;
+        top: -20px; /* Position it above the container */
+        left: 50%;
+        transform: translateX(-50%); /* Center it */
+        background-color: var(--primary-color);
+        color: #000; /* Black text */
+        padding: 2px 8px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
 
-.player-name-field::placeholder {
-    color: rgba(0, 255, 255, 0.5); /* Slightly faded placeholder */
-}
+    .player-name-label {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 5px; /* Space between name and the rest */
+    }
 
-/* Debug styles */
-.cash-variables {
-    margin-top: 10px;
-    padding: 5px;
-    color: var(--primary-color);
-    background-color: var(--secondary-bg-color);
-    border: 2px solid var(--primary-color);
-}
+    .player-name-input {
+        margin-bottom: 5px; /* Space after the input field */
+    }
+
+    .player-cash-display {
+        font-size: 1rem;
+        background-color: rgba(0, 0, 0, 0.7); /* A background to distinguish from the rest */
+        padding: 3px 8px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }
+
+    .player-inventory {
+        display: flex;
+        flex-direction: column; /* Stack drug types vertically */
+        align-items: center; /* Center them */
+        border-top: 1px solid var(--primary-color); /* Separate name and cash from drugs */
+        padding-top: 5px; /* Padding for the top */
+        margin-top: 5px; /* Margin at the top */
+    }
+
+    .buy-btn, .sell-btn {
+        margin: 3px; /* Space around the buttons */
+        padding: 3px 8px; /* Bigger buttons are easier to click */
+        font-size: 0.8rem; /* Clearer labels */
+    }
+
+    /* Improve visibility of input field and its placeholder */
+    .player-name-field {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+        border-radius: 5px;
+        padding: 3px 8px;
+    }
+
+    .player-name-field::placeholder {
+        color: rgba(255, 255, 255, 1); /* Slightly faded placeholder */
+    }
+
+    /* Debug styles */
+    .cash-variables {
+        margin-top: 5px;
+        padding: 3px;
+        color: var(--primary-color);
+        background-color: var(--secondary-bg-color);
+        border: 2px solid var(--primary-color);
+    }
+
+#game-title{
+
+        text-align: center;
+        font-size: 8em;
+        color: white;
+        text-shadow: 0 0 3px var(--primary-color);
+        text-shadow: 10px 10px 12px black;
+        margin-bottom: 10px;
+        font-family: 'Pricedown BL', monospace;
+        margin-top: 20px;
+        
+       
+    }
