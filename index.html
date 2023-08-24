@@ -4,90 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drug Wars - Underworld</title>
-    <link rel="stylesheet" href="styles3.css">
-    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
 </head>
 <body>
-    <!-- Start Game Section -->
-    <div class="container" id="startContainer">
-        <label for="playerSelect">Select the number of players:</label>
-        <select id="playerSelect">
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5" selected>5</option>
-        </select>
-        
-        <label for="startCash">Enter starting cash for each player:</label>
-        <input type="number" id="startCash" value="3000">
-        
-        <button id="startGame">Start Game</button>
-    </div>
 
-    <!-- Main Game Section -->
-    <div class="container">
-        <h1>Drug Lord</h1>
-        <h2 id="playerTurn">It's [Player]'s turn!</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Drugs</th> <!-- Cities will be added dynamically -->
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Drug rows will be added dynamically -->
-            </tbody>
-        </table>
-        <button id="rollDice">Roll the Dice</button>
-        <div id="diceResult"></div>
-        <h2 id="playerCityDisplay"></h2>
-    </div>
+<!-- Start Game Section -->
+<div class="container" id="startContainer">
+    <h1>Welcome to Drug Lord</h1>
+    <label for="playerSelect">Select the number of players:</label>
+    <select id="playerSelect">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+    </select>
+    <label for="startCash">Enter starting cash for each player:</label>
+    <input type="number" id="startCash" value="3000">
+    <button id="startGame">Start Game</button>
+</div>
 
-    <!-- Player Information Section -->
-    <div id="player-container">
-        <!-- Template Player Input - Replicate for each player -->
-        <div class="container player-input" style="display:none">
-            <div class="player-name-input">
-                <input type="text" class="player-name-field" placeholder="Enter Player Name">
-            </div>
-            <div class="player-name-label" style="display: none;">
-                <span class="player-name-text"></span>
-            </div>
+<!-- Main Game Section -->
+<div class="container game-container">
+    <h1>Drug Lord - In Play</h1>
+    <h2 id="playerTurn">It's [Player]'s turn!</h2>
+    <div id="game-interface">
+        <div id="playerAction">
+            <button id="rollDice">Roll the Dice</button>
+            <div id="diceResult"></div>
+            <h2 id="playerCityDisplay"></h2>
         </div>
-        <div class="container player-input" style="display:none">
-            <div class="player-name-input">
-                <input type="text" class="player-name-field" placeholder="Enter Player Name">
-            </div>
-            <div class="player-name-label" style="display: none;">
-                <span class="player-name-text"></span>
-            </div>
+        <div id="marketBoard">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Drugs</th>
+                        <!-- Cities will be added dynamically -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Drug rows will be added dynamically -->
+                </tbody>
+            </table>
         </div>
-        <div class="container player-input" style="display:none">
-            <div class="player-name-input">
-                <input type="text" class="player-name-field" placeholder="Enter Player Name">
-            </div>
-            <div class="player-name-label" style="display: none;">
-                <span class="player-name-text"></span>
-            </div>
-        </div>
-        <div class="container player-input" style="display:none">
-            <div class="player-name-input">
-                <input type="text" class="player-name-field" placeholder="Enter Player Name">
-            </div>
-            <div class="player-name-label" style="display: none;">
-                <span class="player-name-text"></span>
-            </div>
-        </div>
-        <div class="container player-input" style="display:none">
-            <div class="player-name-input">
-                <input type="text" class="player-name-field" placeholder="Enter Player Name">
-            </div>
-            <div class="player-name-label" style="display: none;">
-                <span class="player-name-text"></span>
-            </div>
-        </div>
-
-        <!-- End of Template -->
     </div>
+</div>
+
+<!-- Player Information Section -->
+<div id="player-container">
+    <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+    </div>
+    <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+    </div>
+    <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+    </div>
+    <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+    </div>
+    <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+    </div>
+    <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
