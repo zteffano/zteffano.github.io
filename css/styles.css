@@ -14,16 +14,46 @@
     --th-bg-color: rgba(0, 30, 30, 0.7);
     --btn-bg-color: rgba(0, 0, 0,0.5);
     --btn-bg-color-hover: rgba(59, 59, 66, 0.232);
+    
 }
 @font-face {
     font-family: 'Pricedown BL'; /* You can give any name here, but make sure it's unique */
     src: url('../font/pricedownbl.otf') format('opentype'); /* Assuming 'fonts' is the directory where you stored the font */
 }
 
+.no-select {
+    user-select: none;
+}
+
+#startContainer {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    height: 50vh;
+    width: 50vw;
+    font-size: 2rem;
+    min-width: 600px;
+}
+
+#startContainer > select {
+    height:50px;
+    width: 50px;
+    font-size: 2rem;
+}
+#startContainer > input {
+    color: white;
+    font-size: 2rem;
+}
+
 body {
+    margin:0;
+    padding:0;
     min-width: 1000px;
     display: flex;
     flex-direction: column;
+    align-items: space-between;
     background: #000 url('../img/neon_city_2.png') no-repeat center center/cover;
     color: var(--primary-color);
     font-family: "Arial", sans-serif;
@@ -34,6 +64,14 @@ body {
 
 .game-container {
     min-width: 1000px;
+    display: none;
+}
+#playerCityDisplay {
+    min-height: 40px;
+    
+}
+#playerTurn {
+    font-size: 2rem;
 }
 
     .container {
@@ -125,6 +163,12 @@ body {
     }
     #marketBoard {
         /* */
+        display: flex;
+        gap: 50px;
+        justify-content: baseline;
+        align-items: center;
+        padding: 20px;
+    
     
        
     }
@@ -166,6 +210,7 @@ body {
     }
 
     .player-cash-display {
+        font-size: 2rem;
         margin-top: 10px;
         font-weight: bold;
     }
@@ -223,7 +268,7 @@ body {
     }
 
     .player-name-label {
-        font-size: 1.2rem;
+        font-size: 2rem;
         font-weight: bold;
         margin-bottom: 5px; /* Space between name and the rest */
     }
@@ -233,7 +278,8 @@ body {
     }
 
     .player-cash-display {
-        font-size: 1rem;
+        font-size: 3rem;
+        color: white;
         background-color: rgba(0, 0, 0, 0.7); /* A background to distinguish from the rest */
         padding: 3px 8px;
         margin-bottom: 5px;
@@ -247,6 +293,7 @@ body {
         border-top: 1px solid var(--primary-color); /* Separate name and cash from drugs */
         padding-top: 5px; /* Padding for the top */
         margin-top: 5px; /* Margin at the top */
+        font-size: 2rem;
     }
 
     .buy-btn, .sell-btn {
@@ -275,6 +322,19 @@ body {
         color: var(--primary-color);
         background-color: var(--secondary-bg-color);
         border: 2px solid var(--primary-color);
+    }
+    .debug-container {
+        border: 2px solid var(--primary-color);
+        background-color: black;
+        padding: 20px;
+        margin-top:20px;
+    }
+    .debug-container > p {
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        
+
     }
 
 #game-title{

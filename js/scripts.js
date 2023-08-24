@@ -1,10 +1,12 @@
 (function () {
   const cities = ["East Harlem", "Brooklyn", "Manhattan", "Queens"];
-  const drugsList = ["cocaine", "heroin", "ecstacy", "LSD", "hash"];
+  //const drugsList = ["cocaine", "heroin", "ecstacy", "LSD", "hash","morphine"];
+  const drugsList = ["morphine", "ecstacy", "LSD", "hash", "cocaine","heroin"];
   const prices = {
     cocaine: { min: 4000, max: 12000 },
     heroin: { min: 5000, max: 15000 },
     ecstacy: { min: 200, max: 500 },
+    morphine: { min: 120, max: 400},
     LSD: { min: 1500, max: 3500 },
     hash: { min: 1000, max: 4000 }
   };
@@ -22,7 +24,7 @@
   }
 
   const getRandomPrice = (min, max) =>
-    Math.round((Math.random() * (max - min + 1) + min) / 100) * 100;
+    Math.round((Math.random() * (max - min + 1) + min) / 10) * 10;
 
   const rollDice = () => Math.floor(Math.random() * 6) + 1;
 
@@ -118,17 +120,34 @@
         }
       });
       document.getElementById("startContainer").style.display = "none";
+      document.querySelector(".game-container").style.display = "block";
     });
 
-    document.getElementById("rollDice").addEventListener("click", function () {
-      const diceVal = rollDice();
-      document.getElementById(
-        "diceResult"
-      ).textContent = `You rolled a ${diceVal}!`;
+    document.getElementById("roll-button").addEventListener("click", function () {
+
       updatePrices();
       rotateTurns();
       updateCashDisplay(players);
     });
+    document.getElementById("dayJob").addEventListener("click", function () {
+      const currentPlayer = players[currentPlayerIndex];
+      currentPlayer.cash += 500;
+      const playerCashDisplay = document.querySelector(
+        `#player-container .player-input:nth-child(${
+          currentPlayerIndex + 1
+        }) .player-cash-display`
+      );
+      if (playerCashDisplay) {
+        playerCashDisplay.textContent = `$${currentPlayer.cash}`;
+      } else {
+        console.error("Could not find player cash display element");
+      }
+      updatePrices();
+      rotateTurns();
+      updateCashDisplay(players);
+    });
+
+    
 
     document.querySelectorAll(".player-name-field").forEach((inputField) => {
     inputField.addEventListener("keydown", function (event) {
@@ -181,12 +200,14 @@
 
         const quantity = event.ctrlKey ? 5 : 1;
 
-        if (currentPlayer.cash < price * quantity) {
-          alert(`You don't have enough cash to buy ${quantity} ${drugType}(s).`);
-          return;
+        if (!event.shiftKey) {
+          if (currentPlayer.cash < price * quantity) {
+            alert(`You don't have enough cash to buy ${quantity} ${drugType}(s).`);
+            return;
+          }
+          currentPlayer.cash -= price * quantity;
         }
 
-        currentPlayer.cash -= price * quantity;
         if (!currentPlayer.inventory[drugType]) {
           currentPlayer.inventory[drugType] = 0;
         }
@@ -198,7 +219,7 @@
             currentPlayerIndex + 1
           }) .player-cash-display`
         );
-        if (playerCashDisplay) {
+        if (playerCashDisplay && !event.shiftKey) {
           playerCashDisplay.textContent = `$${currentPlayer.cash}`;
         } else {
           console.error("Could not find player cash display element");
@@ -228,38 +249,47 @@
           .join("<br>");
       });
     });
-    document.querySelectorAll('.sell-btn').forEach(btn => {
-        btn.addEventListener('click', function (event) {
-            const drugType = this.dataset.drug;
-            const currentPlayer = players[currentPlayerIndex];
-            const currentCity = currentPlayer.city.toLowerCase().replace(/\s+/g, '-');
-            const priceCell = document.querySelector(`.${drugType}.${currentCity}`);
-            
-            if (!priceCell) {
-                console.error(`Price cell for drug: ${drugType} and city: ${currentCity} not found.`);
-                return;
-            }
-            
-            const sellingPrice = parseInt(priceCell.textContent.replace('$', ''));
-            
-            const quantity = event.ctrlKey ? 5 : 1;
+    document.querySelectorAll(".sell-btn").forEach((btn) => {
+      btn.addEventListener("click", function (event) {
+        const drugType = this.dataset.drug;
+        const currentPlayer = players[currentPlayerIndex];
+        const currentCity = currentPlayer.city.toLowerCase().replace(/\s+/g, "-");
+        const priceCell = document.querySelector(`.${drugType}.${currentCity}`);
 
-            // Check if player has the drug in inventory
-            if (currentPlayer.inventory[drugType] && currentPlayer.inventory[drugType] >= quantity) {
-                currentPlayer.cash += sellingPrice * quantity;
-                currentPlayer.inventory[drugType] -= quantity;
-                
-                // Update cash in UI
-                const cashDisplay = document.querySelector(`#player-container .player-input:nth-child(${currentPlayerIndex + 1}) .player-cash-display`);
-                cashDisplay.textContent = `$${currentPlayer.cash}`;
-                
-                // Update inventory in UI
-                document.querySelector(`#player-container .player-input:nth-child(${currentPlayerIndex + 1}) .player-inventory`).innerHTML = 
-                    Object.entries(currentPlayer.inventory).map(([drug, quantity]) => `${drug}: ${quantity}`).join('<br>');
-            } else {
-                alert(`You don't have ${quantity} ${drugType}(s) to sell.`);
-            }
-        });
+        if (!priceCell) {
+          console.error(`Price cell for drug: ${drugType} and city: ${currentCity} not found.`);
+          return;
+        }
+
+        const sellingPrice = parseInt(priceCell.textContent.replace("$", ""));
+
+        const quantity = event.ctrlKey ? 5 : 1;
+
+        if (event.shiftKey) {
+          if (!currentPlayer.inventory[drugType] || currentPlayer.inventory[drugType] < quantity) {
+            alert(`You don't have ${quantity} ${drugType}(s) to remove.`);
+            return;
+          }
+          currentPlayer.inventory[drugType] -= quantity;
+        } else {
+          if (!currentPlayer.inventory[drugType] || currentPlayer.inventory[drugType] < quantity) {
+            alert(`You don't have ${quantity} ${drugType}(s) to sell.`);
+            return;
+          }
+          currentPlayer.cash += sellingPrice * quantity;
+          currentPlayer.inventory[drugType] -= quantity;
+        }
+
+        // Update cash in UI
+        const cashDisplay = document.querySelector(`#player-container .player-input:nth-child(${currentPlayerIndex + 1}) .player-cash-display`);
+        if (cashDisplay && !event.shiftKey) {
+          cashDisplay.textContent = `$${currentPlayer.cash}`;
+        }
+
+        // Update inventory in UI
+        document.querySelector(`#player-container .player-input:nth-child(${currentPlayerIndex + 1}) .player-inventory`).innerHTML =
+          Object.entries(currentPlayer.inventory).map(([drug, quantity]) => `${drug}: ${quantity}`).join('<br>');
+      });
     });
   }
   function updateCashDisplay(players) {
@@ -297,7 +327,13 @@
       }
     });
   }
+  const noSelectElements = document.querySelectorAll('.no-select');
 
+  noSelectElements.forEach(element => {
+      element.addEventListener('selectstart', event => {
+          event.preventDefault();
+      });
+  });
   
 
   // Initialization code

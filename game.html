@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Cartel - The Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dice.css">
+    <script src="js/scripts.js" defer></script>
+
+</head>
+<body>
+    <h1 id="game-title">Drug Cartel</h1>
+
+<!-- Start Game Section -->
+<div class="container" id="startContainer">
+    
+    <label for="playerSelect">Select the number of players:</label>
+    <select id="playerSelect">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+    </select>
+    <label for="startCash">Enter starting cash for each player:</label>
+    <input type="number" id="startCash" value="3000">
+    <button id="startGame">Lets hit the streets!</button>
+</div>
+
+<!-- Main Game Section -->
+<div class="container game-container">
+    <h2 id="playerTurn">It's [Player]'s turn!</h2>
+    <h2 id="playerCityDisplay"></h2>
+    <div id="marketBoard" class="no-select">
+        <table>
+            <thead>
+                <tr>
+                    <th>Drugs</th>
+                    <!-- Cities will be added dynamically -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Drug rows will be added dynamically -->
+            </tbody>
+        </table>
+        <div id="game-interface">
+            <div id="playerAction">
+                <div class="dice">
+                    <ol class="die-list even-roll" data-roll="1" id="die-1">
+                      <li class="die-item" data-side="1">
+                        <span class="dot"></span>
+                      </li>
+                      <li class="die-item" data-side="2">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                      </li>
+                      <li class="die-item" data-side="3">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                      </li>
+                      <li class="die-item" data-side="4">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                      </li>
+                      <li class="die-item" data-side="5">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                      </li>
+                      <li class="die-item" data-side="6">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                      </li>
+                    </ol>
+                  </div>
+                  <button type="button" id="roll-button">Roll Dice</button>
+                  <script src="js/dice.js"></script>
+                <button id="dayJob">Take a Dayjob(500$)</button>
+    
+            </div>
+    </div>
+    
+    
+        
+
+    </div>
+</div>
+
+<!-- Player Information Section -->
+<div id="player-container">
+    <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+    </div>
+    <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+    </div>
+    <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+    </div>
+    <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+    </div>
+    <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+    </div>
+    <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+    </div>
+
+</div>
+<div class="debug-container">
+        
+    <h2>Info / Debug - Display:</h2>
+    <p>Husk at indtaste spillernavne, som det første før i slår OG i korrekt rækkefølge - Tryk enter efter hver indtastning</p>
+    <p>Når spillet skal gå igang, så tryk Roll Dice, indtil i er ved den spiller der skal starte(dette kan i slå om)</p>
+    <h3>COMMANDS:</h3>
+    <p>CTRL + (BUY/SELL) : Køber eller sælger 5 stks ad gangen</p>
+    <p>SHIFT + (BUY/SELL) : Tilføjer eller fjerner 1 enhed uden at påvirke spillerens cash</p>
+    <!-- Til debug af cash vars
+    <div class="cash-variables">
+
+    </div>
+    -->
+    </div>
+    <audio id="background-music" loop>
+        <source src="audio\background_theme_2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        const backgroundMusic = document.getElementById('background-music');
+        let audioStarted = false;
+
+        // Start the background music after a delay (in milliseconds)
+        const startAudioAfterDelay = (delay) => {
+            setTimeout(() => {
+                if (!audioStarted) {
+                    audioStarted = true;
+                    backgroundMusic.play();
+                }
+            }, delay);
+        };
+
+        // Trigger audio on mouse movement
+        document.addEventListener('click', () => {
+            startAudioAfterDelay(500); // Start after 2 seconds of mouse movement
+        });
+
+
+    </script>
+
+</body>
+</html>
