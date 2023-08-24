@@ -125,6 +125,7 @@
       ).textContent = `You rolled a ${diceVal}!`;
       updatePrices();
       rotateTurns();
+      updateCashDisplay(players);
     });
 
     document.querySelectorAll(".player-name-field").forEach((inputField) => {
@@ -255,6 +256,43 @@
         });
     });
   }
+  function updateCashDisplay(players) {
+    const container = document.querySelector('.cash-variables');
+    container.innerHTML = ''; // Clear the previous content
+  
+    players.forEach((player, index) => {
+        // Create a label for the player name
+        const nameLabel = document.createElement('label');
+        nameLabel.innerHTML = player.name;
+        container.appendChild(nameLabel);
+  
+        // Create an input box for the player's cash
+        const cashInput = document.createElement('input');
+        cashInput.type = 'number';
+        cashInput.value = player.cash;
+        cashInput.addEventListener('change', (e) => {
+            players[index].cash = parseFloat(e.target.value);
+            updatePlayerCashDisplay(index);
+            
+        });
+  
+        container.appendChild(cashInput);
+    });
+  }
+  function updatePlayerCashDisplay() {
+    const playerContainers = document.querySelectorAll('#player-container .player-input');
+    playerContainers.forEach((container, index) => {
+      const currentPlayer = players[index];
+      const playerCashDisplay = container.querySelector('.player-cash-display');
+      if (playerCashDisplay) {
+        playerCashDisplay.textContent = `$${currentPlayer.cash}`;
+      } else {
+        console.error("Could not find player cash display element");
+      }
+    });
+  }
+
+  
 
   // Initialization code
   document.addEventListener("DOMContentLoaded", function () {
@@ -265,3 +303,5 @@
     setupBuyButtons();
   });
 })();
+
+
