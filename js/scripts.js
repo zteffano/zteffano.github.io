@@ -26,7 +26,7 @@
   const getRandomPrice = (min, max) =>
     Math.round((Math.random() * (max - min + 1) + min) / 10) * 10;
 
-  const rollDice = () => Math.floor(Math.random() * 6) + 1;
+
 
   const updatePrices = () => {
     drugsList.forEach((drug) => {
@@ -45,6 +45,13 @@
       });
     });
   };
+  const updatePlayerTurnDisplay = () => {
+    if (players[currentPlayerIndex]) {
+      document.getElementById(
+        "playerTurn"
+      ).textContent = `It's ${players[currentPlayerIndex].name}'s turn!`;
+    }
+  };
 
   const rotateTurns = () => {
     currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
@@ -57,13 +64,7 @@
     }
   };
 
-  const updatePlayerTurnDisplay = () => {
-    if (players[currentPlayerIndex]) {
-      document.getElementById(
-        "playerTurn"
-      ).textContent = `It's ${players[currentPlayerIndex].name}'s turn!`;
-    }
-  };
+
 
   const generateTable = () => {
     let table = document.querySelector("tbody");
@@ -160,11 +161,19 @@
                 players.push(new Player(enteredName, startingCash));
                 let inputContainer = inputField.closest(".player-name-input");
                 let nameLabel = document.createElement("label");
+                let playerPicture = document.createElement("div");
+                playerPicture.classList.add("player-picture");
                 //nameLabel.textContent = `Name: ${enteredName}`;
                 nameLabel.textContent = `${enteredName}`;
                 nameLabel.classList.add("player-name-label");
                 inputContainer.replaceChild(nameLabel, inputField);
+                inputContainer.appendChild(playerPicture);
+                inputContainer.style.display = "flex";
+                inputContainer.style.justifyContent = "space-around";
                 updatePlayerTurnDisplay();
+                setupPlayerPictures();
+                
+                
             }
         }
     });
@@ -335,6 +344,18 @@
       });
   });
   
+  function setupPlayerPictures() {
+  const playerPictures = document.querySelectorAll(".player-picture");
+
+    playerPictures.forEach((pictureElement, index) => {
+      console.log("Setting player pictures")
+        // Assign each picture with the corresponding png file. Assuming they are in the root directory.
+        const imgPath = `img/characters/${index + 1}.png`; // it will be 1.png for the first element, 2.png for the second, and so on.
+        pictureElement.style.backgroundImage = `url('${imgPath}')`;
+        pictureElement.style.backgroundSize = 'cover'; // This ensures the image covers the entire div.
+    });
+
+  }
 
   // Initialization code
   document.addEventListener("DOMContentLoaded", function () {

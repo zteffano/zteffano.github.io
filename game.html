@@ -97,7 +97,29 @@
 
 <!-- Player Information Section -->
 <div id="player-container">
+    
     <div class="container player-input" style="display:none">
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+        </div>
+      
+    </div>
+    <div class="container player-input" style="display:none">
+       
+        <div class="player-name-input">
+            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+        </div>
+        <div class="player-name-label" style="display: none;">
+            <span class="player-name-text"></span>
+            
+        </div>
+        
+    </div>
+    <div class="container player-input" style="display:none">
+
         <div class="player-name-input">
             <input type="text" class="player-name-field" placeholder="Enter Player Name">
         </div>
@@ -106,6 +128,7 @@
         </div>
     </div>
     <div class="container player-input" style="display:none">
+    
         <div class="player-name-input">
             <input type="text" class="player-name-field" placeholder="Enter Player Name">
         </div>
@@ -114,6 +137,7 @@
         </div>
     </div>
     <div class="container player-input" style="display:none">
+  
         <div class="player-name-input">
             <input type="text" class="player-name-field" placeholder="Enter Player Name">
         </div>
@@ -122,22 +146,7 @@
         </div>
     </div>
     <div class="container player-input" style="display:none">
-        <div class="player-name-input">
-            <input type="text" class="player-name-field" placeholder="Enter Player Name">
-        </div>
-        <div class="player-name-label" style="display: none;">
-            <span class="player-name-text"></span>
-        </div>
-    </div>
-    <div class="container player-input" style="display:none">
-        <div class="player-name-input">
-            <input type="text" class="player-name-field" placeholder="Enter Player Name">
-        </div>
-        <div class="player-name-label" style="display: none;">
-            <span class="player-name-text"></span>
-        </div>
-    </div>
-    <div class="container player-input" style="display:none">
+      
         <div class="player-name-input">
             <input type="text" class="player-name-field" placeholder="Enter Player Name">
         </div>
@@ -150,16 +159,17 @@
 <div class="debug-container">
         
     <h2>Info / Debug - Display:</h2>
+    <p>ZOOM IND / UD indtil spil elementerne passer til din skærm - Da den ikke er optimeret endnu(Dette kan via de 3 dotter oppe i højre hjørne af browseren)</p>
     <p>Husk at indtaste spillernavne, som det første før i slår OG i korrekt rækkefølge - Tryk enter efter hver indtastning</p>
     <p>Når spillet skal gå igang, så tryk Roll Dice, indtil i er ved den spiller der skal starte(dette kan i slå om)</p>
     <h3>COMMANDS:</h3>
     <p>CTRL + (BUY/SELL) : Køber eller sælger 5 stks ad gangen</p>
     <p>SHIFT + (BUY/SELL) : Tilføjer eller fjerner 1 enhed uden at påvirke spillerens cash</p>
-    <!-- Til debug af cash vars
+    <p>Spillernes Cash kan redigeres direkte i disse bokse, indtil der laves en bedre løsning. (Til events)</p>
     <div class="cash-variables">
 
     </div>
-    -->
+
     </div>
     <audio id="background-music" loop>
         <source src="audio\background_theme_2.mp3" type="audio/mpeg">

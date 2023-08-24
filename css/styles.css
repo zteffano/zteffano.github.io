@@ -231,6 +231,16 @@ body {
 
     /* Player Inventory Styling */
 
+    .player-picture {
+
+        width: 30%;
+        aspect-ratio: 1/1;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        border: 2px solid var(--primary-color);
+        box-shadow: 0 0 10px var(--primary-color);
+    }
+
     #player-container {
         display: flex;
         flex-wrap: wrap;
