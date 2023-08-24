@@ -46,6 +46,8 @@
 
   const rotateTurns = () => {
     currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
+    let cityDisplay = document.getElementById("playerCityDisplay");
+    cityDisplay.innerHTML = "";
     if (players[currentPlayerIndex]) {
       document.getElementById(
         "playerTurn"
@@ -154,7 +156,7 @@
     const buyButtons = document.querySelectorAll(".buy-btn");
 
     buyButtons.forEach((button) => {
-      button.addEventListener("click", function () {
+      button.addEventListener("click", function (event) {
         const drugType = this.getAttribute("data-drug");
         const currentPlayer = players[currentPlayerIndex];
         const playerCity = currentPlayer.city;
@@ -177,16 +179,18 @@
 
         const price = parseInt(cell.textContent.replace(/[^0-9]/g, ""), 10);
 
-        if (currentPlayer.cash < price) {
-          alert(`You don't have enough cash to buy ${drugType}.`);
+        const quantity = event.ctrlKey ? 5 : 1;
+
+        if (currentPlayer.cash < price * quantity) {
+          alert(`You don't have enough cash to buy ${quantity} ${drugType}(s).`);
           return;
         }
 
-        currentPlayer.cash -= price;
+        currentPlayer.cash -= price * quantity;
         if (!currentPlayer.inventory[drugType]) {
           currentPlayer.inventory[drugType] = 0;
         }
-        currentPlayer.inventory[drugType]++;
+        currentPlayer.inventory[drugType] += quantity;
 
         // Update player cash on the display
         const playerCashDisplay = document.querySelector(
@@ -225,7 +229,7 @@
       });
     });
     document.querySelectorAll('.sell-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function (event) {
             const drugType = this.dataset.drug;
             const currentPlayer = players[currentPlayerIndex];
             const currentCity = currentPlayer.city.toLowerCase().replace(/\s+/g, '-');
@@ -238,10 +242,12 @@
             
             const sellingPrice = parseInt(priceCell.textContent.replace('$', ''));
             
+            const quantity = event.ctrlKey ? 5 : 1;
+
             // Check if player has the drug in inventory
-            if (currentPlayer.inventory[drugType] && currentPlayer.inventory[drugType] > 0) {
-                currentPlayer.cash += sellingPrice;
-                currentPlayer.inventory[drugType]--;
+            if (currentPlayer.inventory[drugType] && currentPlayer.inventory[drugType] >= quantity) {
+                currentPlayer.cash += sellingPrice * quantity;
+                currentPlayer.inventory[drugType] -= quantity;
                 
                 // Update cash in UI
                 const cashDisplay = document.querySelector(`#player-container .player-input:nth-child(${currentPlayerIndex + 1}) .player-cash-display`);
@@ -251,7 +257,7 @@
                 document.querySelector(`#player-container .player-input:nth-child(${currentPlayerIndex + 1}) .player-inventory`).innerHTML = 
                     Object.entries(currentPlayer.inventory).map(([drug, quantity]) => `${drug}: ${quantity}`).join('<br>');
             } else {
-                alert(`You don't have any ${drugType} to sell.`);
+                alert(`You don't have ${quantity} ${drugType}(s) to sell.`);
             }
         });
     });

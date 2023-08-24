@@ -28,8 +28,21 @@
 
 <!-- Main Game Section -->
 <div class="container game-container">
-    
     <h2 id="playerTurn">It's [Player]'s turn!</h2>
+    <div id="marketBoard">
+        <table>
+            <thead>
+                <tr>
+                    <th>Drugs</th>
+                    <!-- Cities will be added dynamically -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Drug rows will be added dynamically -->
+            </tbody>
+        </table>
+    </div>
+    
     <div id="game-interface">
         <div id="playerAction">
             <button id="rollDice">Roll the Dice</button>
@@ -37,19 +50,7 @@
             <h2 id="playerCityDisplay"></h2>
         </div>
         
-        <div id="marketBoard">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Drugs</th>
-                        <!-- Cities will be added dynamically -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Drug rows will be added dynamically -->
-                </tbody>
-            </table>
-        </div>
+
     </div>
 </div>
 

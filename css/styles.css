@@ -10,7 +10,7 @@
 :root {
     --primary-color: #F29F05;
     --secondary-bg-color: rgba(0, 0, 0, 0.7);
-    --table-bg-color: rgba(0, 50, 50, 0.4);
+    
     --th-bg-color: rgba(0, 30, 30, 0.7);
     --btn-bg-color: rgba(0, 0, 0,0.5);
     --btn-bg-color-hover: rgba(59, 59, 66, 0.232);
@@ -24,7 +24,7 @@ body {
     min-width: 1000px;
     display: flex;
     flex-direction: column;
-    background: #000 url('../img/neon_city.jpg') no-repeat center center/cover;
+    background: #000 url('../img/neon_city_2.png') no-repeat center center/cover;
     color: var(--primary-color);
     font-family: "Arial", sans-serif;
     /*font-family: 'Pricedown BL', monospace; /* This uses the custom font, and falls back to sans-serif if the custom font isn't available */
@@ -32,7 +32,9 @@ body {
         
     }
 
-
+.game-container {
+    min-width: 1000px;
+}
 
     .container {
         
@@ -61,20 +63,23 @@ body {
 
     th, td {
         border: 1px solid var(--primary-color);
-        padding: 0.3rem;
+        padding: 0.3rem 1rem;
         text-align: center;
         background-color: var(--table-bg-color);
     }
 
     th {
         font-size: 1.2rem;
+     
         background-color: var(--th-bg-color);
         cursor: pointer;
     }
 
     td {
-        font-size: 1rem;
+    
+        font-size: 1.2rem;
         background-color: black;
+        color: white;
     }
 
     button {
@@ -120,7 +125,8 @@ body {
     }
     #marketBoard {
         /* */
-
+    
+       
     }
 
 
@@ -131,11 +137,12 @@ body {
         }
 
         th {
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
 
         td, button {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            
         }
 
         #diceResult {
@@ -172,6 +179,7 @@ body {
         margin-right: 3px;
         border-radius: 20%;
         background-color: black;
+        color: rgba(255,255,255,0.9)
         
     }
 
@@ -272,13 +280,15 @@ body {
 #game-title{
 
         text-align: center;
-        font-size: 8em;
+        font-size: 7em;
         color: white;
         text-shadow: 0 0 3px var(--primary-color);
         text-shadow: 10px 10px 12px black;
         margin-bottom: 10px;
         font-family: 'Pricedown BL', monospace;
-        margin-top: 20px;
+        margin-top: 0px;
+        
         
        
     }
+
