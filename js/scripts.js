@@ -1,14 +1,15 @@
 (function () {
   const cities = ["East Harlem", "Brooklyn", "Manhattan", "Queens"];
   //const drugsList = ["cocaine", "heroin", "ecstacy", "LSD", "hash","morphine"];
-  const drugsList = ["morphine", "ecstacy", "LSD", "hash", "cocaine","heroin"];
+  const drugsList = ["morphine", "ecstacy", "crack", "LSD", "hash", "cocaine","heroin"];
   const prices = {
-    cocaine: { min: 4000, max: 12000 },
-    heroin: { min: 5000, max: 15000 },
-    ecstacy: { min: 200, max: 500 },
-    morphine: { min: 120, max: 400},
-    LSD: { min: 1500, max: 3500 },
-    hash: { min: 1000, max: 4000 }
+    cocaine: { min: 1475, max: 2950 },
+    heroin: { min: 2050, max: 3500 },
+    ecstacy: { min: 20, max: 60 },
+    morphine: { min: 15, max: 40},
+    LSD: { min: 150, max: 350 },
+    hash: { min: 125, max: 400 },
+    crack: { min: 100, max: 250 },
   };
 
   let players = [];
@@ -21,30 +22,39 @@
       this.city = city;
       this.inventory = {}; // Empty object to store drugs and their quantities
     }
+
   }
-
   const getRandomPrice = (min, max) =>
-    Math.round((Math.random() * (max - min + 1) + min) / 10) * 10;
+    Math.round((Math.random() * (max - min + 1) + min) / 5) * 5;
 
 
+
+  const averagePrices = {}; // Global object to store average prices of each drug
 
   const updatePrices = () => {
+    const formatter = new Intl.NumberFormat('en-US');
     drugsList.forEach((drug) => {
+      let total = 0;
       cities.forEach((city) => {
         let cell = document.querySelector(
           `.${drug}.${city.toLowerCase().replace(/\s+/g, "-")}`
         );
-        cell
-          ? (cell.textContent = `$${getRandomPrice(
-              prices[drug].min,
-              prices[drug].max
-            )}`)
-          : console.error(
-              `Cell for drug: ${drug} and city: ${city} not found.`
-            );
+        if (cell) {
+          const price = getRandomPrice(prices[drug].min, prices[drug].max);
+          total += price;
+          const formattedPrice = formatter.format(price);
+          cell.textContent = `$${formattedPrice}`;
+        } else {
+          console.error(`Cell for drug: ${drug} and city: ${city} not found.`);
+        }
       });
+      const averagePrice = Math.round(total / cities.length);
+      averagePrices[drug] = averagePrice;
     });
+    //console.log(averagePrices); // Log the object with average prices of each drug
   };
+
+  
   const updatePlayerTurnDisplay = () => {
     if (players[currentPlayerIndex]) {
       document.getElementById(
@@ -54,6 +64,7 @@
   };
 
   const rotateTurns = () => {
+    
     currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
     let cityDisplay = document.getElementById("playerCityDisplay");
     cityDisplay.innerHTML = "";
@@ -62,6 +73,7 @@
         "playerTurn"
       ).textContent = `It's ${players[currentPlayerIndex].name}'s turn!`;
     }
+    removeCityClasses();
   };
 
 
@@ -104,8 +116,32 @@
     document.getElementById(
       "playerCityDisplay"
     ).textContent = `${players[currentPlayerIndex].name} is in ${cityName}`;
+
+    // Remove highlight and notactive classes from all headers and cells
+    document.querySelectorAll("thead th, td").forEach((element) => {
+      element.classList.remove("highlight-city", "notactive-city");
+    });
+
+    // Add highlight class to selected city header and cells, and notactive class to others
+    let columnIndex = cities.indexOf(cityName) + 2;
+    if (columnIndex > 1) {
+      let selectedHeader = document.querySelector(`thead th:nth-child(${columnIndex})`);
+      selectedHeader.classList.add("highlight-city");
+      document.querySelectorAll(`td:nth-child(${columnIndex})`).forEach((cell) => {
+        cell.classList.add("highlight-city");
+      });
+      document.querySelectorAll(`thead th:not(:nth-child(${columnIndex})):not(:nth-child(1)), td:not(:nth-child(${columnIndex})):not(:nth-child(1))`).forEach((element) => {
+        element.classList.add("notactive-city");
+      });
+    }
   };
 
+  const removeCityClasses = () => {
+    document.querySelectorAll("td, th").forEach((element) => {
+      element.classList.remove("highlight-city", "notactive-city");
+    });
+  };
+  
   const setupEventListeners = () => {
     document.getElementById("startGame").addEventListener("click", function () {
       let numPlayers = document.getElementById("playerSelect").value;
@@ -122,17 +158,19 @@
       });
       document.getElementById("startContainer").style.display = "none";
       document.querySelector(".game-container").style.display = "block";
+      document.getElementById("eventcard").style.display = "flex";
     });
 
     document.getElementById("roll-button").addEventListener("click", function () {
-
+      
       updatePrices();
       rotateTurns();
       updateCashDisplay(players);
+      
     });
     document.getElementById("dayJob").addEventListener("click", function () {
       const currentPlayer = players[currentPlayerIndex];
-      currentPlayer.cash += 500;
+      currentPlayer.cash += 100;
       const playerCashDisplay = document.querySelector(
         `#player-container .player-input:nth-child(${
           currentPlayerIndex + 1
@@ -143,6 +181,7 @@
       } else {
         console.error("Could not find player cash display element");
       }
+      
       updatePrices();
       rotateTurns();
       updateCashDisplay(players);

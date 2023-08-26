@@ -53,7 +53,7 @@ body {
     min-width: 1000px;
     display: flex;
     flex-direction: column;
-    align-items: space-between;
+    
     background: #000 url('../img/neon_city_2.png') no-repeat center center/cover;
     color: var(--primary-color);
     font-family: "Arial", sans-serif;
@@ -61,6 +61,41 @@ body {
         padding: 0 1rem; /* Small padding for mobile screens */
         
     }
+main {
+    display: flex;
+    align-items: center;
+    
+}
+
+#eventcard {
+    display: none;
+    background-image: url('../img/eventcard_backs/1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 200px;
+    height: 300px;
+    aspect-ratio: 1/1;
+    box-shadow: 0 0 50px var(--primary-color);
+    transition: transform 0.3s ease;
+    
+}
+#eventcard:hover {
+    transform: scale(1.1);
+
+    cursor: pointer;
+    animation: glowing 1s infinite alternate;
+    
+}
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 50px var(--primary-color);
+    }
+    100% {
+        box-shadow: 0 0 10px #ffffff, 0 0 30px #ffffff, 0 0 50px var(--primary-color), 0 0 70px var(--primary-color), 0 0 100px var(--primary-color);
+    }
+  }
+
 
 .game-container {
     min-width: 1000px;
@@ -75,9 +110,8 @@ body {
 }
 
     .container {
-        
-        max-width: 70%;
-        margin: 1rem auto;  /* reduce margin for mobile devices */
+        max-width: 80%;
+        margin: 0 auto;
         text-align: center;
         background-color: var(--secondary-bg-color);
         padding: 10px;
@@ -144,11 +178,7 @@ body {
         text-shadow: 0 0 3px var(--primary-color);
     }
 
-    #player-container {
-        display: flex;
-        flex-wrap: wrap;  /* Allows items to wrap onto next line */
-        justify-content: center; /* Centers items */
-    }
+
 
     #player-container .container {
         width: 70vw;
@@ -244,7 +274,7 @@ body {
     #player-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between; /* Distributes player containers evenly */
+        justify-content: space-around; /* Distributes player containers evenly */
         margin-top: 30px; /* Provide some space from the game board */
         border-top: 2px dashed var(--primary-color); /* Dashed line to distinguish sections */
         padding-top: 10px; /* Padding at the top */
@@ -260,7 +290,9 @@ body {
 
     #player-container .container:hover {
         transform: translateY(-5px); /* Lift the container a bit on hover */
-        box-shadow: 0 5px 15px var(--primary-color)/* Add a shadow to make it pop out */
+        box-shadow: 0 5px 15px var(--primary-color);/* Add a shadow to make it pop out */
+        transform: scale(1.2); /* Set to 1 to allow scaling on hover */
+        
     }
 
     #player-container .container::before {
@@ -362,3 +394,16 @@ body {
        
     }
 
+#game-interface {
+  /**/
+}
+
+.hightlight-city {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.notactive-city {
+ opacity: 0.0;
+
+}
