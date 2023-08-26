@@ -64,13 +64,14 @@ body {
 main {
     display: flex;
     align-items: center;
-    justify-content: baseline
+    justify-content: center;
     
     
 }
 
 #eventcard {
     display: none;
+    position: relative;
     background-image: url('../img/eventcard_backs/1.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -80,9 +81,17 @@ main {
     aspect-ratio: 1/1;
     box-shadow: 0 0 50px var(--primary-color);
     transition: transform 0.3s ease;
-    margin: 0 6vw;
+    left: auto;
     
+   
 }
+@media screen and (min-width: 1824px) {
+    #eventcard {
+        left: 5vw;
+    }
+}
+    
+
 #eventcard:hover {
     transform: scale(1.1);
 
@@ -114,7 +123,7 @@ main {
 
     .container {
         max-width: 80%;
-        margin: 0.5rem; /* Spacing between containers */
+        margin: 0 auto;
         text-align: center;
         background-color: var(--secondary-bg-color);
         padding: 10px;
@@ -199,13 +208,9 @@ main {
         /* */
         display: flex;
         gap: 50px;
-        justify-content: baseline;
         align-items: center;
         padding: 20px;
-        
-    
-    
-       
+           
     }
 
 
