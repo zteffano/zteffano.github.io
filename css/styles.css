@@ -46,22 +46,50 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
     max-width: 100%;
     width: 50vw;
     height: 50vh;
     font-size: 2rem;
     min-width: 600px;
+    border-radius: 15px;
+    margin-top: 50px;
+}
+#startContainer:hover {
+    box-shadow: 0 0 10px var(--primary-color);
+    transform: scale(1.1);
+    cursor: pointer;
+    animation: glowing 1s infinite alternate;
+    
+
 }
 
 #startContainer > select {
-    height:50px;
-    width: 50px;
-    font-size: 2rem;
+    height:60px;
+    width: 60px;
+    font-size: 3rem;
+    border: 2px solid var(--primary-color);
+    background-color: black;
+    color: var(--primary-color);
+    text-align: center;
 }
 #startContainer > input {
     color: white;
-    font-size: 2rem;
+    font-size: 3rem;
+    background-color: black;
+    font-weight: bold;
+    text-align: center;
+
+}
+#startContainer > button {
+    font-size: 3rem;
+    padding: 10px;
+    color: var(--primary-color);
+    background-color: var(--secondary-bg-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, text-shadow 0.3s;
 }
 
 
@@ -332,6 +360,7 @@ button:hover {
         border: 2px solid var(--primary-color);
     }
     .debug-container {
+        display: none;
         border: 2px solid var(--primary-color);
         background-color: black;
         padding: 20px;

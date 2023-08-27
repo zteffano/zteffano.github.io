@@ -172,6 +172,7 @@
       document.querySelector(".game-container").style.display = "block";
       document.getElementById("eventcard").style.display = "flex";
       document.querySelector(".leaderboard-container").style.display = "block";
+      document.querySelector(".debug-container").style.display = "block";
     });
 
     document.getElementById("roll-button").addEventListener("click", function () {
