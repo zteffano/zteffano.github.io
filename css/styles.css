@@ -578,5 +578,17 @@ button:hover {
     border: 2px solid var(--primary-color);
 
 }
+/* Prepared to implement a story element later */
+.story {
+    display: none;
+    margin-top: 50px;
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    text-align: center;
 
 
+}
