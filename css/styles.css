@@ -6,6 +6,7 @@
     --btn-bg-color: rgba(0, 0, 0,0.5);
     --btn-bg-color-hover: rgba(59, 59, 66, 0.232);
     --inventory-label: "Weight: 0/100";
+    --leaderboard-label: "Street Rank:";
 }
 /* Fonts */
 @font-face {
@@ -431,11 +432,16 @@ button:hover {
 @media screen and (min-width: 1025px) {
     /* ... Tilføj regler for store skærme ... */
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1540px) {
     /* ... Tilføj regler for store skærme ... */
     .leaderboard-container {
         order: -1;
+        margin-top: 40px;
     }
+    .leaderboard-container::before {
+        font-size: 0.8rem;
+    }
+
 }
 
 
@@ -499,8 +505,24 @@ button:hover {
 .leaderboard-container {
     display: none;
     align-self: flex-end;
-    width:12%;
+    width:15%;
+    position: relative;
+    min-width: 200px;
     
+}
+
+.leaderboard-container::before {
+    content: var(--leaderboard-label);
+    display: block;
+    position: absolute;
+    top: -20px; /* Position it above the container */
+    left: 50%;
+    transform: translateX(-50%); /* Center it */
+    background-color: var(--primary-color);
+    color: #000; /* Black text */
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 .leaderboard {
     display: flex;
@@ -527,4 +549,5 @@ button:hover {
     border: 2px solid var(--primary-color);
 
 }
-  
+
+

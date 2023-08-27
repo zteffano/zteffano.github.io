@@ -175,15 +175,20 @@
     });
 
     document.getElementById("roll-button").addEventListener("click", function () {
+      if(players.length < 1) {
+        alert('You need to add at least one player first.');
+        return;
+      }
+      else {
       
       updatePrices();
       rotateTurns();
       updateCashDisplay(players);
-      
+      }
     });
     document.getElementById("dayJob").addEventListener("click", function () {
       const currentPlayer = players[currentPlayerIndex];
-      currentPlayer.cash += 100;
+      currentPlayer.cash += 200;
       const playerCashDisplay = document.querySelector(
         `#player-container .player-input:nth-child(${
           currentPlayerIndex + 1
@@ -495,7 +500,7 @@ function typeWriter(element, text, i = 0, speed = 30) {
 }
 const updateLeaderboard = () => {
   const leaderboardContainer = document.querySelector('.leaderboard');
-  leaderboardContainer.innerHTML = '<h2>Street Rank:</h2>'; // Clear the existing leaderboard
+  leaderboardContainer.innerHTML = ''; // Clear the existing leaderboard
   
   // Calculate net worth for each player
   players.forEach((player) => {
