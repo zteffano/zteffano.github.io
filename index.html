@@ -10,8 +10,6 @@
         body {
             margin: 0;
             padding: 0;
-        }
-        body {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -34,7 +32,33 @@
             background-image: url('https://media.geeksforgeeks.org/wp-content/uploads/20200828184719/rain-300x300.png');
             animation: rain 2s linear infinite;
             opacity: 0;
-            z-index: -1; /* Add this line */
+            z-index: -1;
+        }
+        .start-title {
+            font-size: 15rem!important;
+            animation: fade-in-out 4s ease-in-out infinite;
+            transform-origin: center;
+            display: inline-block;
+            z-index: 1;
+        }
+        .start-menu-button {
+            z-index: 1;
+            width: 40%;
+            height: auto;
+            font-size: 6rem;
+            color: #F29F05;
+            background-color: rgba(0, 0, 0, 0.9);
+            font-family: "Pricedown BL";
+            border-radius: 25px;
+        }
+        .game-info {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 0.9rem;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 0.5rem;
         }
         @keyframes rain {
             0% {
@@ -57,92 +81,60 @@
                 filter: hue-rotate(360deg);
             }
         }
-                .start-title {
-                    font-size: 20rem!important;
-                    animation: fade-in-out 4s ease-in-out infinite;
-                    transform-origin: center;
-                    display: inline-block;
-                    z-index: 1;
-                }
+        @keyframes fade-in-out {
+            0% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="game-title" class="start-title">Drug Cartel</h1>
+    <button class="start-menu-button" onclick="redirectToGame()">Start Game</button>
+    <script>
+        function redirectToGame() {
+            window.location.href = "game.html";
+        }
+    </script>
+    <audio id="background-music" loop>
+        <source src="audio\background_theme.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        const backgroundMusic = document.getElementById('background-music');
+        let audioStarted = false;
 
-                @keyframes fade-in-out {
-                    0% {
-                        opacity: 0.7;
-                    }
-                    50% {
-                        opacity: 1;
-                    }
-                    100% {
-                        opacity: 0.7;
-                    }
+        // Start the background music after a delay (in milliseconds)
+        const startAudioAfterDelay = (delay) => {
+            setTimeout(() => {
+                if (!audioStarted) {
+                    audioStarted = true;
+                    backgroundMusic.play();
                 }
-                .start-menu-button {
-                    z-index: 1;
-                    width: 40%;
-                    height: 250px;
-                    font-size: 8rem;
-                    color: #F29F05;
-                    background-color: rgba(0, 0, 0, 0.9);
-                    font-family: "Pricedown BL";
-                    border-radius: 25px;
-               
-                }
-                #audio {
-                display: none;
-                }
-                .game-info {
-                    position: absolute;
-                    bottom: 0;
-                    right: 0;
-                    font-size: 0.9rem;
-                    color: white;
-                    background-color: rgba(0, 0, 0, 0.2);
-                    
-                    padding: 0.5rem;
-                }
-            </style>
-        </head>
-        <body>
-            <h1 id="game-title" class="start-title">Drug Cartel</h1>
-            <button class="start-menu-button" onclick="redirectToGame()">Start Game</button>
-            <script>
-                function redirectToGame() {
-                    window.location.href = "game.html";
-                }
-            </script>
-        <audio id="background-music" loop>
-            <source src="audio\background_theme.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <script>
-            const backgroundMusic = document.getElementById('background-music');
-            let audioStarted = false;
-    
-            // Start the background music after a delay (in milliseconds)
-            const startAudioAfterDelay = (delay) => {
-                setTimeout(() => {
-                    if (!audioStarted) {
-                        audioStarted = true;
-                        backgroundMusic.play();
-                    }
-                }, delay);
-            };
-    
-            // Trigger audio on mouse movement
-            document.addEventListener('mousemove', () => {
-                startAudioAfterDelay(500); // Start after 2 seconds of mouse movement
-                document.removeEventListener('mousemove', startAudioOnMouseMove);
-            });
-    
-            // Trigger audio on element hover
-            const triggerElement = document.querySelector('#trigger-element');
-            triggerElement.addEventListener('mouseover', () => {
-                startAudioAfterDelay(0); // Start immediately on hover
-                triggerElement.removeEventListener('mouseover', startAudioOnHover);
-            });
-        </script>
+            }, delay);
+        };
 
-        <div class="game-info">Drug Cartel - An Innovation Game Project - IBA 2023 - Music: Do It Now -
-            AleXZavesa</div>
-        </body>
-        </html>
+        // Trigger audio on mouse movement
+        document.addEventListener('mousemove', () => {
+            startAudioAfterDelay(500); // Start after 2 seconds of mouse movement
+            document.removeEventListener('mousemove', startAudioOnMouseMove);
+        });
+
+        // Trigger audio on element hover
+        const triggerElement = document.querySelector('#trigger-element');
+        triggerElement.addEventListener('mouseover', () => {
+            startAudioAfterDelay(0); // Start immediately on hover
+            triggerElement.removeEventListener('mouseover', startAudioOnHover);
+        });
+    </script>
+
+    <div class="game-info">Drug Cartel - An Innovation Game Project - IBA 2023 - Music: Do It Now -
+        AleXZavesa</div>
+</body>
+</html>

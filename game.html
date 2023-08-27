@@ -1,205 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drug Cartel - The Game</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/dice.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/dice.css" />
     <script src="js/scripts.js" defer></script>
-
-</head>
-<body>
+  </head>
+  <body>
     <h1 id="game-title">Drug Cartel</h1>
 
-<!-- Start Game Section -->
-<div class="container" id="startContainer">
-    
-    <label for="playerSelect">Select the number of players:</label>
-    <select id="playerSelect">
+    <!-- Start Game Section -->
+    <div class="container" id="startContainer">
+      <label for="playerSelect">Select the number of players:</label>
+      <select id="playerSelect">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5" selected>5</option>
-    </select>
-    <label for="startCash">Enter starting cash for each player:</label>
-    <input type="number" id="startCash" value="1000">
-    <button id="startGame">Lets hit the streets!</button>
-</div>
-<main>
-<div id="eventcard"></div>
-<!-- Main Game Section -->
-<div class="container game-container">
-    
+      </select>
+      <label for="startCash">Enter starting cash for each player:</label>
+      <input type="number" id="startCash" value="1000" />
+      <button id="startGame">Lets hit the streets!</button>
+    </div>
+    <main>
+      <div id="eventcard"></div>
+      <div id="eventcard-popup" class="eventcard-popup">
 
-    <div id="marketBoard" class="no-select">
-        <table>
+        <div class="eventcard-content">
+            <h2 style="font-family: 'Pricedown BL', monospace; border-bottom: 2px solid var(--primary-color);">Event Card</h2>
+            <div id="event-text-container">
+          <p>This is the description of the event card.</p>
+        </div>
+        </div>
+      </div>
+
+      <!-- Main Game Section -->
+      <div class="container game-container">
+ 
+        <div id="marketBoard" class="no-select">
+            
+          <table>
             <thead>
-                <tr>
-                    <th>Drugs</th>
-                    <!-- Cities will be added dynamically -->
-                </tr>
+              <tr>
+                <th>Drugs</th>
+                <!-- Cities will be added dynamically -->
+              </tr>
             </thead>
             <tbody>
-                <!-- Drug rows will be added dynamically -->
+              <!-- Drug rows will be added dynamically -->
             </tbody>
-        </table>
-        <div id="game-interface">
+          </table>
+          <div id="game-interface">
+ 
+
             <h2 id="playerTurn">It's [Player]'s turn!</h2>
             <h2 id="playerCityDisplay"></h2>
             <div id="playerAction">
-                <div class="dice">
-                    <ol class="die-list even-roll" data-roll="1" id="die-1">
-                      <li class="die-item" data-side="1">
-                        <span class="dot"></span>
-                      </li>
-                      <li class="die-item" data-side="2">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                      </li>
-                      <li class="die-item" data-side="3">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                      </li>
-                      <li class="die-item" data-side="4">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                      </li>
-                      <li class="die-item" data-side="5">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                      </li>
-                      <li class="die-item" data-side="6">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                      </li>
-                    </ol>
-                  </div>
-                  <button type="button" id="roll-button">Roll Dice</button>
-                  <script src="js/dice.js"></script>
-                <button id="dayJob">Take a Dayjob(100$)</button>
-    
+              <div class="dice">
+                <ol class="die-list even-roll" data-roll="1" id="die-1">
+                  <li class="die-item" data-side="1">
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="2">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="3">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="4">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="5">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                  <li class="die-item" data-side="6">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </li>
+                </ol>
+              </div>
+              <button type="button" id="roll-button">Roll Dice</button>
+              <script src="js/dice.js"></script>
+              <button id="dayJob">Take a Dayjob(100$)</button>
             </div>
-    </div>
-    
-    
+          </div>
+        </div>
+      </div>
+      <div class="leaderboard-container">
         
-
+        <div class="leaderboard container">  
+            <h2>Street Rank:</h2>
+        </div>
     </div>
-</div>
-</main>
-<!-- Player Information Section -->
-<div id="player-container">
-    
-    <div class="container player-input" style="display:none">
+    </main>
+    <!-- Player Information Section -->
+    <div id="player-container">
+      <div class="container player-input" style="display: none">
         <div class="player-name-input">
-            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+          <input
+            type="text"
+            class="player-name-field"
+            placeholder="Enter Player Name"
+          />
         </div>
-        <div class="player-name-label" style="display: none;">
-            <span class="player-name-text"></span>
+        <div class="player-name-label" style="display: none">
+          <span class="player-name-text"></span>
         </div>
-      
-    </div>
-    <div class="container player-input" style="display:none">
-       
+      </div>
+      <div class="container player-input" style="display: none">
         <div class="player-name-input">
-            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+          <input
+            type="text"
+            class="player-name-field"
+            placeholder="Enter Player Name"
+          />
         </div>
-        <div class="player-name-label" style="display: none;">
-            <span class="player-name-text"></span>
-            
+        <div class="player-name-label" style="display: none">
+          <span class="player-name-text"></span>
         </div>
-        
-    </div>
-    <div class="container player-input" style="display:none">
-
+      </div>
+      <div class="container player-input" style="display: none">
         <div class="player-name-input">
-            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+          <input
+            type="text"
+            class="player-name-field"
+            placeholder="Enter Player Name"
+          />
         </div>
-        <div class="player-name-label" style="display: none;">
-            <span class="player-name-text"></span>
+        <div class="player-name-label" style="display: none">
+          <span class="player-name-text"></span>
         </div>
-    </div>
-    <div class="container player-input" style="display:none">
-    
+      </div>
+      <div class="container player-input" style="display: none">
         <div class="player-name-input">
-            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+          <input
+            type="text"
+            class="player-name-field"
+            placeholder="Enter Player Name"
+          />
         </div>
-        <div class="player-name-label" style="display: none;">
-            <span class="player-name-text"></span>
+        <div class="player-name-label" style="display: none">
+          <span class="player-name-text"></span>
         </div>
-    </div>
-    <div class="container player-input" style="display:none">
-  
+      </div>
+      <div class="container player-input" style="display: none">
         <div class="player-name-input">
-            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+          <input
+            type="text"
+            class="player-name-field"
+            placeholder="Enter Player Name"
+          />
         </div>
-        <div class="player-name-label" style="display: none;">
-            <span class="player-name-text"></span>
+        <div class="player-name-label" style="display: none">
+          <span class="player-name-text"></span>
         </div>
-    </div>
-    <div class="container player-input" style="display:none">
-      
+      </div>
+      <div class="container player-input" style="display: none">
         <div class="player-name-input">
-            <input type="text" class="player-name-field" placeholder="Enter Player Name">
+          <input
+            type="text"
+            class="player-name-field"
+            placeholder="Enter Player Name"
+          />
         </div>
-        <div class="player-name-label" style="display: none;">
-            <span class="player-name-text"></span>
+        <div class="player-name-label" style="display: none">
+          <span class="player-name-text"></span>
         </div>
+      </div>
     </div>
-
-</div>
-<div class="debug-container">
-        
-    <h2>Info / Debug - Display:</h2>
-    <p>ZOOM IND / UD indtil spil elementerne passer til din skærm - Da den ikke er optimeret endnu(Dette kan via de 3 dotter oppe i højre hjørne af browseren)</p>
-    <p>Husk at indtaste spillernavne, som det første før i slår OG i korrekt rækkefølge - Tryk enter efter hver indtastning</p>
-    <p>Når spillet skal gå igang, så tryk Roll Dice, indtil i er ved den spiller der skal starte(dette kan i slå om)</p>
-    <h3>COMMANDS:</h3>
-    <p>CTRL + (BUY/SELL) : Køber eller sælger 5 stks ad gangen</p>
-    <p>SHIFT + (BUY/SELL) : Tilføjer eller fjerner 1 enhed uden at påvirke spillerens cash</p>
-    <p>Spillernes Cash kan redigeres direkte i disse bokse, indtil der laves en bedre løsning. (Til events)</p>
-    <div class="cash-variables">
-
+  </body>
+  <div class="debug-container">
+    <h2 class="debug-toggle">Info / Debug - Display(Tryk mig):</h2>
+    <div class="debug-content">
+      <p>
+        ZOOM IND / UD indtil spil elementerne passer til din skærm - Da den ikke
+        er optimeret endnu(Dette kan via de 3 dotter oppe i højre hjørne af
+        browseren)
+      </p>
+      <p>
+        Husk at indtaste spillernavne, som det første før i slår OG i korrekt
+        rækkefølge - Tryk enter efter hver indtastning
+      </p>
+      <p>
+        Når spillet skal gå igang, så tryk Roll Dice, indtil i er ved den
+        spiller der skal starte(dette kan i slå om)
+      </p>
+      <h3>COMMANDS:</h3>
+      <p>CTRL + (BUY/SELL) : Køber eller sælger 5 stks ad gangen</p>
+      <p>
+        SHIFT + (BUY/SELL) : Tilføjer eller fjerner 1 enhed uden at påvirke
+        spillerens cash
+      </p>
+      <p>
+        Spillernes Cash kan redigeres direkte i disse bokse, indtil der laves en
+        bedre løsning. (Til events)
+      </p>
+      <div class="cash-variables"></div>
     </div>
+  </div>
+  <audio id="background-music" loop>
+    <source src="audio\background_theme_2.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    const backgroundMusic = document.getElementById("background-music");
+    let audioStarted = false;
 
-    </div>
-    <audio id="background-music" loop>
-        <source src="audio\background_theme_2.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <script>
-        const backgroundMusic = document.getElementById('background-music');
-        let audioStarted = false;
+    // Start the background music after a delay (in milliseconds)
+    const startAudioAfterDelay = (delay) => {
+      setTimeout(() => {
+        if (!audioStarted) {
+          audioStarted = true;
+          backgroundMusic.play();
+        }
+      }, delay);
+    };
 
-        // Start the background music after a delay (in milliseconds)
-        const startAudioAfterDelay = (delay) => {
-            setTimeout(() => {
-                if (!audioStarted) {
-                    audioStarted = true;
-                    backgroundMusic.play();
-                }
-            }, delay);
-        };
-
-        // Trigger audio on mouse movement
-        document.addEventListener('click', () => {
-            startAudioAfterDelay(500); // Start after 2 seconds of mouse movement
-        });
-
-
-    </script>
-
-</body>
+    // Trigger audio on mouse movement
+    document.addEventListener("click", () => {
+      startAudioAfterDelay(500); // Start after 2 seconds of mouse movement
+    });
+  </script>
 </html>

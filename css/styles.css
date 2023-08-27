@@ -1,38 +1,54 @@
-/*
-
-#59021
-#C111D9
-#05F2DB
-#F29F05
-#F28B0C
-*/
 
 :root {
     --primary-color: #F29F05;
     --secondary-bg-color: rgba(0, 0, 0, 0.7);
-    
     --th-bg-color: rgba(0, 30, 30, 0.7);
     --btn-bg-color: rgba(0, 0, 0,0.5);
     --btn-bg-color-hover: rgba(59, 59, 66, 0.232);
-    
+    --inventory-label: "Weight: 0/100";
 }
+/* Fonts */
 @font-face {
-    font-family: 'Pricedown BL'; /* You can give any name here, but make sure it's unique */
-    src: url('../font/pricedownbl.otf') format('opentype'); /* Assuming 'fonts' is the directory where you stored the font */
+    font-family: 'Pricedown BL';
+    src: url('../font/pricedownbl.otf') format('opentype');
+}
+
+/* Base & Layout */
+body {
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #000 url('../img/neon_city_2.png') center center/cover;
+    color: var(--primary-color);
+    font-family: "Arial", sans-serif;
 }
 
 .no-select {
     user-select: none;
 }
 
+/* Containers */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--secondary-bg-color);
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+/* Start Container */
 #startContainer {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap:10px;
-    height: 50vh;
+    gap: 10px;
+    max-width: 100%;
     width: 50vw;
+    height: 50vh;
     font-size: 2rem;
     min-width: 600px;
 }
@@ -47,51 +63,31 @@
     font-size: 2rem;
 }
 
-body {
-    margin:0;
-    padding:0;
-    min-width: 1000px;
-    display: flex;
-    flex-direction: column;
-    
-    background: #000 url('../img/neon_city_2.png') no-repeat center center/cover;
-    color: var(--primary-color);
-    font-family: "Arial", sans-serif;
-    /*font-family: 'Pricedown BL', monospace; /* This uses the custom font, and falls back to sans-serif if the custom font isn't available */
-        padding: 0 1rem; /* Small padding for mobile screens */
-        
-    }
+
 main {
+
     display: flex;
+    flex-wrap: wrap-reverse;
     align-items: center;
     justify-content: center;
     
     
 }
 
+/* Event Card */
 #eventcard {
     display: none;
     position: relative;
-    background-image: url('../img/eventcard_backs/1.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 200px;
-    height: 300px;
-    aspect-ratio: 1/1;
+    background: url('../img/eventcard_backs/1.png') no-repeat center center/cover;
+    width: calc(180px + 1vw);
+    height: calc(270px + 1vh);
     box-shadow: 0 0 50px var(--primary-color);
-    transition: transform 0.3s ease;
-    left: auto;
-    
-   
+    transition: transform 0.3s ease, box-shadow 1s infinite alternate;
 }
-@media screen and (min-width: 1824px) {
-    #eventcard {
-        left: 5vw;
-    }
-}
-    
 
+
+    
+/* Event Card Interactions */
 #eventcard:hover {
     transform: scale(1.1);
 
@@ -110,59 +106,39 @@ main {
 
 
 .game-container {
-    min-width: 1000px;
+    max-width: 100%;
+    min-width: 500px;
     display: none;
 }
 #playerCityDisplay {
-    min-height: 40px;
+    min-height: 20px;
+    font-size: 0.8rem;
     
 }
 #playerTurn {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
-
-    .container {
-        max-width: 80%;
-        margin: 0 auto;
-        text-align: center;
-        background-color: var(--secondary-bg-color);
-        padding: 10px;
-        border: 2px solid var(--primary-color);
-        border-radius: 5px;
-        
-    }
-
-    h1 {
-        font-size: 1.5rem;
-        text-shadow: 0 0 5px var(--primary-color);
-        margin-bottom: 10px;
-        
-    }
 
     table {
         width: 100%;
-        margin-top: 10px;
         border-collapse: collapse;
-        background-color: rgba(0, 0, 0, 1.0);
+        background-color: rgba(0, 0, 0, .7);
     }
 
     th, td {
         border: 1px solid var(--primary-color);
-        padding: 0.3rem 1rem;
+        padding: 0.2rem 0.6rem;
         text-align: center;
         background-color: var(--table-bg-color);
     }
 
     th {
-        font-size: 1.2rem;
-     
         background-color: var(--th-bg-color);
         cursor: pointer;
     }
 
     td {
     
-        font-size: 1.2rem;
         background-color: black;
         color: white;
     }
@@ -175,21 +151,15 @@ main {
         padding: 0.3rem 0.8rem;
         cursor: pointer;
         font-weight: bold;
-        transition: background-color 0.3s;
         font-size: 1rem;
+        transition: background-color 0.3s, text-shadow 0.3s;
     }
 
-    button:hover {
-        background-color: var(--btn-bg-color-hover);
-        text-shadow: 0 0 4px var(--primary-color);
-    }
+button:hover {
+    background-color: var(--btn-bg-color-hover);
+    text-shadow: 0 0 4px var(--primary-color);
+}
 
-    #diceResult {
-        margin-top: 10px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        text-shadow: 0 0 3px var(--primary-color);
-    }
 
 
 
@@ -207,32 +177,14 @@ main {
     #marketBoard {
         /* */
         display: flex;
-        gap: 50px;
+        justify-content: center;
+        gap: 20px;
         align-items: center;
         padding: 20px;
            
     }
 
 
-    /* Media queries for larger screens */
-    @media screen and (min-width: 768px) {
-        h1 {
-            font-size: 2rem;
-        }
-
-        th {
-            font-size: 2rem;
-        }
-
-        td, button {
-            font-size: 1.5rem;
-            
-        }
-
-        #diceResult {
-            font-size: 2rem;
-        }
-    }
 
 
     /* Addon day 2 */
@@ -288,6 +240,7 @@ main {
         margin-top: 30px; /* Provide some space from the game board */
         border-top: 2px dashed var(--primary-color); /* Dashed line to distinguish sections */
         padding-top: 10px; /* Padding at the top */
+
        
     }
 
@@ -306,7 +259,7 @@ main {
     }
 
     #player-container .container::before {
-        content: "Inventory"; /* Add an Inventory label */
+        content: var(--inventory-label);
         display: block;
         position: absolute;
         top: -20px; /* Position it above the container */
@@ -326,8 +279,10 @@ main {
     }
 
     .player-name-input {
+     
         margin-bottom: 5px; /* Space after the input field */
     }
+    
 
     .player-cash-display {
         font-size: 3rem;
@@ -410,10 +365,166 @@ main {
 
 .hightlight-city {
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .notactive-city {
  opacity: 0.0;
 
 }
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 1824px) {
+    #eventcard {
+        left: 5vw;
+    }
+}
+/* Media queries for larger screens */
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    th {
+        font-size: 1.5rem;
+    }
+
+    td, button {
+        font-size: 1.2rem;
+        
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    #startContainer {
+        width: 80vw; /* Skaleres ned */
+        height: 80vh; /* Skaleres ned */
+        font-size: 1.5rem; /* Skaleres ned */
+    }
+
+    body {
+        padding: 0; /* Fjernet padding */
+    }
+
+    #eventcard {
+        width: calc(150px + 2vw); /* Skaleres ned */
+        height: calc(250px + 2vh); /* Skaleres ned */
+    }
+
+    .game-container {
+        padding: 5px; /* Tilføjet */
+    }
+
+    h1, th, td, button {
+        font-size: 1rem; /* Skaleres ned */
+    }
+    #marketBoard {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* ... Tilføj regler for tablets ... */
+}
+
+@media screen and (min-width: 1025px) {
+    /* ... Tilføj regler for store skærme ... */
+}
+@media screen and (max-width: 1500px) {
+    /* ... Tilføj regler for store skærme ... */
+    .leaderboard-container {
+        order: -1;
+    }
+}
+
+
+
+.debug-content {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+.debug-toggle {
+    text-align: center;
+}
+
+.eventcard-popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  .eventcard-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* Applying similar styles as your #eventcard */
+    background-color: black;
+    width: calc(180px + 5vw);
+    height: calc(270px + 5vh);
+    box-shadow: 0 0 50px var(--primary-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 1s infinite alternate;
+    
+    /* Adding content padding and other styling */
+    padding: 20px;
+    text-align: center;
+  }
+
+  .eventcard-content p {
+    display: inline;
+    overflow: hidden;
+    white-space: wrap;
+    border-right: 2px solid;
+    animation: cursorBlink 1s infinite;
+  }
+  
+  @keyframes cursorBlink {
+    0%, 100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: black;
+    }
+  }
+ 
+.leaderboard-container {
+    display: none;
+    align-self: flex-end;
+    width:12%;
+    
+}
+.leaderboard {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    height: 100%;
+    justify-self: flex-start;
+    
+
+
+}
+
+.leaderboard-entry {
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    
+}
+.player-picture-leaderboard{
+    width: 15%;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 2px solid var(--primary-color);
+
+}
+  
