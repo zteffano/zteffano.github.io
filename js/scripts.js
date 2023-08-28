@@ -163,9 +163,12 @@
         if (index < numPlayers) {
           container.style.display = "block";
           let cashDisplay = document.createElement("div");
+          let playerInventory = document.createElement("div");
+          playerInventory.classList.add("player-inventory");
           cashDisplay.classList.add("player-cash-display");
           cashDisplay.textContent = `$${startingCash}`;
           container.appendChild(cashDisplay);
+          container.appendChild(playerInventory);
         }
       });
       document.getElementById("startContainer").style.display = "none";
@@ -324,7 +327,7 @@
         .filter(([_, quantity]) => quantity > 0)  // filter out items with zero count
         .map(([drug, quantity]) => `${drug}: ${quantity}`)
         .join('<br>');
-        updatePlayerContainer(currentPlayer, currentPlayerIndex);
+        updateAllPlayerContainers();
       });
     });
     document.querySelectorAll(".sell-btn").forEach((btn) => {
@@ -370,7 +373,7 @@
         .filter(([_, quantity]) => quantity > 0)  // filter out items with zero count
         .map(([drug, quantity]) => `${drug}: ${quantity}`)
         .join('<br>');
-        updatePlayerContainer(currentPlayer, currentPlayerIndex);
+        updateAllPlayerContainers();
       });
     });
   }
@@ -434,28 +437,16 @@ function calculateTotalItems(inventory) {
   return Object.values(inventory).reduce((total, quantity) => total + quantity, 0);
 }
 
-function updatePlayerContainer(currentPlayer, currentPlayerIndex) {
-  const cashDisplay = document.querySelector(`#player-container .player-input:nth-child(${currentPlayerIndex + 1}) .player-cash-display`);
-  if (cashDisplay) {
-    cashDisplay.textContent = `$${currentPlayer.cash}`;
-  }
 
-  const totalItems = calculateTotalItems(currentPlayer.inventory);
-  const rootStyle = document.documentElement.style;
-
-  rootStyle.setProperty('--inventory-label', `"Weight: ${totalItems}/100"`);
-
-  const inventoryDisplay = document.querySelector(`#player-container .player-input:nth-child(${currentPlayerIndex + 1}) .player-inventory`);
-  //const weightDisplay = document.querySelector(`#player-container .player-input:nth-child(${currentPlayerIndex + 1}) .player-picture`);
-  if (inventoryDisplay) {
-    inventoryDisplay.innerHTML = 
-      Object.entries(currentPlayer.inventory)
-        .filter(([_, quantity]) => quantity > 0)
-        .map(([drug, quantity]) => `${drug}: ${quantity}`)
-        .join('<br>');
-
-  }
-
+function updateAllPlayerContainers() {
+  players.forEach((player, index) => {
+    // Update inventory in UI for each player
+    document.querySelector(`#player-container .player-input:nth-child(${index + 1}) .player-inventory`).innerHTML =
+      Object.entries(player.inventory)
+      .filter(([_, quantity]) => quantity > 0)  // filter out items with zero count
+      .map(([drug, quantity]) => `${drug}: ${quantity}`)
+      .join('<br>');
+  });
 }
 
 document.querySelector('.debug-toggle').addEventListener('click', function() {
@@ -467,38 +458,7 @@ document.querySelector('.debug-toggle').addEventListener('click', function() {
   }
 });
 
-// Show the popup when the event card is clicked
-document.getElementById('eventcard').addEventListener('click', function() {
-  const popup = document.getElementById('eventcard-popup');
-  popup.style.display = 'flex';
-  // Clear existing text
-  let eventTextElement = document.querySelector("#event-text-container p");
-  eventTextElement.innerHTML = '<br>';
-  /*
-  You find $500 on the street.
 
-- Receive $500*/
-  typeWriter(eventTextElement, "You find $500 on the street. \n \n \n \n - Receive $500");
-
-});
-
-// Hide the popup when clicked
-document.getElementById('eventcard-popup').addEventListener('click', function() {
-  this.style.display = 'none';
-});
-
-function typeWriter(element, text, i = 0, speed = 30) {
-  if (i < text.length) {
-    const char = text.charAt(i);
-    if (char === '\n') {
-      element.innerHTML += '<br>';
-    } else {
-      element.innerHTML += char;
-    }
-    i++;
-    setTimeout(() => typeWriter(element, text, i, speed), speed);
-  }
-}
 const updateLeaderboard = () => {
   const leaderboardContainer = document.querySelector('.leaderboard');
   leaderboardContainer.innerHTML = ''; // Clear the existing leaderboard
@@ -518,17 +478,21 @@ const updateLeaderboard = () => {
     const entry = document.createElement('div');
     entry.textContent = `${index + 1}.`;
     const netWorth = document.createElement('div');
-    if (player.netWorth > 250000) {
-      netWorth.textContent = `★★★★★ - Drug Lord`;
-    }
-    else if (player.netWorth > 100000) {
-      netWorth.textContent = `★★★★ - Kingpin`;
+    if (player.netWorth > 100000) {
+      netWorth.textContent = `★★★★★★ - Drug Lord`;
+      netWorth.classList.add('drug-lord-title');
     }
     else if (player.netWorth > 50000) {
-      netWorth.textContent = `★★★ - Dealer`;
+      netWorth.textContent = `★★★★★ - Kingpin`;
     }
-    else if (player.netWorth > 10000) {
-      netWorth.textContent = `★★ - Pusher`;
+    else if (player.netWorth > 15000) {
+      netWorth.textContent = `★★★★ - Dealer`;
+    }
+    else if (player.netWorth > 9000) {
+      netWorth.textContent = `★★★ - Pusher`;
+    }
+    else if (player.netWorth > 3000) {
+      netWorth.textContent = `★★ - Dealer`;
     }
     else {
       netWorth.textContent = `★ - Rookie`;
@@ -548,7 +512,114 @@ const updateLeaderboard = () => {
   });
 };
 
+//Event card logic
 
+let eventCards = [];
+
+fetch('cards/eventcards.json')
+  .then(response => response.json())
+  .then(data => {
+    eventCards = data;
+    console.log('Loaded event cards:', eventCards);
+  })
+  .catch(error => console.error(error));
+
+
+
+// Show the popup when the event card is clicked
+document.getElementById('eventcard').addEventListener('click', function() {
+  const popup = document.getElementById('eventcard-popup');
+  popup.style.display = 'flex';
+
+  const eventCard = getRandomEventCard();
+  
+  let eventTextElement = document.querySelector("#event-text-container p");
+  eventTextElement.innerHTML = '<br>';
+  
+  typeWriter(eventTextElement, eventCard.description);
+  
+  popup.dataset.type = eventCard.type;
+  popup.dataset.amount = eventCard.amount;
+  popup.dataset.scope = eventCard.scope;
+  popup.dataset.item = eventCard.item;
+});
+
+document.getElementById('eventcard-popup').addEventListener('click', function() {
+  this.style.display = 'none';
+
+  const type = this.dataset.type;
+  const amount = parseInt(this.dataset.amount);
+  const scope = this.dataset.scope;
+  const item = this.dataset.item;
+
+  handleEventCard({ type, amount, scope, item });
+});
+
+function handleEventCard(eventCard) {
+  console.log('Handling event card:', eventCard)
+  let playersToAffect = [];
+
+  if (eventCard.scope === "current") {
+    playersToAffect.push(players[currentPlayerIndex]);
+  } else if (eventCard.scope === "global") {
+    playersToAffect = players;
+  }
+
+  for (const player of playersToAffect) {
+    switch(eventCard.type) {
+      case 'cash':
+        player.cash += eventCard.amount;
+        break;
+      case 'drugs':
+        const drugType = eventCard.item;
+        console.log(eventCard);
+        console.log(player);
+        console.log(drugType);
+        console.log(player.inventory);
+        if (!player.inventory[drugType]) {
+          player.inventory[drugType] = 0;
+        }
+        
+        // Adding drugs to the inventory
+        if (eventCard.amount > 0) {
+          player.inventory[drugType] += eventCard.amount;
+        }
+        // Removing drugs from the inventory, ensuring it doesn't go negative
+        else {
+          player.inventory[drugType] = Math.max(0, player.inventory[drugType] + eventCard.amount);
+        }
+        //update the player container
+        updateAllPlayerContainers();
+        
+        break;
+      default:
+        console.error('Unknown event card type:', eventCard.type);
+    }
+  }
+
+  // Optionally, update UI, logs, or perform additional logic here
+  updatePlayerCashDisplay();
+}
+
+
+
+function typeWriter(element, text, i = 0, speed = 30) {
+  if (i < text.length) {
+    const char = text.charAt(i);
+    if (char === '\n') {
+      element.innerHTML += '<br>';
+    } else {
+      element.innerHTML += char;
+    }
+    i++;
+    setTimeout(() => typeWriter(element, text, i, speed), speed);
+  }
+}
+
+function getRandomEventCard() {
+  const randomIndex = Math.floor(Math.random() * eventCards.length);
+  return eventCards[randomIndex];
+}
 
 
 

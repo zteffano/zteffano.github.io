@@ -9,6 +9,7 @@
     <script src="js/scripts.js" defer></script>
   </head>
   <body>
+    <div class="body-container">
     <h1 id="game-title">Drug Cartel</h1>
 
     <!-- Start Game Section -->
@@ -196,58 +197,37 @@
         </div>
       </div>
     </div>
-  </body>
-  <div class="debug-container">
-    <h2 class="debug-toggle">Info / Debug - Display(Tryk mig):</h2>
-    <div class="debug-content">
-        <p>Spillet skal gerne vises i min. 1600 x 900 </p>
-      <p>
-        ZOOM IND / UD indtil spil elementerne passer til din skærm - Da den ikke
-        er optimeret endnu(Dette kan via de 3 dotter oppe i højre hjørne af
-        browseren)
-      </p>
-      <p>
-        Husk at indtaste spillernavne, som det første før i slår OG i korrekt
-        rækkefølge - Tryk enter efter hver indtastning
-      </p>
-      <p>
-        Når spillet skal gå igang, så tryk Roll Dice, indtil i er ved den
-        spiller der skal starte(dette kan i slå om)
-      </p>
-      <h3>COMMANDS:</h3>
-      <p>CTRL + (BUY/SELL) : Køber eller sælger 5 stks ad gangen</p>
-      <p>
-        SHIFT + (BUY/SELL) : Tilføjer eller fjerner 1 enhed uden at påvirke
-        spillerens cash
-      </p>
-      <p>
-        Spillernes Cash kan redigeres direkte i disse bokse, indtil der laves en
-        bedre løsning. (Til events)
-      </p>
-      <div class="cash-variables"></div>
-    </div>
   </div>
-  <audio id="background-music" loop>
-    <source src="audio\background_theme_2.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
-  <script>
-    const backgroundMusic = document.getElementById("background-music");
-    let audioStarted = false;
+    <div class="debug-container">
+      <h2 class="debug-toggle">Info / Debug - Display(Tryk mig):</h2>
+      <div class="debug-content">
+          <p>Spillet skal gerne vises i min. 1600 x 900 </p>
+        <p>
+          ZOOM IND / UD indtil spil elementerne passer til din skærm - Da den ikke
+          er optimeret endnu(Dette kan via de 3 dotter oppe i højre hjørne af
+          browseren)
+        </p>
+        <p>
+          Husk at indtaste spillernavne, som det første før i slår OG i korrekt
+          rækkefølge - Tryk enter efter hver indtastning
+        </p>
+        <p>
+          Når spillet skal gå igang, så tryk Roll Dice, indtil i er ved den
+          spiller der skal starte(dette kan i slå om)
+        </p>
+        <h3>COMMANDS:</h3>
+        <p>CTRL + (BUY/SELL) : Køber eller sælger 5 stks ad gangen</p>
+        <p>
+          SHIFT + (BUY/SELL) : Tilføjer eller fjerner 1 enhed uden at påvirke
+          spillerens cash
+        </p>
+        <p>
+          Spillernes Cash kan redigeres direkte i disse bokse, indtil der laves en
+          bedre løsning. (Til events)
+        </p>
+        <div class="cash-variables"></div>
+      </div>
+    </div>
+  </body>
 
-    // Start the background music after a delay (in milliseconds)
-    const startAudioAfterDelay = (delay) => {
-      setTimeout(() => {
-        if (!audioStarted) {
-          audioStarted = true;
-          backgroundMusic.play();
-        }
-      }, delay);
-    };
-
-    // Trigger audio on mouse movement
-    document.addEventListener("click", () => {
-      startAudioAfterDelay(500); // Start after 2 seconds of mouse movement
-    });
-  </script>
 </html>

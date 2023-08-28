@@ -17,6 +17,11 @@
 /* Base & Layout */
 body {
     margin: 0;
+    padding: 0;
+    background-color: black;
+
+}
+.body-container {
     padding: 20px;
     height: 100vh;
     display: flex;
@@ -479,9 +484,11 @@ button:hover {
     display: none;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    color: white;
   }
 .debug-toggle {
     text-align: center;
+    color: var(--primary-color)
 }
 
 .eventcard-popup {
@@ -534,7 +541,7 @@ button:hover {
 .leaderboard-container {
     display: none;
     align-self: flex-end;
-    width:15%;
+    width:17%;
     position: relative;
     min-width: 200px;
     order: 0;
@@ -591,4 +598,20 @@ button:hover {
     text-align: center;
 
 
+}
+
+.drug-lord-title {
+    color: gold;
+   
+    text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px gold, 0 0 50px gold, 0 0 60px gold, 0 0 70px gold, 0 0 80px gold; /* Multiple shadows for the glowing effect */
+    animation: glowtext 2s infinite; /* Animation to create the flickering effect */
+}
+
+@keyframes glowtext{
+    0%, 100% {
+        text-shadow: 0 0 5px red, 0 0 10px orange, 0 0 15px yellow, 0 0 20px gold;
+    }
+    50% {
+        text-shadow: none; /* No shadow at the midpoint of the animation for the flickering effect */
+    }
 }
