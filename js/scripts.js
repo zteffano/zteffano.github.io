@@ -339,7 +339,8 @@
           return;
         }
 
-        const sellingPrice = parseInt(priceCell.textContent.replace("$", ""));
+        const sellingPrice = parseInt(priceCell.textContent.replace(/,/g, "").replace("$", ""));
+
 
         const quantity = event.ctrlKey ? 5 : 1;
 
