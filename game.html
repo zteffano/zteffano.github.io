@@ -119,6 +119,7 @@
                   </li>
                 </ol>
               </div>
+              <button id="bank">Bank</button>
               <button type="button" id="roll-button">Roll Dice</button>
               <script src="js/dice.js"></script>
               <button id="dayJob">Take a Dayjob(200$)</button>
@@ -206,6 +207,18 @@
 
     </div> <!-- End of player-container -->
 
+    <div id="bankModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Bank</h2>
+        <p>Cash: $<span id="playerCash"></span></p>
+        <p>Bank: $<span id="bankCash"></span></p>
+        <input type="number" id="depositAmount" placeholder="Deposit Amount" />
+        <button id="depositBtn">Deposit</button>
+        <input type="number" id="withdrawAmount" placeholder="Withdraw Amount" />
+        <button id="withdrawBtn">Withdraw</button>
+      </div>
+    </div>
   </div> <!-- End of body-container -->
   
 

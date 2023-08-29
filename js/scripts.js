@@ -21,12 +21,13 @@
       this.id = Player.nextId++;
       this.name = name;
       this.cash = cash;
+      this.bankCash = 0; // new property to store bank cash
       this.city = city;
       this.gender = gender;
       this.inventory = {}; // Empty object to store drugs and their quantities
     }
     getNetWorth(averagePrices) {
-      let netWorth = this.cash;
+      let netWorth = this.cash + this.bankCash; // include bank cash in net worth calculation
       for (const [drug, quantity] of Object.entries(this.inventory)) {
         if (averagePrices[drug]) {
           netWorth += averagePrices[drug] * quantity;
@@ -34,8 +35,26 @@
       }
       return netWorth;
     }
-
+    depositToBank(amount) {
+      if (this.cash >= amount) {
+        this.cash -= amount;
+        this.bankCash += amount;
+        return true;
+      } else {
+        return false;
+      }
+    }
+    withdrawFromBank(amount) {
+      if (this.bankCash >= amount) {
+        this.bankCash -= amount;
+        this.cash += amount;
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
+  
   const getRandomPrice = (min, max) =>
     Math.round((Math.random() * (max - min + 1) + min) / 5) * 5;
 
@@ -166,10 +185,14 @@
           container.style.display = "block";
           let cashDisplay = document.createElement("div");
           let playerInventory = document.createElement("div");
+          let bankingCashDisplay = document.createElement("div"); // create new element for banking cash display
           playerInventory.classList.add("player-inventory");
           cashDisplay.classList.add("player-cash-display");
+          bankingCashDisplay.classList.add("banking-cash-display"); // add class to the new element
           cashDisplay.textContent = `$${startingCash}`;
+          bankingCashDisplay.textContent = `Bank:$0`; // set initial value for banking cash display
           container.appendChild(cashDisplay);
+          container.appendChild(bankingCashDisplay); // append the new element to the player container
           container.appendChild(playerInventory);
         }
       });
@@ -180,7 +203,6 @@
       document.querySelector(".debug-container").style.display = "block";
       document.querySelector("#game-title").style.fontSize = "4em";
     });
-
 
     document.getElementById("roll-button").addEventListener("click", function () {
       if(players.length < 1) {
@@ -424,16 +446,29 @@
   }
   function updatePlayerCashDisplay() {
     const playerContainers = document.querySelectorAll('#player-container .player-input');
+  
     playerContainers.forEach((container, index) => {
-      const currentPlayer = players[index];
+      const currentPlayer = players[index]; // Getting the player object from the global 'players' array
+  
+      // Update player cash display
       const playerCashDisplay = container.querySelector('.player-cash-display');
       if (playerCashDisplay) {
-        playerCashDisplay.textContent = `$${currentPlayer.cash}`;
+        playerCashDisplay.textContent = `$${currentPlayer.cash}`; // Using currentPlayer.cash
       } else {
         console.error("Could not find player cash display element");
       }
+  
+      // Update player bank cash display
+      const playerBankDisplay = container.querySelector('.banking-cash-display');
+      if (playerBankDisplay) {
+        playerBankDisplay.textContent = `Bank: $${currentPlayer.bankCash}`; // Using currentPlayer.bankCash
+      } else {
+        console.error("Could not find player bank display element");
+      }
     });
   }
+  
+  
   const noSelectElements = document.querySelectorAll('.no-select');
 
   noSelectElements.forEach(element => {
@@ -776,6 +811,43 @@ function battlePlayers() {
   }
   updatePlayerCashDisplay();
 }
+
+document.getElementById("bank").addEventListener("click", function() {
+  const modal = document.getElementById("bankModal");
+  document.getElementById("playerCash").textContent = players[currentPlayerIndex].cash;
+  document.getElementById("bankCash").textContent = players[currentPlayerIndex].bankCash;
+  modal.style.display = "block";
+});
+
+document.getElementsByClassName("close")[0].addEventListener("click", function() {
+  document.getElementById("bankModal").style.display = "none";
+  document.getElementById("depositAmount").value = "";
+  document.getElementById("withdrawAmount").value = "";
+  updatePlayerCashDisplay();
+  rotateTurns();
+});
+
+document.getElementById("depositBtn").addEventListener("click", function() {
+  const depositAmount = parseFloat(document.getElementById("depositAmount").value);
+  if (players[currentPlayerIndex].depositToBank(depositAmount)) {
+    document.getElementById("playerCash").textContent = players[currentPlayerIndex].cash;
+    document.getElementById("bankCash").textContent = players[currentPlayerIndex].bankCash;
+  } else {
+    alert("Insufficient funds");
+  }
+});
+
+document.getElementById("withdrawBtn").addEventListener("click", function() {
+  const withdrawAmount = parseFloat(document.getElementById("withdrawAmount").value);
+  if (players[currentPlayerIndex].withdrawFromBank(withdrawAmount)) {
+    document.getElementById("playerCash").textContent = players[currentPlayerIndex].cash;
+    document.getElementById("bankCash").textContent = players[currentPlayerIndex].bankCash;
+  } else {
+    alert("Insufficient funds in bank");
+  }
+});
+
+
 
   // Initialization code
   document.addEventListener("DOMContentLoaded", function () {
