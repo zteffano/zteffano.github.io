@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/dice.css" />
     <script src="js/scripts.js" defer></script>
+    <script src="js/casino.js" defer></script>
   </head>
   <body>
     <div class="body-container">
@@ -116,12 +117,16 @@
           </div>
         </div>
       </div>
+      
       <div class="leaderboard-container">
         
         <div class="leaderboard container">  
         </div>
+        
     </div>
+    
     </main>
+  
     <!-- Player Information Section -->
     <div id="player-container">
       <div class="container player-input" style="display: none">
@@ -198,6 +203,16 @@
       </div>
     </div>
   </div>
+                <!-- Bet container, where you can bet and amount and select either Odd or Even as your predict-->
+                <div class="casino-container">
+                  <div id="betContainer">
+                    <input type="number" id="betAmount" placeholder="Bet Amount" />
+                    <button id="betOdd">Odd</button>
+                    <button id="betEven">Even</button>
+                  </div>
+                  <div id="result"></div> 
+                </div>
+                
     <div class="debug-container">
       <h2 class="debug-toggle">Info / Debug - Display(Tryk mig):</h2>
       <div class="debug-content">

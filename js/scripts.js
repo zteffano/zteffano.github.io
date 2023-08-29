@@ -12,8 +12,8 @@
     //crack: { min: 100, max: 250 },
   };
 
-  let players = [];
-  let currentPlayerIndex = 0;
+  var players = []; // global array to store players
+  var currentPlayerIndex = 0; // global variable to store the index of the current player
 
   class Player {
     static nextId = 1;
@@ -622,6 +622,57 @@ function getRandomEventCard() {
   const randomIndex = Math.floor(Math.random() * eventCards.length);
   return eventCards[randomIndex];
 }
+
+// Function to run mini casino game
+function runGame(chosenOption) {
+  
+  const betAmount = parseInt(document.getElementById("betAmount").value);
+  
+  if (isNaN(betAmount) || betAmount <= 0 || betAmount > players[currentPlayerIndex].cash) {
+    alert("Please enter a valid bet amount.");
+    return;
+  }
+  
+  // Generate a random number between 1 and 10
+  let randomNumber = Math.floor(Math.random() * 10) + 1;
+
+  
+  
+  // Determine if the random number is odd or even
+  const outcome = randomNumber % 2 === 0 ? "Even" : "Odd";
+  console.log("Random number: ", randomNumber);
+  console.log("Random number: ", randomNumber);
+  console.log("Random number: ", randomNumber);
+  console.log("Outcome: ", outcome);
+  console.log("Chosen option: ", chosenOption);
+
+  // Check if the player wins or loses
+  if (chosenOption == outcome) {
+    document.getElementById("result").textContent = `You win!`;
+    // currrent player wins the bet amount
+    console.log("Before win: ", players[currentPlayerIndex].cash);
+    players[currentPlayerIndex].cash += betAmount;
+    console.log("After win: ", players[currentPlayerIndex].cash);
+    
+  } else {
+    document.getElementById("result").textContent = `You lose!`;
+    // current player loses the bet amount
+    console.log("Before lose: ", players[currentPlayerIndex].cash);
+    players[currentPlayerIndex].cash -= betAmount;
+    console.log("After lose: ", players[currentPlayerIndex].cash);
+  
+  }
+  updatePlayerCashDisplay();
+}
+// Attach event listeners to the Odd and Even buttons
+document.getElementById("betOdd").addEventListener("click", function() {
+  runGame("Odd");
+});
+
+document.getElementById("betEven").addEventListener("click", function() {
+  runGame("Even");
+});
+
 
 
 
