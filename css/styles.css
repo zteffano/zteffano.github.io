@@ -71,7 +71,7 @@ body {
 
 #startContainer > select {
     height:60px;
-    width: 60px;
+    width: 80px;
     font-size: 3rem;
     border: 2px solid var(--primary-color);
     background-color: black;
@@ -382,7 +382,7 @@ button:hover {
 #game-title{
 
         text-align: center;
-        font-size: 4em;
+        font-size: 8em;
         color: white;
         text-shadow: 0 0 3px var(--primary-color);
         text-shadow: 10px 10px 12px black;

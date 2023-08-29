@@ -176,6 +176,7 @@
       document.getElementById("eventcard").style.display = "flex";
       document.querySelector(".leaderboard-container").style.display = "block";
       document.querySelector(".debug-container").style.display = "block";
+      document.querySelector("#game-title").style.fontSize = "4em";
     });
 
     document.getElementById("roll-button").addEventListener("click", function () {
@@ -483,16 +484,16 @@ const updateLeaderboard = () => {
       netWorth.textContent = `★★★★★★ - Drug Lord`;
       netWorth.classList.add('drug-lord-title');
     }
-    else if (player.netWorth > 50000) {
+    else if (player.netWorth >= 50000) {
       netWorth.textContent = `★★★★★ - Kingpin`;
     }
-    else if (player.netWorth > 15000) {
-      netWorth.textContent = `★★★★ - Dealer`;
+    else if (player.netWorth >= 20000) {
+      netWorth.textContent = `★★★★ - Boss`;
     }
-    else if (player.netWorth > 9000) {
+    else if (player.netWorth >= 10000) {
       netWorth.textContent = `★★★ - Pusher`;
     }
-    else if (player.netWorth > 3000) {
+    else if (player.netWorth >= 3000) {
       netWorth.textContent = `★★ - Dealer`;
     }
     else {

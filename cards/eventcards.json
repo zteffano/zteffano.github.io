@@ -41,7 +41,7 @@
     {
       "description": "Oh no! One of your rivals has stolen 2 units of Morphine from your inventory. - You lose 2 units of Morphine.",
       "type": "drugs",
-      "item": "morphine",
+      "item": "Morphine",
       "amount": -2,
       "scope": "current"
     },
