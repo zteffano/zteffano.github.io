@@ -22,7 +22,7 @@ body {
 
 }
 .body-container {
-    padding: 20px;
+    padding: 10px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -161,7 +161,7 @@ main {
 
     th, td {
         border: 1px solid var(--primary-color);
-        padding: 0.2rem 0.6rem;
+        padding: 0.2rem 0.4rem;
         text-align: center;
         background-color: var(--table-bg-color);
     }
@@ -236,14 +236,14 @@ button:hover {
     }
 
     .player-cash-display {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-top: 10px;
         font-weight: bold;
     }
 
     .player-inventory {
         margin-top: 10px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .buy-btn, .sell-btn {
@@ -259,7 +259,7 @@ button:hover {
 
     .player-picture {
 
-        width: 30%;
+        width: 25%;
         aspect-ratio: 1/1;
         border-radius: 5px;
         margin-bottom: 10px;
@@ -307,7 +307,7 @@ button:hover {
     }
 
     .player-name-label {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: bold;
         margin-bottom: 5px; /* Space between name and the rest */
     }
@@ -319,7 +319,7 @@ button:hover {
     
 
     .player-cash-display {
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: white;
         background-color: rgba(0, 0, 0, 0.7); /* A background to distinguish from the rest */
         padding: 3px 8px;
@@ -382,7 +382,7 @@ button:hover {
 #game-title{
 
         text-align: center;
-        font-size: 7em;
+        font-size: 4em;
         color: white;
         text-shadow: 0 0 3px var(--primary-color);
         text-shadow: 10px 10px 12px black;
