@@ -86,6 +86,7 @@
     }
     removeCityClasses();
     updateLeaderboard();
+    populatePlayerDropdowns();
   };
 
 
@@ -673,11 +674,72 @@ document.getElementById("betEven").addEventListener("click", function() {
   runGame("Even");
 });
 
+function populatePlayerDropdowns() {
+  const player1Select = document.getElementById('player1Select');
+  const player2Select = document.getElementById('player2Select');
+  const player1Image = document.getElementById('player1Image');
+  const player2Image = document.getElementById('player2Image');
+  const startBattle = document.getElementById('startBattle');
+
+  // Clear any existing options
+  player1Select.innerHTML = '';
+  player2Select.innerHTML = '';
+
+  // Assuming 'players' is an array containing your player objects
+  players.forEach((player, index) => {
+    const option1 = document.createElement('option');
+    option1.value = index;
+    option1.text = player.name;
+    player1Select.appendChild(option1);
+
+    const option2 = option1.cloneNode(true);
+    player2Select.appendChild(option2);
+  });
+
+  function updatePlayerImage(playerIndex, imageDiv) {
+    const image = `../img/characters/${playerIndex + 1}.png`; // Since index starts from 0, we add 1.
+    imageDiv.style.backgroundImage = `url(${image})`;
+  }
+
+  // Initialize images with the first player
+  updatePlayerImage(0, player1Image);
+  updatePlayerImage(0, player2Image);
+
+  player1Select.addEventListener('change', (event) => {
+    updatePlayerImage(Number(event.target.value), player1Image);
+  });
+
+  player2Select.addEventListener('change', (event) => {
+    updatePlayerImage(Number(event.target.value), player2Image);
+  });
+
+  // Attach event listener to the Start Battle button
+  startBattle.addEventListener('click', battlePlayers);
+}
 
 
 
-
-
+function battlePlayers() {
+  console.log("Starting battle between players: ", player1Select.value, player2Select.value);
+  const player1 = players[player1Select.value];
+  const player2 = players[player2Select.value];
+  const player1Dice = Math.floor(Math.random() * 6) + 1;
+  const player2Dice = Math.floor(Math.random() * 6) + 1;
+  if (player1Dice < player2Dice) {
+    // take 25% of cash from player 1 and give it to player 2
+    const amount = Math.floor(player1.cash * 0.25);
+    player1.cash -= amount;
+    player2.cash += amount;
+    alert(`${player2.name} wins!`);
+  } else {
+    // take 25% of cash from player 2 and give it to player 1
+    const amount = Math.floor(player2.cash * 0.25);
+    player2.cash -= amount;
+    player1.cash += amount;
+    alert(`${player1.name} wins!`);
+  }
+  updatePlayerCashDisplay();
+}
 
   // Initialization code
   document.addEventListener("DOMContentLoaded", function () {
@@ -686,6 +748,7 @@ document.getElementById("betEven").addEventListener("click", function() {
     //updatePrices();
     setupEventListeners();
     setupBuyButtons();
+    populatePlayerDropdowns();
     
   });
 })();

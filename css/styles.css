@@ -618,6 +618,7 @@ button:hover {
 
 .casino-container {
     display: flex;
+    justify-content: center;
     scale: 0.7;
     margin: 10px;
     padding: 20px;
@@ -626,4 +627,87 @@ button:hover {
     background-color: var(--secondary-bg-color);
     font-size: 2rem;
     color: var(--primary-color);
+}
+
+#battleContainer {
+    scale: 0.6;
+    display: flex;
+    border: 2px solid var(--primary-color);
+    justify-content: space-between;
+    font-size: 2rem;
+    border-radius: 15px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.battleContainer-players {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.battleContainer-players h2 {
+    font-family: "Pricedown BL", sans-serif;
+    font-size: 3rem;
+}
+.battleContainer-players > button {
+    margin: 35px;
+    padding: 10px;
+    font-size: 1.5rem;
+    animation: glowing 1s infinite alternate;
+}
+
+.battleContainer-players > button:hover {
+    background-color: var(--btn-bg-color-hover);
+    text-shadow: 0 0 4px var(--primary-color);
+}
+
+.battleContainer-players > select {
+    font-size: 1.5rem;
+    border: 2px solid var(--primary-color);
+    background-color: black;
+    color: var(--primary-color);
+    text-align: center;
+    border-radius: 15px;
+}
+
+.battle-player-picture {
+    background-image: url("../img/characters/1.png");
+    background-position: center;
+    background-size: cover;
+    width: 20%;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+    margin: 2%;
+}
+
+.battle-player-picture:nth-child(1) {
+    background-image: url("../img/characters/2.png");
+}
+
+
+#player1Image::before, #player2Image::before {
+    display: block;
+    width: 50%;
+    position: relative;
+    top: -20px; /* Position it above the container */
+    left: 50%;
+    transform: translateX(-50%); /* Center it */
+    background-color: var(--primary-color);
+    color: #000; /* Black text */
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: 2px solid black;
+    box-shadow: 0 0 10px black;
+}
+
+#player1Image::before {
+    content: "DEFENDER";
+}
+#player2Image::before {
+    content: "ATTACKER";
 }

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Drug Cartel - The Game</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/dice.css" />
-    <script src="js/scripts.js" defer></script>
-    <script src="js/casino.js" defer></script>
-  </head>
-  <body>
-    <div class="body-container">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drug Cartel - The Game</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/dice.css" />
+  <script src="js/scripts.js" defer></script>
+  <script src="js/casino.js" defer></script>
+</head>
+
+<body>
+  <div class="body-container">
     <h1 id="game-title">Drug Cartel</h1>
 
     <!-- Start Game Section -->
@@ -29,33 +31,41 @@
       <div class="story">"Rise to Power: The Drug Cartel"
 
         INTRODUCTION - Proposed game rules to follow:
-        
-        In the heart of the urban jungle, in a world defined by crime and power struggles, the infamous drug cartel has always ruled the streets. But now, in the wake of the sudden death of the former cartel leader, the cartel stands at a pivotal crossroads.
-        
-        In his last will and testament, the late leader left a challenging requirement: Only the one who can best navigate the streets, evade the long arm of the law, and reach a million dollars first, will be appointed as the new cartel leader.
-        
-        This is your chance to step into the dangerous world of drug trafficking, corruption, and risky decisions. Earn respect, build your empire, and seize every opportunity as you fight to fulfill the requirements of the will and become the undisputed ruler of the "Drug Cartel."
-        
-        Are you ready to take up the challenge and climb to the top of the hierarchy? Let the game begin, and show the world who is the true ruler of the streets!</p>
+
+        In the heart of the urban jungle, in a world defined by crime and power struggles, the infamous drug cartel has
+        always ruled the streets. But now, in the wake of the sudden death of the former cartel leader, the cartel
+        stands at a pivotal crossroads.
+
+        In his last will and testament, the late leader left a challenging requirement: Only the one who can best
+        navigate the streets, evade the long arm of the law, and reach a million dollars first, will be appointed as the
+        new cartel leader.
+
+        This is your chance to step into the dangerous world of drug trafficking, corruption, and risky decisions. Earn
+        respect, build your empire, and seize every opportunity as you fight to fulfill the requirements of the will and
+        become the undisputed ruler of the "Drug Cartel."
+
+        Are you ready to take up the challenge and climb to the top of the hierarchy? Let the game begin, and show the
+        world who is the true ruler of the streets!</p>
+      </div>
     </div>
-    </div>  
     <main>
       <div id="eventcard"></div>
       <div id="eventcard-popup" class="eventcard-popup">
 
         <div class="eventcard-content">
-            <h2 style="font-family: 'Pricedown BL', monospace; border-bottom: 2px solid var(--primary-color);">Event Card</h2>
-            <div id="event-text-container">
-          <p>This is the description of the event card.</p>
-        </div>
+          <h2 style="font-family: 'Pricedown BL', monospace; border-bottom: 2px solid var(--primary-color);">Event Card
+          </h2>
+          <div id="event-text-container">
+            <p>This is the description of the event card.</p>
+          </div>
         </div>
       </div>
 
       <!-- Main Game Section -->
       <div class="container game-container">
- 
+
         <div id="marketBoard" class="no-select">
-            
+
           <table>
             <thead>
               <tr>
@@ -68,7 +78,7 @@
             </tbody>
           </table>
           <div id="game-interface">
- 
+
 
             <h2 id="playerTurn">Welcome!</h2>
             <h2 id="playerCityDisplay"></h2>
@@ -117,25 +127,21 @@
           </div>
         </div>
       </div>
-      
+
       <div class="leaderboard-container">
-        
-        <div class="leaderboard container">  
+
+        <div class="leaderboard container">
         </div>
-        
-    </div>
-    
+
+      </div>
+
     </main>
-  
+
     <!-- Player Information Section -->
     <div id="player-container">
       <div class="container player-input" style="display: none">
         <div class="player-name-input">
-          <input
-            type="text"
-            class="player-name-field"
-            placeholder="Enter Player Name"
-          />
+          <input type="text" class="player-name-field" placeholder="Enter Player Name" />
         </div>
         <div class="player-name-label" style="display: none">
           <span class="player-name-text"></span>
@@ -143,11 +149,7 @@
       </div>
       <div class="container player-input" style="display: none">
         <div class="player-name-input">
-          <input
-            type="text"
-            class="player-name-field"
-            placeholder="Enter Player Name"
-          />
+          <input type="text" class="player-name-field" placeholder="Enter Player Name" />
         </div>
         <div class="player-name-label" style="display: none">
           <span class="player-name-text"></span>
@@ -155,11 +157,7 @@
       </div>
       <div class="container player-input" style="display: none">
         <div class="player-name-input">
-          <input
-            type="text"
-            class="player-name-field"
-            placeholder="Enter Player Name"
-          />
+          <input type="text" class="player-name-field" placeholder="Enter Player Name" />
         </div>
         <div class="player-name-label" style="display: none">
           <span class="player-name-text"></span>
@@ -167,11 +165,7 @@
       </div>
       <div class="container player-input" style="display: none">
         <div class="player-name-input">
-          <input
-            type="text"
-            class="player-name-field"
-            placeholder="Enter Player Name"
-          />
+          <input type="text" class="player-name-field" placeholder="Enter Player Name" />
         </div>
         <div class="player-name-label" style="display: none">
           <span class="player-name-text"></span>
@@ -179,11 +173,7 @@
       </div>
       <div class="container player-input" style="display: none">
         <div class="player-name-input">
-          <input
-            type="text"
-            class="player-name-field"
-            placeholder="Enter Player Name"
-          />
+          <input type="text" class="player-name-field" placeholder="Enter Player Name" />
         </div>
         <div class="player-name-label" style="display: none">
           <span class="player-name-text"></span>
@@ -191,11 +181,7 @@
       </div>
       <div class="container player-input" style="display: none">
         <div class="player-name-input">
-          <input
-            type="text"
-            class="player-name-field"
-            placeholder="Enter Player Name"
-          />
+          <input type="text" class="player-name-field" placeholder="Enter Player Name" />
         </div>
         <div class="player-name-label" style="display: none">
           <span class="player-name-text"></span>
@@ -203,46 +189,68 @@
       </div>
     </div>
   </div>
-                <!-- Bet container, where you can bet and amount and select either Odd or Even as your predict-->
-                <div class="casino-container">
-                  <div id="betContainer">
-                    <input type="number" id="betAmount" placeholder="Bet Amount" />
-                    <button id="betOdd">Odd</button>
-                    <button id="betEven">Even</button>
-                  </div>
-                  <div id="result"></div> 
-                </div>
-                
-    <div class="debug-container">
-      <h2 class="debug-toggle">Info / Debug - Display(Tryk mig):</h2>
-      <div class="debug-content">
-          <p>Spillet skal gerne vises i min. 1600 x 900 </p>
-        <p>
-          ZOOM IND / UD indtil spil elementerne passer til din skærm - Da den ikke
-          er optimeret endnu(Dette kan via de 3 dotter oppe i højre hjørne af
-          browseren)
-        </p>
-        <p>
-          Husk at indtaste spillernavne, som det første før i slår OG i korrekt
-          rækkefølge - Tryk enter efter hver indtastning
-        </p>
-        <p>
-          Når spillet skal gå igang, så tryk Roll Dice, indtil i er ved den
-          spiller der skal starte(dette kan i slå om)
-        </p>
-        <h3>COMMANDS:</h3>
-        <p>CTRL + (BUY/SELL) : Køber eller sælger 5 stks ad gangen</p>
-        <p>
-          SHIFT + (BUY/SELL) : Tilføjer eller fjerner 1 enhed uden at påvirke
-          spillerens cash
-        </p>
-        <p>
-          Spillernes Cash kan redigeres direkte i disse bokse, indtil der laves en
-          bedre løsning. (Til events)
-        </p>
-        <div class="cash-variables"></div>
-      </div>
+  
+
+
+  <div class="debug-container">
+    <!-- Bet container, where you can bet and amount and select either Odd or Even as your predict-->
+  <div class="casino-container">
+    <div id="betContainer">
+      <input type="number" id="betAmount" placeholder="Bet Amount" />
+      <button id="betOdd">Odd</button>
+      <button id="betEven">Even</button>
     </div>
-  </body>
+    <div id="result"></div>
+  </div>
+  <!-- New Battle Container -->
+<div id="battleContainer">
+  <div class="battle-player-picture" id="player1Image"></div>
+  
+  <div class="battleContainer-players">
+    <h2>Battle Arena</h2>
+    <select id="player1Select">
+      <!-- Options will be populated dynamically -->
+    </select>
+    <h2>VS</h2>
+    <select id="player2Select">
+      <!-- Options will be populated dynamically -->
+    </select>
+
+    <button id="startBattle">Start Battle</button>
+  </div>
+  <div class="battle-player-picture" id="player2Image"></div>
+</div>
+
+  
+    <h2 class="debug-toggle">Info / Debug - Display(Tryk mig):</h2>
+    <div class="debug-content">
+      <p>Spillet skal gerne vises i min. 1600 x 900 </p>
+      <p>
+        ZOOM IND / UD indtil spil elementerne passer til din skærm - Da den ikke
+        er optimeret endnu(Dette kan via de 3 dotter oppe i højre hjørne af
+        browseren)
+      </p>
+      <p>
+        Husk at indtaste spillernavne, som det første før i slår OG i korrekt
+        rækkefølge - Tryk enter efter hver indtastning
+      </p>
+      <p>
+        Når spillet skal gå igang, så tryk Roll Dice, indtil i er ved den
+        spiller der skal starte(dette kan i slå om)
+      </p>
+      <h3>COMMANDS:</h3>
+      <p>CTRL + (BUY/SELL) : Køber eller sælger 5 stks ad gangen</p>
+      <p>
+        SHIFT + (BUY/SELL) : Tilføjer eller fjerner 1 enhed uden at påvirke
+        spillerens cash
+      </p>
+      <p>
+        Spillernes Cash kan redigeres direkte i disse bokse, indtil der laves en
+        bedre løsning. (Til events)
+      </p>
+      <div class="cash-variables"></div>
+    </div>
+  </div>
+</body>
 
 </html>
