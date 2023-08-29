@@ -51,14 +51,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    justify-content: center;
+    gap: 10px;
     max-width: 100%;
     width: 50vw;
-    height: 50vh;
+    height: 75vh;
     font-size: 2rem;
     min-width: 600px;
     border-radius: 15px;
-    margin-top: 50px;
+    margin: auto auto;
 }
 #startContainer:hover {
     box-shadow: 0 0 10px var(--primary-color);
@@ -70,9 +71,9 @@ body {
 }
 
 #startContainer > select {
-    height:60px;
+    height:40px;
     width: 80px;
-    font-size: 3rem;
+    font-size: 2rem;
     border: 2px solid var(--primary-color);
     background-color: black;
     color: var(--primary-color);
@@ -80,14 +81,14 @@ body {
 }
 #startContainer > input {
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
     background-color: black;
     font-weight: bold;
     text-align: center;
 
 }
 #startContainer > button {
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 10px;
     color: var(--primary-color);
     background-color: var(--secondary-bg-color);
@@ -587,17 +588,21 @@ button:hover {
 }
 /* Prepared to implement a story element later */
 .story {
-    display: none;
-    margin-top: 50px;
-    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 1rem;
     background-color: black;
     color: white;
     padding: 20px;
-    border: 2px solid var(--primary-color);
+    border: 5px solid rgba(255, 255, 255, 0.226);
     border-radius: 5px;
-    text-align: center;
+    
 
-
+}
+.story h3 {
+    font-size: 2rem;
+    text-decoration: underline;
 }
 
 .drug-lord-title {
@@ -710,4 +715,13 @@ button:hover {
 }
 #player2Image::before {
     content: "ATTACKER";
+}
+
+.player-gender-select{
+
+    background-color: black;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    margin: 5px;
 }

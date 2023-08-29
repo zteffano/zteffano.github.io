@@ -59,28 +59,28 @@
       "scope": "current"
     },
     {
-      "description": "You find 1 unit of LSD in a public restroom. - Receive 1 unit of Heorin.",
+      "description": "You find 1 unit of Heorin in a public restroom. - Receive 1 unit of Heorin.",
       "type": "drugs",
       "item": "Heorin",
       "amount": 1,
       "scope": "current"
     },
     {
-      "description": "You find 1 unit of LSD in a public restroom. - Receive 1 unit of Hash.",
+      "description": "You find 1 unit of Hash in a public restroom. - Receive 1 unit of Hash.",
       "type": "drugs",
       "item": "Hash",
       "amount": 1,
       "scope": "current"
     },
     {
-      "description": "You find 1 unit of LSD in a public restroom. - Receive 1 unit of Ecstasy.",
+      "description": "You find 1 unit of Ecstasy in a public restroom. - Receive 1 unit of Ecstasy.",
       "type": "drugs",
       "item": "Ecstasy",
       "amount": 1,
       "scope": "current"
     },
     {
-      "description": "You find 4 unit of LSD in a public restroom. - Receive 4 unit of Ecstasy.",
+      "description": "You find 4 unit of Ecstasy in a public restroom. - Receive 4 unit of Ecstasy.",
       "type": "drugs",
       "item": "Ecstasy",
       "amount": 4,
@@ -125,14 +125,14 @@
     "scope": "current"
   },
   {
-    "description": "Oh no! One of your rivals has stolen 2 units of Morphine from your inventory. - You lose 2 units of LSD.",
+    "description": "Oh no! One of your rivals has stolen 2 units of LSD from your inventory. - You lose 2 units of LSD.",
     "type": "drugs",
     "item": "LSD",
     "amount": -2,
     "scope": "current"
   },
   {
-    "description": "Oh no! One of your rivals has stolen 2 units of Morphine from your inventory. - You lose 2 units of Hash.",
+    "description": "Oh no! One of your rivals has stolen 2 units of Hash from your inventory. - You lose 2 units of Hash.",
     "type": "drugs",
     "item": "Hash",
     "amount": -2,
@@ -146,21 +146,21 @@
     "scope": "current"
   },
   {
-    "description": "Oh no! One of your rivals has stolen 3 units of Morphine from your inventory. - You lose 3 units of Ecstasy.",
+    "description": "Oh no! One of your rivals has stolen 3 units of Ecstasy from your inventory. - You lose 3 units of Ecstasy.",
     "type": "drugs",
     "item": "Ecstasy",
     "amount": -3,
     "scope": "current"
   },
   {
-    "description": "Oh no! One of your rivals has stolen 2 units of Morphine from your inventory. - You lose 2 units of LSD.",
+    "description": "Oh no! One of your rivals has stolen 2 units of LSD from your inventory. - You lose 2 units of LSD.",
     "type": "drugs",
     "item": "LSD",
     "amount": -2,
     "scope": "current"
   },
   {
-    "description": "Oh no! One of your rivals has stolen 1 units of Morphine from your inventory. - You lose 1 units of Hash.",
+    "description": "Oh no! One of your rivals has stolen 1 units of Hash from your inventory. - You lose 1 units of Hash.",
     "type": "drugs",
     "item": "Hash",
     "amount": -1,

@@ -17,11 +17,12 @@
 
   class Player {
     static nextId = 1;
-    constructor(name, cash, city = null) {
+    constructor(name, cash, city = null, gender) {
       this.id = Player.nextId++;
       this.name = name;
       this.cash = cash;
       this.city = city;
+      this.gender = gender;
       this.inventory = {}; // Empty object to store drugs and their quantities
     }
     getNetWorth(averagePrices) {
@@ -158,8 +159,8 @@
   const setupEventListeners = () => {
     document.getElementById("startGame").addEventListener("click", function () {
       let numPlayers = document.getElementById("playerSelect").value;
-      let startingCash =
-        parseInt(document.getElementById("startCash").value) || 0;
+      let startingCash = parseInt(document.getElementById("startCash").value) || 0;
+      startingCash = Math.min(Math.max(startingCash, 0), 3000);
       document.querySelectorAll(".player-input").forEach((container, index) => {
         if (index < numPlayers) {
           container.style.display = "block";
@@ -179,6 +180,7 @@
       document.querySelector(".debug-container").style.display = "block";
       document.querySelector("#game-title").style.fontSize = "4em";
     });
+
 
     document.getElementById("roll-button").addEventListener("click", function () {
       if(players.length < 1) {
@@ -214,37 +216,54 @@
     
 
     document.querySelectorAll(".player-name-field").forEach((inputField) => {
-    inputField.addEventListener("keydown", function (event) {
+      inputField.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
-            event.preventDefault();
-            let enteredName = inputField.value;
-            if (!players.some((p) => p.name === enteredName)) {
-                let startingCash =
-                    parseInt(document.getElementById("startCash").value) || 0;
-                players.push(new Player(enteredName, startingCash));
-                let inputContainer = inputField.closest(".player-name-input");
-                let nameLabel = document.createElement("label");
-                let playerPicture = document.createElement("div");
-                let weightLabel = document.createElement("label");
-                playerPicture.classList.add("player-picture");
-                //weightLabel.classList.add("player-weight-label");
-                //nameLabel.textContent = `Name: ${enteredName}`;
-                nameLabel.textContent = `${enteredName}`;
-                nameLabel.classList.add("player-name-label");
-                inputContainer.replaceChild(nameLabel, inputField);
-                inputContainer.appendChild(playerPicture);
-                //inputContainer.appendChild(weightLabel);
-                inputContainer.style.display = "flex";
-                inputContainer.style.justifyContent = "space-around";
-                updatePlayerTurnDisplay();
-                setupPlayerPictures();
-                updateLeaderboard();
-                
-                
-            }
+          event.preventDefault();
+          let enteredName = inputField.value;
+          if (!players.some((p) => p.name === enteredName)) {
+            
+            // Find input and gender select containers
+            let inputContainer = inputField.closest(".player-name-input");
+            let genderSelect = inputContainer.querySelector('.player-gender-select');
+    
+            // Get the gender from the select field
+            let selectedGender = genderSelect.value;
+    
+            // Get the starting cash
+            let startingCash = parseInt(document.getElementById("startCash").value) || 0;
+    
+            // Create the new Player object and add to the players array
+            players.push(new Player(enteredName, startingCash, null, selectedGender));
+    
+            // Hide the gender select field
+            genderSelect.style.display = 'none';
+    
+            // Create new elements and labels
+            let nameLabel = document.createElement("label");
+            let playerPicture = document.createElement("div");
+    
+            // Setup the new elements and labels
+            nameLabel.textContent = `${enteredName}`;
+            nameLabel.classList.add("player-name-label");
+            playerPicture.classList.add("player-picture");
+    
+            // Replace and append elements
+            inputContainer.replaceChild(nameLabel, inputField);
+            inputContainer.appendChild(playerPicture);
+    
+            // Update the layout and content
+            inputContainer.style.display = "flex";
+            inputContainer.style.justifyContent = "space-around";
+    
+            updatePlayerTurnDisplay();
+            setupPlayerPictures();
+            updateLeaderboard();
+          }
         }
+      });
     });
-    });
+    
+    
   };
 
   function setupBuyButtons() {
@@ -424,17 +443,28 @@
   });
   
   function setupPlayerPictures() {
-  const playerPictures = document.querySelectorAll(".player-picture");
-
+    const playerPictures = document.querySelectorAll(".player-picture");
+    const playerGenders = document.querySelectorAll(".player-gender-select"); // Collect the gender selects
+    
     playerPictures.forEach((pictureElement, index) => {
-      console.log("Setting player pictures")
-        // Assign each picture with the corresponding png file. Assuming they are in the root directory.
-        const imgPath = `img/characters/${index + 1}.png`; // it will be 1.png for the first element, 2.png for the second, and so on.
-        pictureElement.style.backgroundImage = `url('${imgPath}')`;
-        pictureElement.style.backgroundSize = 'cover'; // This ensures the image covers the entire div.
+      console.log("Setting player pictures");
+  
+      // Get the selected gender for the current player
+      const selectedGender = playerGenders[index].value;
+  
+      let imgPath;
+      if (selectedGender === "male") {
+        imgPath = `img/characters/${index + 1}.png`;
+      } else if (selectedGender === "female") {
+        imgPath = `img/characters/${index + 1}f.png`;
+      }
+  
+      // Assign each picture with the corresponding png file based on gender.
+      pictureElement.style.backgroundImage = `url('${imgPath}')`;
+      pictureElement.style.backgroundSize = 'cover'; // This ensures the image covers the entire div.
     });
-
   }
+  
 // Utility functions
 function calculateTotalItems(inventory) {
   return Object.values(inventory).reduce((total, quantity) => total + quantity, 0);
@@ -505,7 +535,13 @@ const updateLeaderboard = () => {
     container.appendChild(entry);
     const characterImage = document.createElement('div');
     characterImage.classList.add('player-picture-leaderboard');
+    console.log(player);
+    if (player.gender == "male") {
     characterImage.style.backgroundImage = `url('img/characters/${player.id}.png')`;
+    }
+    else {
+      characterImage.style.backgroundImage = `url('img/characters/${player.id}f.png')`;
+    }
     characterImage.style.backgroundSize = 'cover';
     container.appendChild(characterImage);
     container.appendChild(netWorth);
