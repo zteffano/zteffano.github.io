@@ -54,10 +54,9 @@ body {
     justify-content: center;
     gap: 10px;
     max-width: 100%;
-    width: 50vw;
-    height: 75vh;
+    width: 80vh;
     font-size: 2rem;
-    min-width: 600px;
+    min-width: 800px;
     border-radius: 15px;
     margin: auto auto;
 }
@@ -81,14 +80,14 @@ body {
 }
 #startContainer > input {
     color: white;
-    font-size: 2rem;
+    font-size: 1.8rem;
     background-color: black;
     font-weight: bold;
     text-align: center;
 
 }
 #startContainer > button {
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding: 10px;
     color: var(--primary-color);
     background-color: var(--secondary-bg-color);
@@ -242,10 +241,6 @@ button:hover {
         font-weight: bold;
     }
 
-    .player-inventory {
-        margin-top: 10px;
-        font-size: 0.7rem;
-    }
 
     .buy-btn, .sell-btn {
         margin-right: 3px;
@@ -320,7 +315,7 @@ button:hover {
     
 
     .player-cash-display {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         color: white;
         background-color: rgba(0, 0, 0, 0.7); /* A background to distinguish from the rest */
         padding: 3px 8px;
@@ -335,7 +330,7 @@ button:hover {
         border-top: 1px solid var(--primary-color); /* Separate name and cash from drugs */
         padding-top: 5px; /* Padding for the top */
         margin-top: 5px; /* Margin at the top */
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .buy-btn, .sell-btn {
@@ -590,8 +585,8 @@ button:hover {
 .story {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    font-size: 1rem;
+    margin-top: 50px;
+    font-size: 0.8rem;
     background-color: black;
     color: white;
     padding: 20px;

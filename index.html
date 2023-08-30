@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drug Cartel - The Game</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
     <script src="js/scripts.js" defer></script>
     <style>
         body {
@@ -130,7 +131,7 @@
     <!-- The Modal -->
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <iframe src="newspaper.html" width="100%" height="100%"></iframe>
+            <iframe id="news-iframe" src="newspaper.html" width="100%" height="100%"></iframe>
         </div>
     </div>
     
@@ -138,12 +139,11 @@
         function showNewspaper() {
             var modal = document.getElementById("myModal");
             modal.style.display = "block";
-            setTimeout(function() {
-                modal.style.display = "none";
-                redirectToGame();
-            }, 5000);
+            setTimeout(function() {  
+                document.addEventListener("click", redirectToGame);
+            }, 1000);
+            
         }
-        
         function redirectToGame() {
             window.location.href = "game.html";
         }

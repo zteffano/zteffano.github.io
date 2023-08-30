@@ -11,19 +11,21 @@
     Hash: { min: 125, max: 400 },
     //crack: { min: 100, max: 250 },
   };
+  const cardModifiers = {"Rookie": 0.8, "Dealer": 1, "Pusher": 1.2, "Boss": 1.4, "Kingpin": 1.6, "Drug Lord": 2.5};
 
   var players = []; // global array to store players
   var currentPlayerIndex = 0; // global variable to store the index of the current player
 
   class Player {
     static nextId = 1;
-    constructor(name, cash, city = null, gender) {
+    constructor(name, cash, city = null, gender, title ="Rookie") {
       this.id = Player.nextId++;
       this.name = name;
       this.cash = cash;
       this.bankCash = 0; // new property to store bank cash
       this.city = city;
       this.gender = gender;
+      this.title = "";
       this.inventory = {}; // Empty object to store drugs and their quantities
     }
     getNetWorth(averagePrices) {
@@ -549,21 +551,28 @@ const updateLeaderboard = () => {
     if (player.netWorth > 100000) {
       netWorth.textContent = `★★★★★★ - Drug Lord`;
       netWorth.classList.add('drug-lord-title');
+      player.title = "Drug Lord";
+
     }
     else if (player.netWorth >= 50000) {
       netWorth.textContent = `★★★★★ - Kingpin`;
+      player.title = "Kingpin";
     }
     else if (player.netWorth >= 20000) {
       netWorth.textContent = `★★★★ - Boss`;
+      player.title = "Boss";
     }
     else if (player.netWorth >= 10000) {
       netWorth.textContent = `★★★ - Pusher`;
+      player.title = "Pusher";
     }
     else if (player.netWorth >= 3000) {
       netWorth.textContent = `★★ - Dealer`;
+      player.title = "Dealer";
     }
     else {
       netWorth.textContent = `★ - Rookie`;
+      player.title = "Rookie";
     }
    
     //entry.textContent = `${index + 1}. ${player.name} - $${player.netWorth}`;
@@ -609,6 +618,16 @@ document.getElementById('eventcard').addEventListener('click', function() {
   
   let eventTextElement = document.querySelector("#event-text-container p");
   eventTextElement.innerHTML = '<br>';
+  let currentPlayer = players[currentPlayerIndex];
+  let modifier = cardModifiers[currentPlayer.title];
+  let cardType = eventCard.cardType;
+
+  if (eventCard.type === 'cash' && cardType.toLowerCase() === 'negative') {
+    let amount = eventCard.amount;
+    eventCard.description = eventCard.description.replace(`${amount}`, eventCard.amount*modifier);
+    console.log(eventCard.description)
+  }
+
   
   typeWriter(eventTextElement, eventCard.description);
   
@@ -642,14 +661,12 @@ function handleEventCard(eventCard) {
   for (const player of playersToAffect) {
     switch(eventCard.type) {
       case 'cash':
-        player.cash += eventCard.amount;
+        let modifier = eventCard.amount > 0? 1: cardModifiers[player.title];
+        player.cash += eventCard.amount*modifier;
         break;
       case 'drugs':
         const drugType = eventCard.item;
-        console.log(eventCard);
-        console.log(player);
-        console.log(drugType);
-        console.log(player.inventory);
+
         if (!player.inventory[drugType]) {
           player.inventory[drugType] = 0;
         }

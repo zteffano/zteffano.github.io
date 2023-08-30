@@ -1,0 +1,239 @@
+[
+  {
+    "description": "You find $500 on the street. - Receive $500.",
+    "type": "cash",
+    "amount": 500,
+    "scope": "current"
+  },
+  {
+    "description": "You find $1000 on the street. - Receive $1000.",
+    "type": "cash",
+    "amount": 1000,
+    "scope": "current"
+  },
+  {
+    "description": "You find $1000 on the street. - Receive $1500.",
+    "type": "cash",
+    "amount": 1500,
+    "scope": "current"
+  },
+  {
+    "description": "You find $1000 on the street. - Receive $2000.",
+    "type": "cash",
+    "amount": 2000,
+    "scope": "current"
+  },
+  {
+    "description": "You find 1 unit of Morphine in a public restroom. - Receive 1 unit of Morphine.",
+    "type": "drugs",
+    "item": "Morphine",
+    "amount": 1,
+    "scope": "current"
+  },
+  {
+    "description": "You find 5 unit of Morphine in a public restroom. - Receive 5 unit of Morphine.",
+    "type": "drugs",
+    "item": "Morphine",
+    "amount": 5,
+    "scope": "current"
+  },
+  {
+    "description": "You find 1 unit of Cocaine in a public restroom. - Receive 1 unit of Cocaine.",
+    "type": "drugs",
+    "item": "Cocaine",
+    "amount": 1,
+    "scope": "current"
+  },
+  {
+      "description": "You find 1 unit of LSD in a public restroom. - Receive 1 unit of LSD.",
+      "type": "drugs",
+      "item": "LSD",
+      "amount": 1,
+      "scope": "current"
+    },
+    {
+      "description": "You find 3 unit of LSD in a public restroom. - Receive 3 unit of LSD.",
+      "type": "drugs",
+      "item": "LSD",
+      "amount": 3,
+      "scope": "current"
+    },
+    {
+      "description": "You find 1 unit of Heorin in a public restroom. - Receive 1 unit of Heorin.",
+      "type": "drugs",
+      "item": "Heorin",
+      "amount": 1,
+      "scope": "current"
+    },
+    {
+      "description": "You find 1 unit of Hash in a public restroom. - Receive 1 unit of Hash.",
+      "type": "drugs",
+      "item": "Hash",
+      "amount": 1,
+      "scope": "current"
+    },
+    {
+      "description": "You find 1 unit of Ecstasy in a public restroom. - Receive 1 unit of Ecstasy.",
+      "type": "drugs",
+      "item": "Ecstasy",
+      "amount": 1,
+      "scope": "current"
+    },
+    {
+      "description": "You find 4 unit of Ecstasy in a public restroom. - Receive 4 unit of Ecstasy.",
+      "type": "drugs",
+      "item": "Ecstasy",
+      "amount": 4,
+      "scope": "current"
+    },
+  {
+    "description": "You run into the police who detain you. - Pay a fine of 500$.",
+    "type": "cash",
+    "amount": -500,
+    "scope": "current"
+  },
+  {
+    "description": "You run into the police who detain you. - Pay a fine of -750$.",
+    "type": "cash",
+    "amount": -750,
+    "scope": "current"
+  },
+  {
+    "description": "You run into the police who detain you. - Pay a fine of -1100$.",
+    "type": "cash",
+    "amount": -1100,
+    "scope": "current"
+  },
+  {
+    "description": "You run into the police who detain you. - Pay a fine of -1400$.",
+    "type": "cash",
+    "amount": -1400,
+    "scope": "current"
+  },
+  {
+    "description": "Oh no! One of your rivals has stolen 2 units of Morphine from your inventory. - You lose 2 units of Morphine.",
+    "type": "drugs",
+    "item": "Morphine",
+    "amount": -2,
+    "scope": "current"
+  },
+  {
+    "description": "Oh no! One of your rivals has stolen 2 units of Morphine from your inventory. - You lose 2 units of Ecstasy.",
+    "type": "drugs",
+    "item": "Ecstasy",
+    "amount": -2,
+    "scope": "current"
+  },
+  {
+    "description": "Oh no! One of your rivals has stolen 2 units of LSD from your inventory. - You lose 2 units of LSD.",
+    "type": "drugs",
+    "item": "LSD",
+    "amount": -2,
+    "scope": "current"
+  },
+  {
+    "description": "Oh no! One of your rivals has stolen 2 units of Hash from your inventory. - You lose 2 units of Hash.",
+    "type": "drugs",
+    "item": "Hash",
+    "amount": -2,
+    "scope": "current"
+  },
+  {
+    "description": "Oh no! One of your rivals has stolen 4 units of Morphine from your inventory. - You lose 4 units of Morphine.",
+    "type": "drugs",
+    "item": "Morphine",
+    "amount": -4,
+    "scope": "current"
+  },
+  {
+    "description": "Oh no! One of your rivals has stolen 3 units of Ecstasy from your inventory. - You lose 3 units of Ecstasy.",
+    "type": "drugs",
+    "item": "Ecstasy",
+    "amount": -3,
+    "scope": "current"
+  },
+  {
+    "description": "Oh no! One of your rivals has stolen 2 units of LSD from your inventory. - You lose 2 units of LSD.",
+    "type": "drugs",
+    "item": "LSD",
+    "amount": -2,
+    "scope": "current"
+  },
+  {
+    "description": "Oh no! One of your rivals has stolen 1 units of Hash from your inventory. - You lose 1 units of Hash.",
+    "type": "drugs",
+    "item": "Hash",
+    "amount": -1,
+    "scope": "current"
+  },
+  {
+    "description": "One of your fellow drug dealers needs your assistance to secure their release from jail. - Pay their bail-out $500.",
+    "type": "cash",
+    "amount": -500,
+    "scope": "current"
+  },
+  {
+      "description": "Oh oh!!! The police have caught your hash supplier! Now you're worried about being exposed. - Pay 1000$ to keep him quiet.",
+      "type": "cash",
+      "amount": -1000,
+      "scope": "current"
+    },
+    {
+      "description": "You encounter a junkie who is completely out of it! You rob him and take his money. - You receive nothing; he was completely broke!",
+      "type": "cash",
+      "amount": 0,
+      "scope": "current"
+    },
+    {
+      "description": "You got caught, but you ain't no snitch, Vato! Stay silent! Wait for 1 round and pay a fine of $1100. - Wait for 1 round and pay a fine of $1100.",
+      "type": "cash",
+      "amount": -1100,
+      "scope": "current"
+    },
+    {
+      "description": "One of your fellow drug dealers needs your assistance to secure their release from jail. - Pay their bail-out $500.",
+      "type": "cash",
+      "amount": -500,
+      "scope": "current"
+    },
+    {
+      "description": "You encounter a junkie who is completely out of it! You rob him and take his money. - Receive $400.",
+      "type": "cash",
+      "amount": 400,
+      "scope": "current"
+    },
+    {
+      "description": "Demand is increasing drastically. - Receive $600.",
+      "type": "cash",
+      "amount": 600,
+      "scope": "current"
+    },
+    {
+      "description": "You find 1 unit of hash in a public restroom. - Receive 1 unit of hash.",
+      "type": "drugs",
+      "item": "Hash",
+      "amount": 1,
+      "scope": "current"
+    },
+    {
+      "description": "You find 2 unit of Morphine in a public restroom. - Receive 2 unit of Morphine.",
+      "type": "drugs",
+      "item": "Morphine",
+      "amount": 2,
+      "scope": "current"
+    },
+    {
+        "description": "You find 1 unit of LSD in a public restroom. - Receive 1 unit of LSD.",
+        "type": "drugs",
+        "item": "LSD",
+        "amount": 1,
+        "scope": "current"
+      },
+      {
+        "description": "You find 1 unit of LSD in a public restroom. - Receive 1 unit of LSD.",
+        "type": "drugs",
+        "item": "LSD",
+        "amount": 1,
+        "scope": "current"
+      }
+  ]
