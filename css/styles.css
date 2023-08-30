@@ -309,8 +309,10 @@ button:hover {
     }
 
     .player-name-input {
-     
         margin-bottom: 5px; /* Space after the input field */
+    }
+    .player-name-input input {
+        animation: glowing 0.6s infinite; /* Animation to create the flickering effect */
     }
     
 
@@ -797,3 +799,56 @@ button:hover {
     font-size: 2.5rem;
  
   }
+
+
+
+  #end-game-graph {
+
+ 
+    margin: 0 auto;
+    width:50%;
+    height: 50%;
+
+  }
+#dayDisplay {
+    font-size: 2rem;
+
+    color: var(--primary-color);
+    text-shadow: 0 0 10px black;
+    margin: 10px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+.current-player {
+    transform: scale(1.1);
+  
+    animation: glowing-small 1.5s infinite reverse;
+
+}
+
+@keyframes glowing-small {
+    0% {
+        box-shadow: 0 0 15px #51ff00;
+    }
+    100% {
+        box-shadow: 0 0 15px #51ff00, 0 0 40px var(--primary-color);
+    }
+  }
+
+  .end-game-button {
+    font-size: 1rem;
+    padding: 10px;
+    color: var(--primary-color);
+    background-color: var(--secondary-bg-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 2s, text-shadow 2s;
+    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  

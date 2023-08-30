@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "cardType": "positive",
+      "description": "A huge bust has made Cocaine scarce. Prices are going up!",
+      "type": "drug-prices",
+      "item": "Cocaine",
+      "amount": 0.3,
+      "duration": 3
+    },
+    {
+      "id": 2,
+      "cardType": "negative",
+      "description": "Someone is flooding the market with cheap Heroin. Prices are plummeting!",
+      "type": "drug-prices",
+      "item": "Heroin",
+      "amount": -0.2,
+      "duration": 4
+    },
+    {
+      "id": 3,
+      "cardType": "positive",
+      "description": "Ecstacy has become trendy. Prices are soaring!",
+      "type": "drug-prices",
+      "item": "Ecstacy",
+      "amount": 0.25,
+      "duration": 2
+    },
+    {
+      "id": 4,
+      "cardType": "negative",
+      "description": "Oversupply of Morphine in the market. Prices are dropping!",
+      "type": "drug-prices",
+      "item": "Morphine",
+      "amount": -0.15,
+      "duration": 5
+    },
+    {
+      "id": 5,
+      "cardType": "positive",
+      "description": "A famous musician endorsed LSD. Prices are through the roof!",
+      "type": "drug-prices",
+      "item": "LSD",
+      "amount": 0.4,
+      "duration": 1
+    }
+  ]

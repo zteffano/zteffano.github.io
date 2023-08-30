@@ -1,0 +1,48 @@
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/news-end.css">
+    <title>Newpost York - Game's End</title>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<div class="head">
+    <div class="headerobjectswrapper">
+        <header>Newpost York</header>
+    </div>
+    <div class="subhead">York, MA - Date of Game's End - Special Edition</div>
+</div>
+<div class="content">
+    <div class="collumns">
+        <div class="collumn">
+            <div class="head">
+                <span class="headline hl3">New Leader of New York Drug Cartel Revealed</span>
+                
+                <figure class="figure">
+                    <img class="media" id="winner-pic" src="" alt="" >
+                    
+            
+            </div>
+            <p><span id="winner-name" class="headline hl4"><!-- Insert name here via JS --></span></p>
+            <p>As New York City remains engulfed in the chaos following the death of its former Drug Cartel leader, a new figure has emerged as the successor. Identified as <span id="winner-name2"><!-- Insert name here via JS --></span>, this individual is already instilling fear and displaying an unnerving level of influence and potential.</p>
+
+            <p>Authorities are concerned that this new leader is well-equipped, both in terms of resources and intellect, to carry forward the cartel's activities. Preliminary reports suggest that they have strong international connections, with potential ties to other major criminal organizations worldwide.</p>
+
+            <p>The level of sophistication and the immediate restructuring of the cartel under the new leadership have law enforcement agencies on high alert. "This isn't an amateur. This is someone who understands not just the trade, but the politics and economics that come with it," warned a high-ranking official who requested anonymity.</p>
+
+            <p>Residents of the city are now living under an atmosphere of palpable tension, unsure of how this regime change within the city's underworld will affect their daily lives. Community leaders are urging for immediate action, while the police are left recalibrating their strategy in the wake of this unexpected and unsettling development.</p>
+        </div>
+    </div>
+</div>
+<script>
+    const winnerName = localStorage.getItem('winnerName');
+    const winnerPic = localStorage.getItem('winnerPicture');
+
+    if (winnerName) {
+      document.getElementById("winner-name").textContent = winnerName;
+      document.getElementById("winner-name2").textContent = winnerName;
+      document.getElementById("winner-pic").src = winnerPic;
+    }
+  </script>
+</body>
+</html>
