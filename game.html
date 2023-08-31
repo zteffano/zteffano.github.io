@@ -15,7 +15,54 @@
 
 <body>
   <div class="body-container">
-    <div class="rules">Rules</div>
+    <div class="rules" onclick="toggleRules()">Rules</div>
+    <div id="rules-container" style="display: none; position: absolute; z-index: 999;">
+      <h3>Game Rules</h3>
+      <ul>
+        <h4>Start</h4>
+        <li>1-5 players</li>
+        <li>Each player starts with an amount between $0 og $3000.</li>
+        <li>The game begins from the starting point marked with “S”.</li>
+        <li>Players take turns moving clockwise according to the value of the dice.</li>
+        <li>The starting point also functions as a market during the game.</li>
+        <h4>Market</h4>
+        <li>The market square is indicated by the “drugs icon”, where drugs can be bought and 
+          sold at the price of the corresponding district.
+          </li>
+        <li>Buying and selling prices can be recorded on paper as desired. </li>
+        <li>If the prices are unfavorable, players can choose not to buy or sell.</li>
+        <h4>Event</h4>
+        <li>When landing on an orange circle, the player gets a random event card with different consequences.</li>
+        <li>If an event card results in a negative monetary amount, the player must balance it by selling drugs in the specific district the player is in. </li>
+        <li>If the player does not have available drugs in their inventory, they must take a dayjob until they are out of the negative.</li>
+        <h4>Battle</h4>
+        <li>If a player lands on the same square as another player, a battle is initiated.
+        </li>
+        <li>A random “battle score” is generated for each player, between the defender (the one already on the square) and the attacker. </li>
+        <li>The winner receives 25% of the loser’s money. </li>
+        <li>If multiple players are on the same square, the player moving to the square, chooses whom to battle. </li>
+        <li>It is not possible to start a battle in the 1st round of the game.</li>
+        <li>Buying and selling can proceed as usual after a battle.</li>
+        
+      
+        <h4>Casino</h4>
+        <li>If a player lands on the Casino square, they can choose whether to gamble by betting on odd or even  in the roulette.</li>
+        <li>Win double the amount that is being bet or lose the bet amount of money, based on the outcome. </li>
+        <h4>Dayjob</h4>
+        <li>If a player ends up with a negative monetary amount during the game, they can choose to take a dayjob and earn $200. </li>
+        <li>Opting for a dayjob forfeits the right to trade until it is their turn again. </li>
+        <li>The dayjob function cannot be used when achieving the rank of Kingpin or above.</li>
+        <h4>Bank</h4>
+        <li>The bank can be used to deposit or withdraw money into one’s account. </li>
+        <li>Players can visit the bank when it’s their turn, but no trading can occur if this is chosen.</li>
+        <h4>Winner</h4>
+        <li>The game is won when a player reaches the “Druglord” street rank and maintains the rank for at least 5 rounds.</li>
+        <h4>Street Ranks:</h4>
+        <li>Rookie - Dealer - Pusher - Boss - Kingpin - Drug Lord(100.000$)</li>
+      </ul>
+    </div>
+
+    
     <h1 id="game-title">Drug Cartel</h1>
 
     <!-- Start Game Section -->
@@ -252,9 +299,10 @@
 </div>
 <div class="casino-container">
   <div id="betContainer">
+    <button id="betEven">EVEN</button>
     <input type="number" id="betAmount" placeholder="Bet Amount" />
-    <button id="betOdd">Odd</button>
-    <button id="betEven">Even</button>
+    <button id="betOdd">ODD</button>
+    
   </div>
   <div id="result"></div>
 </div>
@@ -294,7 +342,19 @@
         </div>
     </div>
   </div>
-
+<script>
+      function toggleRules() {
+      var rulesContainer = document.getElementById("rules-container");
+      const rulesButton = document.querySelector(".rules");
+      if (rulesContainer.style.display === "none") {
+        rulesContainer.style.display = "block";
+        rulesButton.classList.add("glowtext");
+      } else {
+        rulesContainer.style.display = "none";
+        rulesButton.classList.remove("glowtext");
+      }
+    }
+</script>
 </body>
 
 </html>

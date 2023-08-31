@@ -635,12 +635,17 @@
 
   document
     .querySelector(".debug-toggle")
-    .addEventListener("click", function () {
+    const debugToggle = document.querySelector(".debug-toggle");
+    
+    debugToggle.addEventListener("dblclick", function () {
       const content = document.querySelector(".debug-content");
       if (content.style.display === "none" || content.style.display === "") {
         content.style.display = "block";
+        debugToggle.style.color = "var(--primary-color)";
+        
       } else {
         content.style.display = "none";
+        debugToggle.style.color = "black";
       }
     });
 
