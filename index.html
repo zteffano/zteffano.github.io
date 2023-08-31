@@ -142,7 +142,10 @@
             <iframe id="news-iframe" src="newspaper.html" width="100%" height="100%"></iframe>
         </div>
     </div>
-    
+    <audio id="background-music" loop>
+        <source src="audio/background_theme.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
     <script>
         function showNewspaper() {
             var modal = document.getElementById("myModal");
@@ -163,6 +166,25 @@
                 modal.style.display = "none";
             }
         }
+        const backgroundMusic = document.getElementById('background-music');
+    let audioStarted = false;
+
+    // Start the background music after a delay (in milliseconds)
+    const startAudioAfterDelay = (delay) => {
+      setTimeout(() => {
+        if (!audioStarted) {
+          audioStarted = true;
+          backgroundMusic.play();
+          console.log("Audio started");
+        }
+      }, delay);
+    };
+
+    // Trigger audio on page load
+
+    window.addEventListener('click', () => {
+      startAudioAfterDelay(2000); // Start immediately
+    });
     </script>
 
     <div class="game-info">Drug Cartel - An Innovation Game Project - IBA 2023 - Music: Do It Now -

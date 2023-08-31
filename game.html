@@ -346,8 +346,15 @@
       <div id="end-game-graph">
         <canvas id="netWorthChart"></canvas>
         </div>
+    
+   
     </div>
-  </div>
+  </div> <!-- End of debug-container -->
+  <audio id="background-music" loop>
+    <source src="audio/background_theme_2.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  
 <script>
       function toggleRules() {
       var rulesContainer = document.getElementById("rules-container");
@@ -360,6 +367,27 @@
         rulesButton.classList.remove("glowtext");
       }
     }
+    const backgroundMusic = document.getElementById('background-music');
+    let audioStarted = false;
+
+    // Start the background music after a delay (in milliseconds)
+    const startAudioAfterDelay = (delay) => {
+      setTimeout(() => {
+        if (!audioStarted) {
+          audioStarted = true;
+          backgroundMusic.play();
+          console.log("Audio started");
+        }
+      }, delay);
+    };
+
+    // Trigger audio on page load
+
+    window.addEventListener('click', () => {
+      startAudioAfterDelay(2000); // Start immediately
+    });
+
+
 </script>
 </body>
 
