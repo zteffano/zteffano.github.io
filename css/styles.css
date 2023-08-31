@@ -5,7 +5,8 @@
     --th-bg-color: rgba(0, 30, 30, 0.7);
     --btn-bg-color: rgba(0, 0, 0,0.5);
     --btn-bg-color-hover: rgba(59, 59, 66, 0.232);
-    --inventory-label: "Weight: 0/100";
+    /*--inventory-label: "Weight: 0/100";*/
+    --inventory-label: "Inventory";
     --leaderboard-label: "Street Rank:";
 }
 /* Fonts */
@@ -387,9 +388,8 @@ button:hover {
         margin-bottom: 10px;
         font-family: 'Pricedown BL', monospace;
         margin-top: 0px;
-        
-        
-       
+        margin-bottom: 3vh;
+  
     }
 
 #game-interface {
@@ -632,7 +632,7 @@ button:hover {
 }
 
 #battleContainer {
-    scale: 0.6;
+    scale: 0.8;
     display: flex;
     border: 2px solid var(--primary-color);
     justify-content: space-between;
@@ -640,6 +640,7 @@ button:hover {
     border-radius: 15px;
     color: var(--primary-color);
     text-align: center;
+   
 }
 
 .battleContainer-players {
@@ -850,5 +851,24 @@ button:hover {
     margin: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+
+  .rules {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    font-family: "PriceDown BL", sans-serif;
+    font-size: 2rem;
+    cursor:pointer;
+  }
+
+  .rules:hover {
+    color: white;
+    text-shadow: 0 0 10px var(--primary-color);
+    user-select: none;
+    
   }
   
