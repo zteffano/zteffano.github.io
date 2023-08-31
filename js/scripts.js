@@ -196,7 +196,7 @@
       const event = getRandomGlobalEventCard();
       if (event) {
         activeEvents.push(event);
-        displayNews(event.description);
+        displayNews("BREAKING NEWS: " + event.description);
       }
     }
     removeCityClasses();
