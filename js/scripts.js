@@ -196,10 +196,7 @@
       const event = getRandomGlobalEventCard();
       if (event) {
         activeEvents.push(event);
-        console.log("Active events:", activeEvents);
         displayNews(event.description);
-        alert(event.description);
-        
       }
     }
     removeCityClasses();
@@ -787,7 +784,7 @@
 
   let eventCards = [];
 
-  fetch("cards/test_cards.json")
+  fetch("cards/eventcards.json")
     .then((response) => response.json())
     .then((data) => {
       eventCards = data;
