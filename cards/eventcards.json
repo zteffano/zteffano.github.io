@@ -1,5 +1,8 @@
 [
  {
+  "description": "Positive event basic kort - kan man ikke køre disse kort til at være aktive endtil BOSS Rank ellers er der mange negative ellers bliver man straffet fra starten??\n\nFx fra#1-12 eller fra #1-18"
+ },
+ {
   "id": 1,
   "cardType": "positive",
   "description": "You find $500 on the street. - Receive $500.",
@@ -34,88 +37,82 @@
  {
   "id": 5,
   "cardType": "positive",
-  "description": "You find 6 units of Morphine in a public restroom. - Receive 6 units of Morphine.",
-  "type": "drugs",
-  "item": "Morphine",
-  "amount": 6,
+  "description": "You find $500 on the street. - Receive $500.",
+  "type": "cash",
+  "amount": 500,
   "scope": "current"
  },
  {
   "id": 6,
   "cardType": "positive",
-  "description": "You find 5 units of Morphine in a public restroom. - Receive 5 units of Morphine.",
-  "type": "drugs",
-  "item": "Morphine",
-  "amount": 5,
+  "description": "You find $1000 on the street. - Receive $1000.",
+  "type": "cash",
+  "amount": 1000,
   "scope": "current"
  },
  {
   "id": 7,
   "cardType": "positive",
-  "description": "You find 1 unit of Cocaine in a public restroom. - Receive 1 unit of Cocaine.",
-  "type": "drugs",
-  "item": "Cocaine",
-  "amount": 1,
+  "description": "You find $1500 on the street. - Receive $1500.",
+  "type": "cash",
+  "amount": 1500,
   "scope": "current"
  },
  {
   "id": 8,
   "cardType": "positive",
-  "description": "You find 2 units of LSD in a public restroom. - Receive 2 units of LSD.",
-  "type": "drugs",
-  "item": "LSD",
-  "amount": 2,
+  "description": "You find $2000 on the street. - Receive $2000.",
+  "type": "cash",
+  "amount": 2000,
   "scope": "current"
  },
  {
   "id": 9,
   "cardType": "positive",
-  "description": "You find 3 units of LSD in a public restroom. - Receive 3 units of LSD.",
-  "type": "drugs",
-  "item": "LSD",
-  "amount": 3,
+  "description": "you encounter a junkie who is completely out of it! You rob him and take his money. \n\n- Receive $600.",
+  "type": "cash",
+  "amount": 600,
   "scope": "current"
  },
  {
   "id": 10,
   "cardType": "positive",
-  "description": "You find 1 unit of Heroin in a public restroom. - Receive 1 unit of Heroin.",
-  "type": "drugs",
-  "item": "Heroin",
-  "amount": 1,
+  "description": "you encounter a junkie who is completely out of it! You rob him and take his money. \n\n- Receive $300.",
+  "type": "cash",
+  "amount": 500,
   "scope": "current"
  },
  {
   "id": 11,
   "cardType": "positive",
-  "description": "You find 1 unit of Hash in a public restroom. - Receive 1 unit of Hash.",
-  "type": "drugs",
-  "item": "Hash",
-  "amount": 1,
+  "description": "you encounter a junkie who is completely out of it! You rob him and take his money. \n\n- Receive $500.",
+  "type": "cash",
+  "amount": 400,
   "scope": "current"
  },
  {
   "id": 12,
   "cardType": "positive",
-  "description": "You find 3 units of Ecstacy in a public restroom. - Receive 3 units of Ecstacy.",
-  "type": "drugs",
-  "item": "Ecstacy",
-  "amount": 3,
+  "description": "You encounter a junkie who is completely out of it! You rob him and take his money. \n\n- You receive nothing; he was completely broke!",
+  "type": "cash",
+  "amount": 0,
   "scope": "current"
  },
  {
+  "description": "Negative basic event kort"
+ },
+ {
   "id": 13,
-  "cardType": "positive",
-  "description": "You find 4 units of Ecstacy in a public restroom. - Receive 4 units of Ecstacy.",
-  "type": "drugs",
-  "item": "Ecstacy",
-  "amount": 4,
+  "cardType": "Negative",
+  "description": "You run into the police who detain you. \n\n- Pay a fine of 500$.",
+  "type": "cash",
+  "amount": -500,
   "scope": "current"
  },
  {
   "id": 14,
   "cardType": "Negative",
-  "description": "You run into the police who detain you. - Pay a fine of 500$.",
+  "description": "You run into the police who detain you. \n\n- Pay a fine of 500$.",
   "type": "cash",
   "amount": -500,
   "scope": "current"
@@ -123,361 +120,268 @@
  {
   "id": 15,
   "cardType": "Negative",
-  "description": "You run into the police who detain you. - Pay a fine of -750$.",
-  "type": "cash",
-  "amount": -750,
-  "scope": "current"
- },
- {
-  "id": 16,
-  "cardType": "Negative",
-  "description": "You run into the police who detain you. - Pay a fine of -1100$.",
-  "type": "cash",
-  "amount": -1100,
-  "scope": "current"
- },
- {
-  "id": 17,
-  "cardType": "Negative",
-  "description": "You run into the police who detain you. - Pay a fine of -1400$.",
-  "type": "cash",
-  "amount": -1400,
-  "scope": "current"
- },
- {
-  "id": 18,
-  "cardType": "Negative",
-  "description": "Oh no! One of your rivals has stolen 2 units of Morphine from your inventory. - You lose 2 units of Morphine.",
-  "type": "drugs",
-  "item": "Morphine",
-  "amount": -2,
-  "scope": "current"
- },
- {
-  "id": 19,
-  "cardType": "Negative",
-  "description": "Oh no! One of your rivals has stolen 2 units of Ecstacy from your inventory. - You lose 2 units of Ecstacy.",
-  "type": "drugs",
-  "item": "Ecstacy",
-  "amount": -2,
-  "scope": "current"
- },
- {
-  "id": 20,
-  "cardType": "Negative",
-  "description": "Oh no! One of your rivals has stolen 2 units of LSD from your inventory. - You lose 2 units of LSD.",
-  "type": "drugs",
-  "item": "LSD",
-  "amount": -2,
-  "scope": "current"
- },
- {
-  "id": 21,
-  "cardType": "Negative",
-  "description": "Oh no! One of your rivals has stolen 2 units of Hash from your inventory. - You lose 2 units of Hash.",
-  "type": "drugs",
-  "item": "Hash",
-  "amount": -2,
-  "scope": "current"
- },
- {
-  "id": 22,
-  "cardType": "Negative",
-  "description": "Oh no! One of your rivals has stolen 4 units of Morphine from your inventory. - You lose 4 units of Morphine.",
-  "type": "drugs",
-  "item": "Morphine",
-  "amount": -4,
-  "scope": "current"
- },
- {
-  "id": 23,
-  "cardType": "Negative",
-  "description": "Oh no! One of your rivals has stolen 3 units of Ecstacy. from your inventory. - You lose 3 units of Ecstacy.",
-  "type": "drugs",
-  "item": "Ecstacy",
-  "amount": -3,
-  "scope": "current"
- },
- {
-  "id": 24,
-  "cardType": "Negative",
-  "description": "Oh no! One of your rivals has stolen 2 units of LSD. from your inventory. - You lose 2 units of LSD.",
-  "type": "drugs",
-  "item": "LSD",
-  "amount": -2,
-  "scope": "current"
- },
- {
-  "id": 25,
-  "cardType": "Negative",
-  "description": "Oh no! One of your rivals has stolen 1 units of Hash from your inventory. - You lose 1 units of Hash.",
-  "type": "drugs",
-  "item": "Hash",
-  "amount": -1,
-  "scope": "current"
- },
- {
-  "id": 26,
-  "cardType": "Negative",
-  "description": "One of your fellow drug dealers needs your assistance to secure their release from jail. - Pay their bail-out $500.",
-  "type": "cash",
-  "amount": -500,
-  "scope": "current"
- },
- {
-  "id": 27,
-  "cardType": "Negative",
-  "description": "Oh oh!!! The police have caught your Hash supplier! Now you're worried about being exposed. - Pay 1000$ to keep him quiet.",
-  "type": "cash",
-  "amount": -1000,
-  "scope": "current"
- },
- {
-  "id": 28,
-  "cardType": "Negative",
-  "description": "You encounter a junkie who is completely out of it! You rob him and take his money. - You receive nothing; he was completely broke!",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 29,
-  "cardType": "Negative",
-  "description": "You got caught, but you ain't no snitch, Vato! Stay silent! Wait for 1 round and pay a fine of $1100. - Wait for 1 round and pay a fine of $1100.",
-  "type": "cash",
-  "amount": -1100,
-  "scope": "current"
- },
- {
-  "id": 30,
-  "cardType": "Negative",
-  "description": "One of your fellow drug dealers needs your assistance to secure their release from jail. - Pay their bail-out $500.",
-  "type": "cash",
-  "amount": -500,
-  "scope": "current"
- },
- {
-  "id": 31,
-  "cardType": "positive",
-  "description": "ou encounter a junkie who is completely out of it! You rob him and take his money. - Receive $400.",
-  "type": "cash",
-  "amount": 400,
-  "scope": "current"
- },
- {
-  "id": 32,
-  "cardType": "positive",
-  "description": "ou encounter a junkie who is completely out of it! You rob him and take his money. - Receive $300.",
-  "type": "cash",
-  "amount": 300,
-  "scope": "current"
- },
- {
-  "id": 33,
-  "cardType": "positive",
-  "description": "ou encounter a junkie who is completely out of it! You rob him and take his money. - Receive $500.",
-  "type": "cash",
-  "amount": 500,
-  "scope": "current"
- },
- {
-  "id": 34,
-  "cardType": "positive",
-  "description": "Demand is increasing drastically. - Receive $600.",
-  "type": "cash",
-  "amount": 600,
-  "scope": "current"
- },
- {
-  "id": 35,
-  "cardType": "positive",
-  "description": "You find 1 unit of Hash in a public restroom. - Receive 1 unit of Hash.",
-  "type": "drugs",
-  "item": "Hash",
-  "amount": 1,
-  "scope": "current"
- },
- {
-  "id": 36,
-  "cardType": "positive",
-  "description": "ou find 2 units of Morphine in a public restroom. - Receive 2 units of Morphine.",
-  "type": "drugs",
-  "item": "Morphine",
-  "amount": 2,
-  "scope": "current"
- },
- {
-  "id": 37,
-  "cardType": "positive",
-  "description": "You find 1 unit of LSD in a public restroom. - Receive 1 unit of LSD.",
-  "type": "drugs",
-  "item": "LSD",
-  "amount": 1,
-  "scope": "current"
- },
- {
-  "id": 38,
-  "cardType": "positive",
-  "description": "Your supplier is clumsy and forgets to receive payment for your purchase. - Receive 1 unit of Cocaine.",
-  "type": "drugs",
-  "item": "Cocaine",
-  "amount": 1,
-  "scope": "current"
- },
- {
-  "id": 39,
-  "cardType": "positive",
-  "description": "Your supplier is clumsy and forgets to receive payment for your purchase. - Receive 1 unit of Heroin.",
-  "type": "drugs",
-  "item": "Heroin",
-  "amount": 1,
-  "scope": "current"
- },
- {
-  "id": 40,
-  "cardType": "positive",
-  "description": "Your supplier is clumsy and forgets to receive payment for your purchase. - Receive 2 units of LSD.",
-  "type": "drugs",
-  "item": "LSD",
-  "amount": 2,
-  "scope": "current"
- },
- {
-  "id": 41,
-  "cardType": "positive",
-  "description": "Your supplier is clumsy and forgets to receive payment for your purchase. - Receive 7 unit of Morphine.",
-  "type": "drugs",
-  "item": "Morphine",
-  "amount": 7,
-  "scope": "current"
- },
- {
-  "id": 42,
-  "cardType": "Negative",
-  "description": "Your supplier reminds you that you still need to settle the payment for the last delivery. - Pay the $800 you owe.",
+  "description": "You run into the police who detain you. \n\n- Pay a fine of 800$.",
   "type": "cash",
   "amount": -800,
   "scope": "current"
  },
  {
-  "id": 43,
+  "id": 16,
   "cardType": "Negative",
-  "description": "Your supplier reminds you that you still need to settle the payment for the last delivery. - Pay the $500 you owe.",
+  "description": "You run into the police who detain you. \n\n- Pay a fine of 800$.",
+  "type": "cash",
+  "amount": -800,
+  "scope": "current"
+ },
+ {
+  "id": 17,
+  "cardType": "Negative",
+  "description": "One of your fellow drug dealers needs your assistance to secure their release from jail. \n\n- Pay their bail-out $500.",
   "type": "cash",
   "amount": -500,
   "scope": "current"
  },
  {
-  "id": 44,
+  "id": 18,
   "cardType": "Negative",
-  "description": "Your supplier reminds you that you still need to settle the payment for the last delivery. - Pay the $1000 you owe.",
+  "description": "Oh no!!! The police have caught your supplier! Now you're worried about being exposed. \n\n- Pay $700 to keep him quiet.",
   "type": "cash",
-  "amount": -1000,
+  "amount": -700,
+  "scope": "current"
+ },
+ {
+  "description": "Spiller events"
+ },
+ {
+  "id": 19,
+  "cardType": "positive",
+  "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either Odd or Even. \n\n- Choose one and bet any amount you like.",
+  "type": "cash",
+  "amount": 0,
+  "scope": "current"
+ },
+ {
+  "id": 20,
+  "cardType": "positive",
+  "description": "You're furious and feel like smashing one of your rivals!\n\n- Choose a rival, move to their piece, and Fight!!!\"",
+  "type": "cash",
+  "amount": 0,
+  "scope": "current"
+ },
+ {
+  "id": 21,
+  "cardType": "positive",
+  "description": "A Cunning Scheme to climb the hierarchy! You've received information about your rivals and set them against each other in a street brawl!\n\n- Choose two of your rivals to face off against each other in a street fight!",
+  "type": "cash",
+  "amount": 0,
+  "scope": "current"
+ },
+ {
+  "id": 22,
+  "cardType": "positive",
+  "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either Odd or Even. \n\n- Choose one and bet any amount you like.",
+  "type": "cash",
+  "amount": 0,
+  "scope": "current"
+ },
+ {
+  "id": 23,
+  "cardType": "positive",
+  "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either Odd or Even. \n\n- Choose one and bet any amount you like.",
+  "type": "cash",
+  "amount": 0,
+  "scope": "current"
+ },
+ {
+  "id": 24,
+  "cardType": "positive",
+  "description": "You're furious and feel like smashing one of your rivals!\n\n- Choose a rival, move to their piece, and Fight!!!\"",
+  "type": "cash",
+  "amount": 0,
+  "scope": "current"
+ },
+ {
+  "id": 25,
+  "cardType": "positive",
+  "description": "A Cunning Scheme to climb the hierarchy! You've received information about your rivals and set them against each other in a street brawl!\n\n- Choose two of your rivals to face off against each other in a street fight!",
+  "type": "cash",
+  "amount": 0,
+  "scope": "current"
+ },
+ {
+  "id": 26,
+  "cardType": "positive",
+  "description": "FUCK!!! Your supplier got caught... - Sell out of the drug you have the least units of!",
+  "type": "cash",
+  "amount": 0,
+  "scope": "current"
+ },
+ {
+  "id": 27,
+  "cardType": "positive",
+  "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either Odd or Even. \n\n- Choose one and bet any amount you like.",
+  "type": "cash",
+  "amount": 0,
+  "scope": "current"
+ },
+ {
+  "id": 28,
+  "cardType": "positive",
+  "description": "A Cunning Scheme to climb the hierarchy! You've received information about your rivals and set them against each other in a street brawl!\n\n- Choose two of your rivals to face off against each other in a street fight!",
+  "type": "cash",
+  "amount": 0,
+  "scope": "current"
+ },
+ {
+  "description": "random-loss"
+ },
+ {
+  "id": 29,
+  "cardType": "positive",
+  "description": "You got caught, one of your rival has rat you out to the police. \n\n- Your stash of drugs takes a hit.",
+  "type": "random-loss",
+  "scope": "current"
+ },
+ {
+  "id": 30,
+  "cardType": "positive",
+  "description": "You've been busted!! one of your rivals has snitched to the police.\n\n- You suffer a loss in your drug inventory.",
+  "type": "random-loss",
+  "scope": "current"
+ },
+ {
+  "id": 31,
+  "cardType": "positive",
+  "description": "You got caught, one of your rival has rat you out to the police. \n\n- A portion of your drugs is gone.",
+  "type": "random-loss",
+  "scope": "current"
+ },
+ {
+  "description": "police-raid"
+ },
+ {
+  "id": 32,
+  "cardType": "negative",
+  "description": "Police Trouble Ahead! Law enforcement is on to you due to suspicious activities.\n\n- Pay a $1000 bribe to evade consequences.\n\nIf you're unable to afford the bribe The police will take half of your units.",
+  "type": "police-raid",
+  "amount": 1000,
+  "scope": "current"
+ },
+ {
+  "id": 33,
+  "cardType": "negative",
+  "description": "Police Investigation Alert! The authorities have their eyes on you, suspecting illegal activities!\n\nPay $1000 bribe to evade consequences.\n\nIf you can't afford the bribe the police will confiscate 50% of your units.",
+  "type": "police-raid",
+  "amount": 1000,
+  "scope": "current"
+ },
+ {
+  "id": 34,
+  "cardType": "negative",
+  "description": "You find yourself in a sticky situation as the police close in. You have a choice!\n\n- Pay a bribe of $1000 to avoid any consequences.\n\nIf you can't afford the bribe the police will confiscate half of your drugs.",
+  "type": "police-raid",
+  "amount": 1000,
+  "scope": "current"
+ },
+ {
+  "id": 35,
+  "cardType": "negative",
+  "description": "Secret intelligence triggers a Police Raid! You're presented with the option to grease the palms of the police.\n\n- Offer a payoff of $1000!\n\nFailure to pay will lead the police to take 50% of your units.",
+  "type": "police-raid",
+  "amount": 1000,
+  "scope": "current"
+ },
+ {
+  "id": 36,
+  "cardType": "negative",
+  "description": "Police have caught wind of your activities and are closing in.\n\n- Pay a hush money $1000 to avoid problems.\n\nIf you can't afford the fine, the police will confiscate half of your drugs.",
+  "type": "police-raid",
+  "amount": 1000,
+  "scope": "current"
+ },
+ {
+  "id": 37,
+  "cardType": "negative",
+  "description": "Confidential intelligence triggers a Police Raid! You have a chance to bribe the authorities.\n\n- Settle for a bribe of $1000!\n\nIf your funds fall short, the police will seize 50% of your stash.",
+  "type": "police-raid",
+  "amount": 1000,
+  "scope": "current"
+ },
+ {
+  "id": 38,
+  "cardType": "negative",
+  "description": "Secret information leads to a Police Raid! You now have the opportunity to bribe the police.\n\n- Pay hush money of $1000!\n\nIf you don't have enough funds available, the police will confiscate half of your drugs.",
+  "type": "police-raid",
+  "amount": 1000,
+  "scope": "current"
+ },
+ {
+  "description": "random-loss"
+ },
+ {
+  "id": 39,
+  "cardType": "positive",
+  "description": "There's action in the neighborhood, so you decide to take a control round as there are many people around. On your way back home, you realize that you're missing a lot of your drugs! There has been a pickpocket at play!\n\n- You've lost some of your drugs!",
+  "type": "random-loss",
+  "scope": "current"
+ },
+ {
+  "id": 40,
+  "cardType": "positive",
+  "description": "When you land on the sofa after a long day, you can feel that your pockets aren't as full as when you left... Damn!\n\n- You've lost some of your drugs!",
+  "type": "random-loss",
+  "scope": "current"
+ },
+ {
+  "id": 41,
+  "cardType": "positive",
+  "description": "You're at a big event at an underground nightclub, and there's a high demand. Fortunately, you have an extra stash in your jacket... but you can't find it. It's been swiped!!!\n\n- You're left with fewer drugs.",
+  "type": "random-loss",
+  "scope": "current"
+ },
+ {
+  "id": 42,
+  "cardType": "positive",
+  "description": "You celebrate a successful week with your dealers at a bar, but a group of troublemakers arrives, and you're too drunk to defend yourself. \n\n- They beat you up and steal some of your drugs.",
+  "type": "random-loss",
+  "scope": "current"
+ },
+ {
+  "id": 43,
+  "cardType": "positive",
+  "description": "You decide to throw a lavish party to celebrate a successful week. While the party is in full swing, uninvited guests crash the party, causing a brawl. \n\n- You're too intoxicated to intervene, and during the chaos, they manage to steal some of your drugs.",
+  "type": "random-loss",
+  "scope": "current"
+ },
+ {
+  "id": 44,
+  "cardType": "positive",
+  "description": "You receive a mysterious tip about a secret drug stash hidden in an abandoned warehouse. Excited, you head there, but as you start searching, you trigger an alarm, and the police arrive!\n\n- You have to flee, leaving some of your drugs behind, or risk getting caught.",
+  "type": "random-loss",
   "scope": "current"
  },
  {
   "id": 45,
-  "cardType": "Negative",
-  "description": "Your supplier reminds you that you still need to settle the payment for the last delivery. - Pay the $350 you owe.",
-  "type": "cash",
-  "amount": -350,
+  "cardType": "positive",
+  "description": "While making a deal with a new contact, you become suspicious of their intentions. They offer you a drink, and you start feeling dizzy. You realize you've been drugged!\n\n- You black out and wake up later, finding that some of your drugs and money are missing.",
+  "type": "random-loss",
   "scope": "current"
  },
  {
   "id": 46,
   "cardType": "positive",
-  "description": "You've found $1000! YES! But you owe a friend $800. - Receive $200",
-  "type": "cash",
-  "amount": 200,
+  "description": "You receive an urgent call from a fellow dealer who needs your help with a deal gone wrong. You rush to the location, only to find a tense standoff with rival dealers. Negotiations break down, and a fight ensues.\n\n- Amid the chaos, some of your drugs are accidentally destroyed, and you barely manage to escape with your life.",
+  "type": "random-loss",
   "scope": "current"
  },
  {
   "id": 47,
   "cardType": "positive",
-  "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either black or red. - Choose a color (black or red) and bet any amount you like.",
-  "type": "cash",
-  "amount": 0,
+  "description": "You see a shady type walking by, later you suddenly realise something is missing from your inventory.\n\n- Your drug cache is reduced.",
+  "type": "random-loss",
   "scope": "current"
  },
  {
-  "id": 48,
-  "cardType": "positive",
-  "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either black or red. - Choose a color (black or red) and bet any amount you like.",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 49,
-  "cardType": "positive",
-  "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either black or red. - Choose a color (black or red) and bet any amount you like.",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 50,
-  "cardType": "Negative",
-  "description": "You run into the police who detain you. -Wait 1 round",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 51,
-  "cardType": "positive",
-  "description": "You're furious and feel like smashing one of your rivals! Choose a rival, move to their piece, and Fight!!!\"",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 52,
-  "cardType": "positive",
-  "description": "You're furious and feel like smashing one of your rivals! Choose a rival, move to their piece, and Fight!!!\"",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 53,
-  "cardType": "positive",
-  "description": "You're furious and feel like smashing one of your rivals! Choose a rival, move to their piece, and Fight!!!\"",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 54,
-  "cardType": "positive",
-  "description": "You encounter the police, but you manage to avoid them and continue freely. - Proceed without consequences.",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 55,
-  "cardType": "positive",
-  "description": "You encounter the police, but you manage to avoid them and continue freely. - Proceed without consequences.",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 56,
-  "cardType": "positive",
-  "description": "A Cunning Scheme to climb the hierarchy! You've received information about your rivals and set them against each other in a street brawl! - Choose two of your rivals to face off against each other in a street fight!",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 57,
-  "cardType": "positive",
-  "description": "You've found $1000! YES! But you owe a friend $800. - Receive $200",
-  "type": "cash",
-  "amount": 200,
-  "scope": "current"
+  "description": "Slut"
  }
-
 ]

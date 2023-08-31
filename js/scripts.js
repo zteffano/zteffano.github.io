@@ -3,6 +3,16 @@
   let winner;
   // Active events
   let activeEvents = [];
+  let globalEventList = [];
+
+  fetch("cards/active_events.json")
+    .then((response) => response.json())
+    .then((data) => {
+      globalEventList = data;
+      console.log("Loaded active events:", globalEventList);
+    })
+    .catch((error) => console.error(error));
+
   const cities = ["East Harlem", "Brooklyn", "Manhattan", "Queens"];
   //const drugsList = ["cocaine", "heroin", "ecstacy", "LSD", "hash","morphine"];
   const drugsList = ["Morphine", "Ecstacy", "LSD", "Hash", "Cocaine", "Heroin"];
@@ -180,6 +190,18 @@
       });
     }
     console.log("Current Day: ", currentDay);
+    document.getElementById('news').textContent = "";
+    // Random chance to trigger a global event
+    if (Math.random() < 0.2 && activeEvents.length < 2) {
+      const event = getRandomGlobalEventCard();
+      if (event) {
+        activeEvents.push(event);
+        console.log("Active events:", activeEvents);
+        displayNews(event.description);
+        alert(event.description);
+        
+      }
+    }
     removeCityClasses();
     updateLeaderboard();
     populatePlayerDropdowns();
@@ -968,6 +990,11 @@
     return eventCards[randomIndex];
   }
 
+  function getRandomGlobalEventCard() {
+    const randomIndex = Math.floor(Math.random() * globalEventList.length);
+    return globalEventList[randomIndex];
+  }
+
   // Function to run mini casino game
   function runGame(chosenOption) {
     const betAmount = parseInt(document.getElementById("betAmount").value);
@@ -1194,10 +1221,34 @@
     netWorthChart = new Chart(ctx, config);
   }
 
+  /* news ticker */
+  function displayNews(headline) {
+    console.log("displayNews", headline);
+    let index = 0; // Move the 'index' variable inside the 'displayNews' function
+    let newsElement = document.getElementById('news');
+    newsElement.textContent = ''; // Clear previous content
+  
+    function displayCharacter() {
+      if (index < headline.length) {
+        newsElement.textContent += headline[index];
+        index++;
+      } else {
+        clearInterval(intervalId);
+      }
+    }
+  
+    const intervalId = setInterval(displayCharacter, 50); // 100 milliseconds per character
+  }
+  // Example usage:
+ 
+
+
+
   // Initialization code
   document.addEventListener("DOMContentLoaded", function () {
     generateTableHeaders();
     generateTable();
+    //displayNews("Welcome to Drug Cartel - The Game!");
     //updatePrices();
     setupEventListeners();
     setupBuyButtons();

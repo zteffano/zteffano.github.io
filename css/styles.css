@@ -956,3 +956,18 @@ button:hover {
    scale: 1.3;
     animation: glowtext 2s infinite;
   }
+
+.news-container {
+    display: inline-flex;
+    background-color: var(--secondary-bg-color);
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.842);
+    color: var(--primary-color);
+}
+
+.news {
+    font-size: 20px;
+   
+}
+
+
+
