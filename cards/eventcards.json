@@ -1,8 +1,5 @@
 [
  {
-  "description": "Positive event basic kort - kan man ikke køre disse kort til at være aktive endtil BOSS Rank ellers er der mange negative ellers bliver man straffet fra starten??\n\nFx fra#1-12 eller fra #1-18"
- },
- {
   "id": 1,
   "cardType": "positive",
   "description": "You find $500 on the street. - Receive $500.",
@@ -99,9 +96,6 @@
   "scope": "current"
  },
  {
-  "description": "Negative basic event kort"
- },
- {
   "id": 13,
   "cardType": "Negative",
   "description": "You run into the police who detain you. \n\n- Pay a fine of 500$.",
@@ -149,9 +143,7 @@
   "amount": -700,
   "scope": "current"
  },
- {
-  "description": "Spiller events"
- },
+
  {
   "id": 19,
   "cardType": "positive",
@@ -232,9 +224,7 @@
   "amount": 0,
   "scope": "current"
  },
- {
-  "description": "random-loss"
- },
+
  {
   "id": 29,
   "cardType": "positive",
@@ -315,9 +305,7 @@
   "amount": 1000,
   "scope": "current"
  },
- {
-  "description": "random-loss"
- },
+
  {
   "id": 39,
   "cardType": "positive",
@@ -380,8 +368,5 @@
   "description": "You see a shady type walking by, later you suddenly realise something is missing from your inventory.\n\n- Your drug cache is reduced.",
   "type": "random-loss",
   "scope": "current"
- },
- {
-  "description": "Slut"
  }
 ]

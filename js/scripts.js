@@ -584,7 +584,7 @@
       if (playerCashDisplay) {
         playerCashDisplay.textContent = `$${currentPlayer.cash}`; // Using currentPlayer.cash
       } else {
-        console.error("Could not find player cash display element");
+        //console.error("Could not find player cash display element");
       }
 
       // Update player bank cash display
@@ -594,7 +594,7 @@
       if (playerBankDisplay) {
         playerBankDisplay.textContent = `Bank: $${currentPlayer.bankCash}`; // Using currentPlayer.bankCash
       } else {
-        console.error("Could not find player bank display element");
+        //console.error("Could not find player bank display element");
       }
     });
   }
