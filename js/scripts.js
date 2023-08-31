@@ -1188,24 +1188,71 @@
     };
 
     const config = {
-      type: "line",
+      type: 'line',
       data: data,
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+            labels: {
+              usePointStyle: true,
+            },
+          },
+          tooltip: {
+            mode: 'index',
+            intersect: false,
+          },
+        },
         scales: {
           x: {
             title: {
               display: true,
-              text: "Days",
+              text: 'Days',
+              font: {
+                size: 14,
+                weight: 'bold'
+              },
+              color: '#333',
             },
+            grid: {
+              display: true,
+              drawBorder: true,
+              drawOnChartArea: true,
+              drawTicks: true,
+              borderColor: 'rgba(0, 0, 0, 0.1)',
+              color: 'rgba(0, 0, 0, 0.05)',
+              tickBorderDash: [5, 5],
+            }
           },
           y: {
             title: {
               display: true,
-              text: "Networth",
+              text: 'Networth',
+              font: {
+                size: 14,
+                weight: 'bold'
+              },
+              color: '#333',
             },
-          },
+            grid: {
+              display: true,
+              drawBorder: true,
+              drawOnChartArea: true,
+              drawTicks: true,
+              borderColor: 'rgba(0, 0, 0, 0.1)',
+              color: 'rgba(0, 0, 0, 0.05)',
+              tickBorderDash: [5, 5],
+            }
+          }
         },
-      },
+        interaction: {
+          intersect: false,
+          mode: 'nearest'
+        }
+      }
     };
 
     const ctx = document.getElementById("netWorthChart").getContext("2d");

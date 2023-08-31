@@ -69,14 +69,15 @@
 
 .winner-pic {
     background-image: url('img/characters/group.png');
-    width: 30%;
+    width: 50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border: 5px solid #F29F05;
-    margin: 0 auto;
+    margin: 7% auto;
+    animation: glowing 2000ms infinite;
  
 }
 .winner-name, .winner-title{
@@ -157,25 +158,60 @@ function generateNetWorthLineChartX(players) {
   };
 
   const config = {
-    type: 'line',
-    data: data,
-    options: {
-      scales: {
-        x: {
-          title: {
-            display: true,
-            text: 'Days'
-          }
+  type: 'line',
+  data: data,
+  options: {
+    plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 25,
+                    }
+                }
+            }
         },
-        y: {
-          title: {
-            display: true,
-            text: 'Networth'
-          }
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Days'
+        },
+        grid: {
+          display: true, // this will display the grid
+          drawBorder: true,
+          drawOnChartArea: true,
+          drawTicks: true,
+          color: 'rgba(255, 255, 255, 0.2)'
+          
+        },
+        ticks: {
+          color: '#F29F05',
+          
+        }
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Networth',
+          
+
+        },
+        grid: {
+          display: true, // this will display the grid
+          drawBorder: true,
+          drawOnChartArea: true,
+          drawTicks: true,
+          color: 'rgba(255, 255, 255, 0.2)'
+        },
+        ticks: {
+          color: '#F29F05',
+          
         }
       }
     }
-  };
+  }
+};
 
   const ctx = document.getElementById('netWorthChart_end').getContext('2d');
   
@@ -187,7 +223,23 @@ function generateNetWorthLineChartX(players) {
   netWorthChart = new Chart(ctx, config);
 }
 function someColorFunction(player) {
-  return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+  const brightnessThreshold = 128; // Colors with a brightness below this threshold will be considered "dark"
+  let color = null;
+  do {
+    color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+  } while (getBrightness(color) < brightnessThreshold);
+  return color;
+}
+
+function getBrightness(color) {
+  // Convert color to RGB values
+  const hex = color.replace('#', '');
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+
+  // Calculate brightness using the formula for relative luminance
+  return (0.2126 * r) + (0.7152 * g) + (0.0722 * b);
 }
 
     </script>

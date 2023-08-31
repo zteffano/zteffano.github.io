@@ -816,8 +816,9 @@ button:hover {
 
  
     margin: 0 auto;
-    width:50%;
-    height: 50%;
+    width:40%;
+    height: 40%;
+
 
   }
 #dayDisplay {
@@ -960,7 +961,7 @@ button:hover {
 .news-container {
     display: inline-flex;
     background-color: var(--secondary-bg-color);
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.842);
+    text-shadow: 0 0 15px black;
     color: var(--primary-color);
 }
 

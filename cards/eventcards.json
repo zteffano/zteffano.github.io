@@ -1,372 +1,371 @@
 [
- {
-  "id": 1,
-  "cardType": "positive",
-  "description": "You find $500 on the street. - Receive $500.",
-  "type": "cash",
-  "amount": 500,
-  "scope": "current"
- },
- {
-  "id": 2,
-  "cardType": "positive",
-  "description": "You find $1000 on the street. - Receive $1000.",
-  "type": "cash",
-  "amount": 1000,
-  "scope": "current"
- },
- {
-  "id": 3,
-  "cardType": "positive",
-  "description": "You find $1500 on the street. - Receive $1500.",
-  "type": "cash",
-  "amount": 1500,
-  "scope": "current"
- },
- {
-  "id": 4,
-  "cardType": "positive",
-  "description": "You find $2000 on the street. - Receive $2000.",
-  "type": "cash",
-  "amount": 2000,
-  "scope": "current"
- },
- {
-  "id": 5,
-  "cardType": "positive",
-  "description": "You find $500 on the street. - Receive $500.",
-  "type": "cash",
-  "amount": 500,
-  "scope": "current"
- },
- {
-  "id": 6,
-  "cardType": "positive",
-  "description": "You find $1000 on the street. - Receive $1000.",
-  "type": "cash",
-  "amount": 1000,
-  "scope": "current"
- },
- {
-  "id": 7,
-  "cardType": "positive",
-  "description": "You find $1500 on the street. - Receive $1500.",
-  "type": "cash",
-  "amount": 1500,
-  "scope": "current"
- },
- {
-  "id": 8,
-  "cardType": "positive",
-  "description": "You find $2000 on the street. - Receive $2000.",
-  "type": "cash",
-  "amount": 2000,
-  "scope": "current"
- },
- {
-  "id": 9,
-  "cardType": "positive",
-  "description": "you encounter a junkie who is completely out of it! You rob him and take his money. \n\n- Receive $600.",
-  "type": "cash",
-  "amount": 600,
-  "scope": "current"
- },
- {
-  "id": 10,
-  "cardType": "positive",
-  "description": "you encounter a junkie who is completely out of it! You rob him and take his money. \n\n- Receive $300.",
-  "type": "cash",
-  "amount": 500,
-  "scope": "current"
- },
- {
-  "id": 11,
-  "cardType": "positive",
-  "description": "you encounter a junkie who is completely out of it! You rob him and take his money. \n\n- Receive $500.",
-  "type": "cash",
-  "amount": 400,
-  "scope": "current"
- },
- {
-  "id": 12,
-  "cardType": "positive",
-  "description": "You encounter a junkie who is completely out of it! You rob him and take his money. \n\n- You receive nothing; he was completely broke!",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 13,
-  "cardType": "Negative",
-  "description": "You run into the police who detain you. \n\n- Pay a fine of 500$.",
-  "type": "cash",
-  "amount": -500,
-  "scope": "current"
- },
- {
-  "id": 14,
-  "cardType": "Negative",
-  "description": "You run into the police who detain you. \n\n- Pay a fine of 500$.",
-  "type": "cash",
-  "amount": -500,
-  "scope": "current"
- },
- {
-  "id": 15,
-  "cardType": "Negative",
-  "description": "You run into the police who detain you. \n\n- Pay a fine of 800$.",
-  "type": "cash",
-  "amount": -800,
-  "scope": "current"
- },
- {
-  "id": 16,
-  "cardType": "Negative",
-  "description": "You run into the police who detain you. \n\n- Pay a fine of 800$.",
-  "type": "cash",
-  "amount": -800,
-  "scope": "current"
- },
- {
-  "id": 17,
-  "cardType": "Negative",
-  "description": "One of your fellow drug dealers needs your assistance to secure their release from jail. \n\n- Pay their bail-out $500.",
-  "type": "cash",
-  "amount": -500,
-  "scope": "current"
- },
- {
-  "id": 18,
-  "cardType": "Negative",
-  "description": "Oh no!!! The police have caught your supplier! Now you're worried about being exposed. \n\n- Pay $700 to keep him quiet.",
-  "type": "cash",
-  "amount": -700,
-  "scope": "current"
- },
-
- {
-  "id": 19,
-  "cardType": "positive",
-  "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either Odd or Even. \n\n- Choose one and bet any amount you like.",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 20,
-  "cardType": "positive",
-  "description": "You're furious and feel like smashing one of your rivals!\n\n- Choose a rival, move to their piece, and Fight!!!\"",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 21,
-  "cardType": "positive",
-  "description": "A Cunning Scheme to climb the hierarchy! You've received information about your rivals and set them against each other in a street brawl!\n\n- Choose two of your rivals to face off against each other in a street fight!",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 22,
-  "cardType": "positive",
-  "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either Odd or Even. \n\n- Choose one and bet any amount you like.",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 23,
-  "cardType": "positive",
-  "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either Odd or Even. \n\n- Choose one and bet any amount you like.",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 24,
-  "cardType": "positive",
-  "description": "You're furious and feel like smashing one of your rivals!\n\n- Choose a rival, move to their piece, and Fight!!!\"",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 25,
-  "cardType": "positive",
-  "description": "A Cunning Scheme to climb the hierarchy! You've received information about your rivals and set them against each other in a street brawl!\n\n- Choose two of your rivals to face off against each other in a street fight!",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 26,
-  "cardType": "positive",
-  "description": "FUCK!!! Your supplier got caught... - Sell out of the drug you have the least units of!",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 27,
-  "cardType": "positive",
-  "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either Odd or Even. \n\n- Choose one and bet any amount you like.",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
- {
-  "id": 28,
-  "cardType": "positive",
-  "description": "A Cunning Scheme to climb the hierarchy! You've received information about your rivals and set them against each other in a street brawl!\n\n- Choose two of your rivals to face off against each other in a street fight!",
-  "type": "cash",
-  "amount": 0,
-  "scope": "current"
- },
-
- {
-  "id": 29,
-  "cardType": "positive",
-  "description": "You got caught, one of your rival has rat you out to the police. \n\n- Your stash of drugs takes a hit.",
-  "type": "random-loss",
-  "scope": "current"
- },
- {
-  "id": 30,
-  "cardType": "positive",
-  "description": "You've been busted!! one of your rivals has snitched to the police.\n\n- You suffer a loss in your drug inventory.",
-  "type": "random-loss",
-  "scope": "current"
- },
- {
-  "id": 31,
-  "cardType": "positive",
-  "description": "You got caught, one of your rival has rat you out to the police. \n\n- A portion of your drugs is gone.",
-  "type": "random-loss",
-  "scope": "current"
- },
- {
-  "description": "police-raid"
- },
- {
-  "id": 32,
-  "cardType": "negative",
-  "description": "Police Trouble Ahead! Law enforcement is on to you due to suspicious activities.\n\n- Pay a $1000 bribe to evade consequences.\n\nIf you're unable to afford the bribe The police will take half of your units.",
-  "type": "police-raid",
-  "amount": 1000,
-  "scope": "current"
- },
- {
-  "id": 33,
-  "cardType": "negative",
-  "description": "Police Investigation Alert! The authorities have their eyes on you, suspecting illegal activities!\n\nPay $1000 bribe to evade consequences.\n\nIf you can't afford the bribe the police will confiscate 50% of your units.",
-  "type": "police-raid",
-  "amount": 1000,
-  "scope": "current"
- },
- {
-  "id": 34,
-  "cardType": "negative",
-  "description": "You find yourself in a sticky situation as the police close in. You have a choice!\n\n- Pay a bribe of $1000 to avoid any consequences.\n\nIf you can't afford the bribe the police will confiscate half of your drugs.",
-  "type": "police-raid",
-  "amount": 1000,
-  "scope": "current"
- },
- {
-  "id": 35,
-  "cardType": "negative",
-  "description": "Secret intelligence triggers a Police Raid! You're presented with the option to grease the palms of the police.\n\n- Offer a payoff of $1000!\n\nFailure to pay will lead the police to take 50% of your units.",
-  "type": "police-raid",
-  "amount": 1000,
-  "scope": "current"
- },
- {
-  "id": 36,
-  "cardType": "negative",
-  "description": "Police have caught wind of your activities and are closing in.\n\n- Pay a hush money $1000 to avoid problems.\n\nIf you can't afford the fine, the police will confiscate half of your drugs.",
-  "type": "police-raid",
-  "amount": 1000,
-  "scope": "current"
- },
- {
-  "id": 37,
-  "cardType": "negative",
-  "description": "Confidential intelligence triggers a Police Raid! You have a chance to bribe the authorities.\n\n- Settle for a bribe of $1000!\n\nIf your funds fall short, the police will seize 50% of your stash.",
-  "type": "police-raid",
-  "amount": 1000,
-  "scope": "current"
- },
- {
-  "id": 38,
-  "cardType": "negative",
-  "description": "Secret information leads to a Police Raid! You now have the opportunity to bribe the police.\n\n- Pay hush money of $1000!\n\nIf you don't have enough funds available, the police will confiscate half of your drugs.",
-  "type": "police-raid",
-  "amount": 1000,
-  "scope": "current"
- },
-
- {
-  "id": 39,
-  "cardType": "positive",
-  "description": "There's action in the neighborhood, so you decide to take a control round as there are many people around. On your way back home, you realize that you're missing a lot of your drugs! There has been a pickpocket at play!\n\n- You've lost some of your drugs!",
-  "type": "random-loss",
-  "scope": "current"
- },
- {
-  "id": 40,
-  "cardType": "positive",
-  "description": "When you land on the sofa after a long day, you can feel that your pockets aren't as full as when you left... Damn!\n\n- You've lost some of your drugs!",
-  "type": "random-loss",
-  "scope": "current"
- },
- {
-  "id": 41,
-  "cardType": "positive",
-  "description": "You're at a big event at an underground nightclub, and there's a high demand. Fortunately, you have an extra stash in your jacket... but you can't find it. It's been swiped!!!\n\n- You're left with fewer drugs.",
-  "type": "random-loss",
-  "scope": "current"
- },
- {
-  "id": 42,
-  "cardType": "positive",
-  "description": "You celebrate a successful week with your dealers at a bar, but a group of troublemakers arrives, and you're too drunk to defend yourself. \n\n- They beat you up and steal some of your drugs.",
-  "type": "random-loss",
-  "scope": "current"
- },
- {
-  "id": 43,
-  "cardType": "positive",
-  "description": "You decide to throw a lavish party to celebrate a successful week. While the party is in full swing, uninvited guests crash the party, causing a brawl. \n\n- You're too intoxicated to intervene, and during the chaos, they manage to steal some of your drugs.",
-  "type": "random-loss",
-  "scope": "current"
- },
- {
-  "id": 44,
-  "cardType": "positive",
-  "description": "You receive a mysterious tip about a secret drug stash hidden in an abandoned warehouse. Excited, you head there, but as you start searching, you trigger an alarm, and the police arrive!\n\n- You have to flee, leaving some of your drugs behind, or risk getting caught.",
-  "type": "random-loss",
-  "scope": "current"
- },
- {
-  "id": 45,
-  "cardType": "positive",
-  "description": "While making a deal with a new contact, you become suspicious of their intentions. They offer you a drink, and you start feeling dizzy. You realize you've been drugged!\n\n- You black out and wake up later, finding that some of your drugs and money are missing.",
-  "type": "random-loss",
-  "scope": "current"
- },
- {
-  "id": 46,
-  "cardType": "positive",
-  "description": "You receive an urgent call from a fellow dealer who needs your help with a deal gone wrong. You rush to the location, only to find a tense standoff with rival dealers. Negotiations break down, and a fight ensues.\n\n- Amid the chaos, some of your drugs are accidentally destroyed, and you barely manage to escape with your life.",
-  "type": "random-loss",
-  "scope": "current"
- },
- {
-  "id": 47,
-  "cardType": "positive",
-  "description": "You see a shady type walking by, later you suddenly realise something is missing from your inventory.\n\n- Your drug cache is reduced.",
-  "type": "random-loss",
-  "scope": "current"
- }
-]
+    {
+     "id": 1,
+     "cardType": "positive",
+     "description": "You find $500 on the street. - Receive $500.",
+     "type": "cash",
+     "amount": 500,
+     "scope": "current"
+    },
+    {
+     "id": 2,
+     "cardType": "positive",
+     "description": "You find $1000 on the street. - Receive $1000.",
+     "type": "cash",
+     "amount": 1000,
+     "scope": "current"
+    },
+    {
+     "id": 3,
+     "cardType": "positive",
+     "description": "You find $1500 on the street. - Receive $1500.",
+     "type": "cash",
+     "amount": 1500,
+     "scope": "current"
+    },
+    {
+     "id": 4,
+     "cardType": "positive",
+     "description": "You find $2000 on the street. - Receive $2000.",
+     "type": "cash",
+     "amount": 2000,
+     "scope": "current"
+    },
+    {
+     "id": 5,
+     "cardType": "positive",
+     "description": "You find $500 on the street. - Receive $500.",
+     "type": "cash",
+     "amount": 500,
+     "scope": "current"
+    },
+    {
+     "id": 6,
+     "cardType": "positive",
+     "description": "You find $1000 on the street. - Receive $1000.",
+     "type": "cash",
+     "amount": 1000,
+     "scope": "current"
+    },
+    {
+     "id": 7,
+     "cardType": "positive",
+     "description": "You find $1500 on the street. - Receive $1500.",
+     "type": "cash",
+     "amount": 1500,
+     "scope": "current"
+    },
+    {
+     "id": 8,
+     "cardType": "positive",
+     "description": "You find $2000 on the street. - Receive $2000.",
+     "type": "cash",
+     "amount": 2000,
+     "scope": "current"
+    },
+    {
+     "id": 9,
+     "cardType": "positive",
+     "description": "you encounter a junkie who is completely out of it! You rob him and take his money. \n\n- Receive $600.",
+     "type": "cash",
+     "amount": 600,
+     "scope": "current"
+    },
+    {
+     "id": 10,
+     "cardType": "positive",
+     "description": "you encounter a junkie who is completely out of it! You rob him and take his money. \n\n- Receive $300.",
+     "type": "cash",
+     "amount": 500,
+     "scope": "current"
+    },
+    {
+     "id": 11,
+     "cardType": "positive",
+     "description": "you encounter a junkie who is completely out of it! You rob him and take his money. \n\n- Receive $500.",
+     "type": "cash",
+     "amount": 400,
+     "scope": "current"
+    },
+    {
+     "id": 12,
+     "cardType": "positive",
+     "description": "You encounter a junkie who is completely out of it! You rob him and take his money. \n\n- You receive nothing; he was completely broke!",
+     "type": "cash",
+     "amount": 0,
+     "scope": "current"
+    },
+    null,
+    {
+     "id": 13,
+     "cardType": "Negative",
+     "description": "You run into the police who detain you. \n\n- Pay a fine of 500$.",
+     "type": "cash",
+     "amount": -500,
+     "scope": "current"
+    },
+    {
+     "id": 14,
+     "cardType": "Negative",
+     "description": "You run into the police who detain you. \n\n- Pay a fine of 500$.",
+     "type": "cash",
+     "amount": -500,
+     "scope": "current"
+    },
+    {
+     "id": 15,
+     "cardType": "Negative",
+     "description": "You run into the police who detain you. \n\n- Pay a fine of 800$.",
+     "type": "cash",
+     "amount": -800,
+     "scope": "current"
+    },
+    {
+     "id": 16,
+     "cardType": "Negative",
+     "description": "You run into the police who detain you. \n\n- Pay a fine of 800$.",
+     "type": "cash",
+     "amount": -800,
+     "scope": "current"
+    },
+    {
+     "id": 17,
+     "cardType": "Negative",
+     "description": "One of your fellow drug dealers needs your assistance to secure their release from jail. \n\n- Pay their bail-out $500.",
+     "type": "cash",
+     "amount": -500,
+     "scope": "current"
+    },
+    {
+     "id": 18,
+     "cardType": "Negative",
+     "description": "Oh no!!! The police have caught your supplier! Now you're worried about being exposed. \n\n- Pay $700 to keep him quiet.",
+     "type": "cash",
+     "amount": -700,
+     "scope": "current"
+    },
+    null,
+    {
+     "id": 19,
+     "cardType": "positive",
+     "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either Odd or Even. \n\n- Choose one and bet any amount you like.",
+     "type": "cash",
+     "amount": 0,
+     "scope": "current"
+    },
+    {
+     "id": 20,
+     "cardType": "positive",
+     "description": "You're furious and feel like smashing one of your rivals!\n\n- Choose a rival, move to their piece, and Fight!!!\"",
+     "type": "cash",
+     "amount": 0,
+     "scope": "current"
+    },
+    {
+     "id": 21,
+     "cardType": "positive",
+     "description": "You've obtained intel on your rivals and pitted them against each other in a street brawl!\n\n- Choose two of your rivals to face off against each other in a street fight!",
+     "type": "cash",
+     "amount": 0,
+     "scope": "current"
+    },
+    {
+     "id": 22,
+     "cardType": "positive",
+     "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either Odd or Even. \n\n- Choose one and bet any amount you like.",
+     "type": "cash",
+     "amount": 0,
+     "scope": "current"
+    },
+    {
+     "id": 23,
+     "cardType": "positive",
+     "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either Odd or Even. \n\n- Choose one and bet any amount you like.",
+     "type": "cash",
+     "amount": 0,
+     "scope": "current"
+    },
+    {
+     "id": 24,
+     "cardType": "positive",
+     "description": "You're furious and feel like smashing one of your rivals!\n\n- Choose a rival, move to their piece, and Fight!!!\"",
+     "type": "cash",
+     "amount": 0,
+     "scope": "current"
+    },
+    {
+     "id": 25,
+     "cardType": "positive",
+     "description": "With rival intel in hand, you've orchestrated a street brawl between them!\"!\n\n- Choose two of your rivals to face off against each other in a street fight!",
+     "type": "cash",
+     "amount": 0,
+     "scope": "current"
+    },
+    {
+     "id": 26,
+     "cardType": "positive",
+     "description": "FUCK!!! Your supplier got caught... - Sell out of the drug you have the least units of!",
+     "type": "cash",
+     "amount": 0,
+     "scope": "current"
+    },
+    {
+     "id": 27,
+     "cardType": "positive",
+     "description": "Feeling lucky, you decide to visit the casino and wager an amount of your choice on either Odd or Even. \n\n- Choose one and bet any amount you like.",
+     "type": "cash",
+     "amount": 0,
+     "scope": "current"
+    },
+    {
+     "id": 28,
+     "cardType": "positive",
+     "description": "You've received information about your rivals and set them against each other in a street brawl!\n\n- Choose two of your rivals to face off against each other in a street fight!",
+     "type": "cash",
+     "amount": 0,
+     "scope": "current"
+    },
+    null,
+    {
+     "id": 29,
+     "cardType": "positive",
+     "description": "You got caught, one of your rival has rat you out to the police. \n\n- Your stash of drugs takes a hit.",
+     "type": "random-loss",
+     "scope": "current"
+    },
+    {
+     "id": 30,
+     "cardType": "positive",
+     "description": "You've been busted!! one of your rivals has snitched to the police.\n\n- You suffer a loss in your drug inventory.",
+     "type": "random-loss",
+     "scope": "current"
+    },
+    {
+     "id": 31,
+     "cardType": "positive",
+     "description": "You got caught, one of your rival has rat you out to the police. \n\n- A portion of your drugs is gone.",
+     "type": "random-loss",
+     "scope": "current"
+    },
+    null,
+    {
+     "id": 32,
+     "cardType": "negative",
+     "description": "Police Trouble Ahead! Law enforcement is on to you due to suspicious activities.\n\n- Pay a $1000 bribe to evade consequences.\n\nIf you're unable to afford the bribe The police will take half of your units.",
+     "type": "police-raid",
+     "amount": 1000,
+     "scope": "current"
+    },
+    {
+     "id": 33,
+     "cardType": "negative",
+     "description": "Police Investigation Alert! The authorities have their eyes on you, suspecting illegal activities!\n\nPay $1000 bribe to evade consequences.\n\nIf you can't afford the bribe the police will confiscate 50% of your units.",
+     "type": "police-raid",
+     "amount": 1000,
+     "scope": "current"
+    },
+    {
+     "id": 34,
+     "cardType": "negative",
+     "description": "You find yourself in a sticky situation as the police close in. You have a choice!\n\n- Pay a bribe of $1000 to avoid any consequences.\n\nIf you can't afford the bribe the police will confiscate half of your drugs.",
+     "type": "police-raid",
+     "amount": 1000,
+     "scope": "current"
+    },
+    {
+     "id": 35,
+     "cardType": "negative",
+     "description": "Secret intelligence triggers a Police Raid! \n\n- Offer a payoff of $1000!\n\nFailure to pay will lead the police to take 50% of your units.",
+     "type": "police-raid",
+     "amount": 1000,
+     "scope": "current"
+    },
+    {
+     "id": 36,
+     "cardType": "negative",
+     "description": "Police have caught wind of your activities and are closing in.\n\n- Pay a hush money $1000 to avoid problems.\n\nIf you can't afford the fine, the police will confiscate half of your drugs.",
+     "type": "police-raid",
+     "amount": 1000,
+     "scope": "current"
+    },
+    {
+     "id": 37,
+     "cardType": "negative",
+     "description": "Confidential intelligence triggers a Police Raid! You have a chance to bribe the authorities.\n\n- Settle for a bribe of $1000!\n\nIf your funds fall short, the police will seize 50% of your stash.",
+     "type": "police-raid",
+     "amount": 1000,
+     "scope": "current"
+    },
+    {
+     "id": 38,
+     "cardType": "negative",
+     "description": "Secret information leads to a Police Raid! You now have the opportunity to bribe the police.\n\n- Pay hush money of $1000!\n\nIf you don't have enough funds available, the police will confiscate half of your drugs.",
+     "type": "police-raid",
+     "amount": 1000,
+     "scope": "current"
+    },
+    null,
+    {
+     "id": 39,
+     "cardType": "positive",
+     "description": "As neighborhood activity buzzes, you seize the opportunity to take charge. Returning home, you discover a significant portion of your drugs missing\n\n— evidence of a pickpocket's mischief!",
+     "type": "random-loss",
+     "scope": "current"
+    },
+    {
+     "id": 40,
+     "cardType": "positive",
+     "description": "When you land on the sofa after a long day, you can feel that your pockets aren't as full as when you left... Damn!\n\n- You've lost some of your drugs!",
+     "type": "random-loss",
+     "scope": "current"
+    },
+    {
+     "id": 41,
+     "cardType": "positive",
+     "description": "At an underground nightclub event with high demand, you're in luck with an extra stash in your jacket... but it's vanished! It's been swiped!\n\n- You're left with fewer drugs.",
+     "type": "random-loss",
+     "scope": "current"
+    },
+    {
+     "id": 42,
+     "cardType": "positive",
+     "description": "You celebrate a successful week with your dealers at a bar, but a group of troublemakers arrives, and you're too drunk to defend yourself. \n\n- They beat you up and steal some of your drugs.",
+     "type": "random-loss",
+     "scope": "current"
+    },
+    {
+     "id": 43,
+     "cardType": "positive",
+     "description": "\nAs the week ends triumphantly, you throw a lavish party. Unexpected guests arrive, sparking chaos at its peak.\n\n- They manage to steal some of your drugs.",
+     "type": "random-loss",
+     "scope": "current"
+    },
+    {
+     "id": 44,
+     "cardType": "positive",
+     "description": "You get a tip about a hidden drug stash in an abandoned warehouse. Excited, you go, but trigger an alarm while searching. Police show up!\n\n- You have to flee, losing some of your drugs in the process.",
+     "type": "random-loss",
+     "scope": "current"
+    },
+    {
+     "id": 45,
+     "cardType": "positive",
+     "description": "During a deal with a new contact, suspicion arises as they offer you a drink. Dizziness hits, and you realize you've been drugged.\n\n- You wake up later to find some drugs missing.",
+     "type": "random-loss",
+     "scope": "current"
+    },
+    {
+     "id": 46,
+     "cardType": "positive",
+     "description": "Urgent call from a dealer in trouble. You arrive to rival standoff. Talks fail, fight erupts.\n\n- Amid chaos, drugs destroyed and you barely manage to escape with your life.",
+     "type": "random-loss",
+     "scope": "current"
+    },
+    {
+     "id": 47,
+     "cardType": "positive",
+     "description": "You see a shady type walking by, later you suddenly realise something is missing from your inventory.\n\n- Your drug cache is reduced.",
+     "type": "random-loss",
+     "scope": "current"
+    }
+   ]

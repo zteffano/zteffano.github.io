@@ -43,5 +43,50 @@
       "item": "LSD",
       "amount": 0.4,
       "duration": 1
+    },
+    {
+      "id": 6,
+      "cardType": "positive",
+      "description": "Fresh album released by Snoop Dogg!! Hash in high demand!",
+      "type": "drug-prices",
+      "item": "Hash",
+      "amount": 0.15,
+      "duration": 3
+    },
+    {
+      "id": 7,
+      "cardType": "negative",
+      "description": "Market flooded with inexpensive LSD. Prices dropping rapidly!",
+      "type": "drug-prices",
+      "item": "LSD",
+      "amount": -0.2,
+      "duration": 4
+    },
+    {
+      "id": 8,
+      "cardType": "positive",
+      "description": "Ecstasy is having a fashion moment. Prices are reaching for the stars!",
+      "type": "drug-prices",
+      "item": "Ecstacy",
+      "amount": 0.35,
+      "duration": 2
+    },
+    {
+      "id": 9,
+      "cardType": "negative",
+      "description": "Cocaine is resulting in massive fines! no one dares to possess any!",
+      "type": "drug-prices",
+      "item": "Cocaine",
+      "amount": -0.25,
+      "duration": 2
+    },
+    {
+      "id": 10,
+      "cardType": "positive",
+      "description": "Morphine is the new buzz in a hectic daily life, adored by businesspeople!",
+      "type": "drug-prices",
+      "item": "Morphine",
+      "amount": 0.4,
+      "duration": 4
     }
   ]
