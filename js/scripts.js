@@ -27,11 +27,11 @@
     //crack: { min: 100, max: 250 },
   };
   const cardModifiers = {
-    Rookie: 0.8,
-    Dealer: 1,
-    Pusher: 1.2,
-    Boss: 1.4,
-    Kingpin: 1.6,
+    "Rookie": 0.8,
+    "Dealer": 1,
+    "Pusher": 1.2,
+    "Boss": 1.4,
+    "Kingpin": 1.6,
     "Drug Lord": 2.5,
   };
 
@@ -367,6 +367,7 @@
             updatePlayerTurnDisplay();
             setupPlayerPictures();
             updateLeaderboard();
+            document.querySelector(".leaderboard-container").style.display = "block"; // temp fix for leaderboard random disappearing -_-
           }
         }
       });
@@ -759,7 +760,7 @@
 
   let eventCards = [];
 
-  fetch("cards/active_event_test.json")
+  fetch("cards/test_cards.json")
     .then((response) => response.json())
     .then((data) => {
       eventCards = data;
@@ -780,10 +781,12 @@
     let eventTextElement = document.querySelector("#event-text-container p");
     eventTextElement.innerHTML = "<br>";
     let currentPlayer = players[currentPlayerIndex];
+    console.log("Current player:", currentPlayer);
     let modifier = cardModifiers[currentPlayer.title];
+    console.log("Modifier:", modifier);
     let cardType = eventCard.cardType;
 
-    if (eventCard.type === "cash" && cardType.toLowerCase() === "negative") {
+    if ((eventCard.type === "cash" || eventCard.type == "police-raid") && cardType.toLowerCase() === "negative") {
       let amount = eventCard.amount;
       eventCard.description = eventCard.description.replace(
         `${amount}`,
@@ -839,6 +842,78 @@
           let modifier = eventCard.amount > 0 ? 1 : cardModifiers[player.title];
           player.cash += eventCard.amount * modifier;
           break;
+
+
+          case "random-loss":
+            console.log("Random loss event card");
+            // Calculate total items in inventory
+            const totalItems = Object.values(player.inventory).reduce((a, b) => a + b, 0);
+            // Calculate random loss percentage (up to 35%)
+            const lossPercent = Math.max(0.15,Math.random() * 0.40);
+            const lossAmount = Math.floor(totalItems * lossPercent);
+
+            // Randomly select drugs to lose
+            let itemsLost = 0;
+            while (itemsLost < lossAmount) { 
+              let drugKeys = Object.keys(player.inventory);
+              let randomDrug = drugKeys[Math.floor(Math.random() * drugKeys.length)];
+          
+              if (player.inventory[randomDrug] > 0) {
+                player.inventory[randomDrug]--;
+                itemsLost++;
+              }
+            }
+            updateAllPlayerContainers();
+            break;
+          case "specific-loss":
+
+            const specificDrug = eventCard.item;
+            console.log("Specific loss event card for drug:", specificDrug)
+
+            if (player.inventory[specificDrug]) {
+              // Calculate the maximum loss for the specific drug (up to 30%)
+              const maxLoss = Math.max(0.1,Math.floor(player.inventory[specificDrug] * 0.3));
+              console.log("Max loss:", maxLoss)
+              // If maxLoss is zero but there is some amount of the drug, set maxLoss to 1
+              const adjustedMaxLoss = maxLoss === 0 && player.inventory[specificDrug] > 0 ? 1 : maxLoss;
+              console.log("Adjusted max loss:", adjustedMaxLoss)
+              // Randomly determine the loss amount from 1 to maxLoss
+              const lossAmount = Math.floor(Math.random() * (adjustedMaxLoss - 1 + 1)) + 1;
+              console.log("Loss amount:", lossAmount)
+              // Reduce the drug quantity, ensuring it doesn't go negative
+              console.log("Inventory before loss:", player.inventory)
+              player.inventory[specificDrug] = Math.max(0, player.inventory[specificDrug] - lossAmount);
+              console.log("Inventory after loss:", player.inventory)
+            }
+            //update the player container
+            updateAllPlayerContainers();
+            break;
+
+            case "police-raid":
+              console.log(player)
+              eventCard.amount = eventCard.amount * cardModifiers[player.title];
+              // Check if the player can pay the bribe
+              if (player.cash >= eventCard.amount) {
+                player.cash -= eventCard.amount;
+              } else {
+                // Calculate 50% loss if bribe can't be paid
+                const totalItems = Object.values(player.inventory).reduce((a, b) => a + b, 0);
+                const lossAmount = Math.floor(totalItems * 0.5);
+                // Randomly remove items from the inventory
+                let itemsLost = 0;
+                while (itemsLost < lossAmount) {
+                  let drugKeys = Object.keys(player.inventory);
+                  let randomDrug = drugKeys[Math.floor(Math.random() * drugKeys.length)];
+                  if (player.inventory[randomDrug] > 0) {
+                    player.inventory[randomDrug]--;
+                    itemsLost++;
+                  }
+                }
+              }
+              // Update the player container
+              updateAllPlayerContainers();
+              break;
+
         case "drugs":
           const drugType = eventCard.item;
 

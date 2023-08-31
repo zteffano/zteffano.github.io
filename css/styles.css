@@ -871,4 +871,11 @@ button:hover {
     user-select: none;
     
   }
+
+  /* Specific styling for Big presentation screen */
+
+  #game-title {
+    font-size: 8em!important;
+    margin-bottom: 8vh!important;
+  }
   

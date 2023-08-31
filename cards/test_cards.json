@@ -1,0 +1,14 @@
+[
+
+      {
+        "id": 9,
+        "cardType": "negative",
+        "description": "You are caught in a police raid! You must pay a bribe of $1000 to avoid losing 50% of your inventory!",
+        "type": "police-raid",
+        "amount": 1000,
+        "scope": "current"
+      }
+      
+
+
+  ]
