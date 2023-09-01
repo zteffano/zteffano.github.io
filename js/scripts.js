@@ -40,9 +40,9 @@
     "Rookie": 0.8,
     "Dealer": 1,
     "Pusher": 1.2,
-    "Boss": 1.4,
-    "Kingpin": 1.6,
-    "Drug Lord": 2.5,
+    "Boss": 2,
+    "Kingpin": 3,
+    "Drug Lord": 3,
   };
 
   var players = []; // global array to store players
@@ -62,7 +62,7 @@
       this.netWorthHistory = []; // Array to store net worth over time
       this.drugLordDays = 1;
     }
-    getNetWorth(averagePrices) {
+    getNetWorth(averagePrices , titlecall = false) {
       let netWorth = this.cash + this.bankCash; // include bank cash in net worth calculation
       for (const [drug, quantity] of Object.entries(this.inventory)) {
         if (averagePrices[drug]) {
@@ -70,11 +70,27 @@
         }
       }
       //if its the current players turn then add the net worth to the net worth history
-      if (players[currentPlayerIndex] === this) {
+      if (players[currentPlayerIndex] === this && titlecall === false) {
         this.netWorthHistory.push(netWorth);
         this.roundActions(); // cause this runs every turn, we can put any code that needs to run every turn here
       }
       return netWorth;
+    }
+    updateTitle() {
+      let netWorthNow = this.getNetWorth(averagePrices, true);
+      if (netWorthNow >= 100000) {
+        this.title = "Drug Lord";
+      } else if (netWorthNow >= 50000) {
+        this.title = "Kingpin";
+      } else if (netWorthNow >= 20000) {
+        this.title = "Boss";
+      } else if (netWorthNow >= 10000) {
+        this.title = "Pusher";
+      } else if (netWorthNow >= 3000) {
+        this.title = "Dealer";
+      } else {
+        this.title = "Rookie";
+      }
     }
     depositToBank(amount) {
       if (this.cash >= amount) {
@@ -812,6 +828,8 @@
 
     if ((eventCard.type === "cash" || eventCard.type == "police-raid") && cardType.toLowerCase() === "negative") {
       let amount = eventCard.amount;
+      //update player title
+      currentPlayer.updateTitle();
       eventCard.description = eventCard.description.replace(
         `${amount}`,
         eventCard.amount * modifier

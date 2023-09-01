@@ -336,7 +336,7 @@
     {
      "id": 43,
      "cardType": "positive",
-     "description": "\nAs the week ends triumphantly, you throw a lavish party. Unexpected guests arrive, sparking chaos at its peak.\n\n- They manage to steal some of your drugs.",
+     "description": "As the week ends triumphantly, you throw a lavish party. Unexpected guests arrive, sparking chaos at its peak.\n\n- They manage to steal some of your drugs.",
      "type": "random-loss",
      "scope": "current"
     },
