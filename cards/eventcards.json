@@ -144,7 +144,6 @@
      "amount": -700,
      "scope": "current"
     },
-    null,
     {
      "id": 19,
      "cardType": "positive",
@@ -225,7 +224,6 @@
      "amount": 0,
      "scope": "current"
     },
-    null,
     {
      "id": 29,
      "cardType": "positive",
@@ -247,7 +245,6 @@
      "type": "random-loss",
      "scope": "current"
     },
-    null,
     {
      "id": 32,
      "cardType": "negative",
@@ -304,7 +301,6 @@
      "amount": 1000,
      "scope": "current"
     },
-    null,
     {
      "id": 39,
      "cardType": "positive",
