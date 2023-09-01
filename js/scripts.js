@@ -1082,8 +1082,17 @@
     });
 
     function updatePlayerImage(playerIndex, imageDiv) {
+      // if player.gender is female 
+      if(players[playerIndex].gender == "female") {
+        const image = `../img/characters/${playerIndex + 1}f.png`; // Since index starts from 0, we add 1.
+        imageDiv.style.backgroundImage = `url(${image})`;
+        return;
+
+      }
+      else {
       const image = `../img/characters/${playerIndex + 1}.png`; // Since index starts from 0, we add 1.
       imageDiv.style.backgroundImage = `url(${image})`;
+    }
     }
 
     // Initialize images with the first player
