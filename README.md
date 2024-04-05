@@ -1,3 +1,3 @@
-#  Webapp for a Innovation Project Board Game called Drug Lord
+#  Webapp for a Innovation Project Board Game called Drug Cartel, made on IBA Kolding
 
-### Under construction
+### See Example on: https://zteffano.github.io/
